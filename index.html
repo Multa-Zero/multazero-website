@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multa Zero — Gestão de Multas para Frotas</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar transparent" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="nav-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        Multa Zero
+      </a>
+
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="nav-links">
+        <a href="#solucao" class="nav-link">Plataforma</a>
+        <a href="#diferenciais" class="nav-link">Diferenciais</a>
+        <a href="#resultados" class="nav-link">Resultados</a>
+        <a href="#oferta" class="btn btn-primary btn-S">Falar com representante</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 1. Hero -->
+  <header class="hero" id="home">
+    <div class="hero-video-wrap">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="./videos/Truck_moving_in_road_32aee69975.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-text reveal-up">
+        <h1 class="heading-1">Multas da sua frota sob controle — da contestação ao pagamento.</h1>
+        <p class="body-L" style="margin-top: 16px; opacity: 0.9;">A Multa Zero centraliza multas, recursos e pagamentos
+          da sua frota em um único ambiente. Recorra com apoio de IA, com confiabilidade e visibilidade total para a
+          operação.</p>
+
+        <div class="hero-actions">
+          <a href="#oferta" class="btn btn-primary btn-M">Falar com representante</a>
+          <a href="#solucao" class="btn btn-outline-light btn-M">Conhecer a plataforma</a>
+        </div>
+
+        <div class="trust-badge" style="color: var(--hero-chart-light); opacity: 0.8;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          Proposta personalizada. Sem compromisso. Dados protegidos (LGPD).
+        </div>
+      </div>
+
+      <div class="hero-visual reveal-card">
+        <img src="./images/Visão Geral.png" alt="Painel Multa Zero — Visão Geral">
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Logos -->
+  <section class="logos-section">
+    <div class="container text-center">
+      <p class="body-XS text-secondary" style="text-transform: uppercase; letter-spacing: 2px; font-weight: 600;">Quem
+        já simplifica as multas com a gente</p>
+      <div class="logo-strip reveal-up">
+        <div class="logo-item"><span>Trans</span>Log</div>
+        <div class="logo-item"><span>Via</span>Cargo</div>
+        <div class="logo-item"><span>Eco</span>Frota</div>
+        <div class="logo-item"><span>Agro</span>Transportes</div>
+        <div class="logo-item"><span>Sul</span>Logistics</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Problema -->
+  <section class="section-padding card-neutral" id="problema">
+    <div class="container">
+      <div class="text-center reveal-up">
+        <h2 class="heading-2">O desafio da sua frota</h2>
+        <p class="body-M text-secondary"
+          style="margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">Planilhas dispersas, prazos
+          apertados e burocracia consomem a operação.</p>
+      </div>
+
+      <div class="grid grid-4" style="margin-top: 48px;">
+        <div class="card card-shadow reveal-card">
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <h3 class="heading-4">Multas injustas</h3>
+          <p class="body-S text-secondary" style="margin-top: 8px;">Penalizações indevidas que afetam a rentabilidade se
+            não contestadas a tempo.</p>
+        </div>
+
+        <div class="card card-shadow reveal-card">
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h3 class="heading-4">Falta de tempo</h3>
+          <p class="body-S text-secondary" style="margin-top: 8px;">Equipe sobrecarregada com tarefas operacionais, não
+            sobrando tempo para recursos estratégicos.</p>
+        </div>
+
+        <div class="card card-shadow reveal-card">
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <h3 class="heading-4">Burocracia</h3>
+          <p class="body-S text-secondary" style="margin-top: 8px;">Documentação espalhada e processos manuais que geram
+            falhas e perda de prazos.</p>
+        </div>
+
+        <div class="card card-shadow reveal-card">
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3 class="heading-4">Volume alto</h3>
+          <p class="body-S text-secondary" style="margin-top: 8px;">Dificuldade em gerenciar e ter visibilidade de todas
+            as infrações de grandes frotas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Solução -->
+  <section class="section-padding solution-section" id="solucao">
+    <div class="container">
+      <div class="text-center reveal-up" style="margin-bottom: 64px;">
+        <span class="tag" style="margin-bottom: 16px;">Plataforma</span>
+        <h2 class="heading-2">Multa Zero na prática</h2>
+        <p class="body-M text-secondary"
+          style="margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">Controle por veículo e
+          condutor, recursos com IA e pagamentos centralizados.</p>
+      </div>
+
+      <div class="solution-split reveal-up">
+        <div class="solution-text">
+          <h3 class="heading-3">Uma plataforma. Toda a gestão de multas.</h3>
+          <p class="body-M text-secondary" style="margin-top: 16px;">A Multa Zero concentra em um único painel o
+            cadastro de multas, a identificação de condutores e o acompanhamento de prazos. Reduza os custos invisíveis
+            da sua frota.</p>
+
+          <ul class="feature-list">
+            <li>
+              <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <div>
+                <strong class="subtitle-M">Gestão unificada</strong>
+                <p class="body-S text-secondary">Tudo em um só lugar, acabando com planilhas.</p>
+              </div>
+            </li>
+            <li>
+              <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <div>
+                <strong class="subtitle-M">Apoio Profissional</strong>
+                <p class="body-S text-secondary">Recorra com base legal sólida gerada por IA.</p>
+              </div>
+            </li>
+            <li>
+              <svg class="feature-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <div>
+                <strong class="subtitle-M">Pagamento rápido</strong>
+                <p class="body-S text-secondary">Quite infrações com desconto direto no sistema.</p>
+              </div>
+            </li>
+          </ul>
+
+          <a href="#oferta" class="btn btn-primary btn-M" style="margin-top: 24px;">Solicitar demonstração</a>
+        </div>
+
+        <div class="solution-image reveal-card">
+          <div
+            style="background-color: var(--neutral-1); height: 400px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--border-default);">
+            <img src="./images/truck image.png" alt="Caminhão da frota"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Como Funciona -->
+  <section class="section-padding card-neutral" id="como-funciona">
+    <div class="container">
+      <div class="text-center reveal-up">
+        <h2 class="heading-2">Do problema à solução em poucos passos</h2>
+      </div>
+
+      <div class="timeline reveal-up">
+        <div class="timeline-step">
+          <div class="step-number">1</div>
+          <h3 class="heading-5">Cadastro</h3>
+          <p class="body-S text-secondary" style="margin-top: 8px;">Integre sua frota e centralize o recebimento de
+            notificações.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">2</div>
+          <h3 class="heading-5">Análise IA</h3>
+          <p class="body-S text-secondary" style="margin-top: 8px;">O sistema identifica inconsistências e sugere
+            defesas embasadas.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">3</div>
+          <h3 class="heading-5">Recurso</h3>
+          <p class="body-S text-secondary" style="margin-top: 8px;">Com um clique, envie a contestação para o órgão
+            responsável.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">4</div>
+          <h3 class="heading-5">Acompanhamento</h3>
+          <p class="body-S text-secondary" style="margin-top: 8px;">Monitore o status do processo e, se necessário,
+            pague via plataforma.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Diferenciais -->
+  <section class="section-padding" id="diferenciais">
+    <div class="container">
+      <div class="text-center reveal-up">
+        <span class="tag" style="margin-bottom: 16px;">Por que nós?</span>
+        <h2 class="heading-2">Ferramentas para quem exige gestão de frota de ponta</h2>
+      </div>
+
+      <div class="bento-grid">
+        <div class="card card-shadow bento-large reveal-card card-neutral">
+          <div>
+            <span class="tag" style="margin-bottom: 16px; background-color: var(--hero-chart-dark); color: white;">IA
+              Proprietária</span>
+            <h3 class="heading-3">Defesas elaboradas por Inteligência Artificial</h3>
+            <p class="body-M text-secondary" style="margin-top: 16px; max-width: 80%;">Nossa tecnologia analisa milhares
+              de variáveis do código de trânsito para criar recursos consistentes e personalizados, aumentando
+              drasticamente a chance de sucesso.</p>
+          </div>
+          <div style="margin-top: 32px; text-align: right;">
+            <img src="./images/truckicon2.png" alt="Icon"
+              style="width: 120px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));">
+          </div>
+        </div>
+
+        <div class="card card-shadow reveal-card">
+          <h3 class="heading-4">Proteção CNH</h3>
+          <p class="body-S text-secondary" style="margin-top: 8px;">Evite a suspensão de motoristas com o controle
+            inteligente de pontuação e prazos de indicação de condutor.</p>
+        </div>
+
+        <div class="card card-shadow reveal-card">
+          <h3 class="heading-4">Pagamento Integrado</h3>
+          <p class="body-S text-secondary" style="margin-top: 8px;">Quite multas aproveitando descontos legais (até 40%)
+            diretamente pelo painel financeiro.</p>
+        </div>
+
+        <div class="card card-shadow reveal-card" style="grid-column: 1 / -1;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+            <div>
+              <h3 class="heading-4">Múltiplos Órgãos</h3>
+              <p class="body-M text-secondary" style="margin-top: 8px;">Integração com Detran, PRF, DNIT e municípios em
+                todo o território nacional.</p>
+            </div>
+            <a href="#oferta" class="btn btn-secondary btn-M">Entender a solução</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Prova Social -->
+  <section class="section-padding card-neutral" id="resultados">
+    <div class="container">
+      <div class="text-center reveal-up">
+        <h2 class="heading-2">Resultados que falam por si</h2>
+        <p class="body-M text-secondary" style="margin-top: 16px;">Empresas que não abrem mão de controle escolhem a
+          Multa Zero.</p>
+      </div>
+
+      <div class="stats-grid reveal-up">
+        <div>
+          <div class="stat-row"><span class="heading-1 stat-number reveal-number" data-target="85">0</span><span
+              class="heading-1 stat-number stat-suffix">%</span></div>
+          <p class="subtitle-M">Menos tempo em processos de recurso</p>
+        </div>
+        <div>
+          <div class="stat-row"><span class="heading-1 stat-number reveal-number" data-target="150">0</span><span
+              class="heading-1 stat-number stat-suffix">k+</span></div>
+          <p class="subtitle-M">Multas gerenciadas na plataforma</p>
+        </div>
+        <div>
+          <div class="stat-row"><span class="heading-1 stat-number reveal-number" data-target="30">0</span><span
+              class="heading-1 stat-number stat-suffix">%</span></div>
+          <p class="subtitle-M">Redução média de custos com infrações</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3 reveal-up">
+        <div class="card card-shadow testimonial-card">
+          <p class="body-M text-primary" style="font-style: italic;">“Antes da Multa Zero, perdíamos prazos e descontos
+            quase todo mês. Hoje o controle é absoluto e o tempo da equipe foca na operação real.”</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">M</div>
+            <div>
+              <div class="subtitle-S">Marcelo Silva</div>
+              <div class="body-XS text-secondary">Gestor de Frota, LogísticaX</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-shadow testimonial-card">
+          <p class="body-M text-primary" style="font-style: italic;">“A precisão dos recursos gerados pela inteligência
+            artificial nos surpreendeu positivamente. Protegemos nossos motoristas de forma ágil.”</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">C</div>
+            <div>
+              <div class="subtitle-S">Carlos Mendes</div>
+              <div class="body-XS text-secondary">Diretor de Operações, Transportadora BR</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-shadow testimonial-card">
+          <p class="body-M text-primary" style="font-style: italic;">“Ter o pagamento integrado na mesma tela onde
+            controlamos as defesas otimizou nosso financeiro de maneira incrível.”</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">P</div>
+            <div>
+              <div class="subtitle-S">Paula Souza</div>
+              <div class="body-XS text-secondary">Coord. Financeira, ViaCarga</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Oferta -->
+  <section class="section-padding" id="oferta">
+    <div class="container">
+      <div class="text-center reveal-up">
+        <span class="tag" style="margin-bottom: 16px;">Contato</span>
+        <h2 class="heading-2">Uma proposta à altura da sua empresa</h2>
+        <p class="body-M text-secondary" style="margin-top: 16px;">Conversa consultiva com um representante. Sem
+          compromisso.</p>
+      </div>
+
+      <div class="card card-shadow form-card reveal-up">
+        <form id="contact-form">
+          <div class="form-group">
+            <label class="form-label font-weight-bold">Nome completo</label>
+            <input type="text" class="form-input" placeholder="Seu nome" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label font-weight-bold">E-mail corporativo</label>
+            <input type="email" class="form-input" placeholder="email@suaempresa.com.br" required>
+          </div>
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label class="form-label font-weight-bold">Empresa</label>
+              <input type="text" class="form-input" placeholder="Nome da empresa" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label font-weight-bold">Tamanho da frota</label>
+              <select class="form-input" required>
+                <option value="">Selecione</option>
+                <option value="1-20">1 a 20 veículos</option>
+                <option value="21-50">21 a 50 veículos</option>
+                <option value="51-100">51 a 100 veículos</option>
+                <option value="100+">Mais de 100 veículos</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-L" style="width: 100%; margin-top: 16px;">Solicitar proposta
+            para minha frota</button>
+
+          <div style="text-align: center;">
+            <div class="trust-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              Dados confidenciais e protegidos (LGPD).
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FAQ -->
+  <section class="section-padding card-neutral" id="faq">
+    <div class="container reveal-up">
+      <div class="text-center">
+        <h2 class="heading-2">Perguntas frequentes</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question heading-5">Para que tamanho de frota a plataforma é recomendada?<span
+              class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg></span></button>
+          <div class="faq-answer">
+            <p class="body-M text-secondary" style="max-width: 90%;">Atendemos empresas a partir de 10 veículos
+              corporativos até operações logísticas complexas com milhares de caminhões, adaptando nossa proposta à sua
+              realidade.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question heading-5">Como funciona a inteligência artificial nos recursos?<span
+              class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg></span></button>
+          <div class="faq-answer">
+            <p class="body-M text-secondary" style="max-width: 90%;">Nosso sistema analisa os dados do auto de infração
+              contra a legislação vigente e erros comuns de autuação, elaborando automaticamente uma peça de defesa
+              consistente baseada em casos de sucesso anteriores.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question heading-5">A Multa Zero garante o cancelamento da multa?<span
+              class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg></span></button>
+          <div class="faq-answer">
+            <p class="body-M text-secondary" style="max-width: 90%;">Nenhuma empresa idônea pode garantir o
+              cancelamento, pois a decisão final cabe ao órgão de trânsito. O que entregamos é a melhor defesa possível
+              para as infrações, maximizando a taxa de deferimentos e oferecendo gestão completa sobre o risco.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question heading-5">O sistema integra com rastreadores e telemetria?<span
+              class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg></span></button>
+          <div class="faq-answer">
+            <p class="body-M text-secondary" style="max-width: 90%;">Sim, possuímos documentação de API para integração
+              com os principais sistemas de ERP, telemetria e rastreamento do mercado, facilitando a identificação
+              automática de condutores.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question heading-5">Como recebo uma proposta comercial?<span class="faq-icon"><svg
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg></span></button>
+          <div class="faq-answer">
+            <p class="body-M text-secondary" style="max-width: 90%;">Preencha o formulário na seção "Contato" desta
+              página. Um representante especialista em frotas analisará suas informações e entrará em contato para uma
+              conversa consultiva e sem compromisso.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CTA Final -->
+  <section class="cta-final section-padding">
+    <div class="container reveal-up">
+      <h2 class="heading-1">Pronto para elevar a gestão de multas da sua frota?</h2>
+      <p class="body-L text-secondary" style="margin-top: 16px; margin-bottom: 32px;">Gestão de frota exige ferramentas
+        à altura. Conte-nos sobre sua operação e solicite uma proposta personalizada.</p>
+
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="#oferta" class="btn"
+          style="background-color: white; color: var(--blue-ribbon-9); font-weight: 700; padding: 16px 32px; font-size: 16px;">Falar
+          com representante</a>
+      </div>
+
+      <div class="trust-badge" style="justify-content: center; color: var(--blue-ribbon-2); margin-top: 24px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        Sem compromisso.
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#" class="footer-logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+              style="vertical-align: middle; margin-right: 8px;">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--blue-ribbon-6)" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M2 17L12 22L22 17" stroke="var(--blue-ribbon-6)" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M2 12L12 17L22 12" stroke="var(--blue-ribbon-6)" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Multa Zero
+          </a>
+          <p class="body-S text-secondary" style="max-width: 80%;">Gestão inteligente, recursos com IA e redução de
+            burocracia para frotas corporativas.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Produto</h4>
+          <ul class="footer-links">
+            <li><a href="#solucao">Funcionalidades</a></li>
+            <li><a href="#diferenciais">Diferenciais IA</a></li>
+            <li><a href="#como-funciona">Como Funciona</a></li>
+            <li><a href="#resultados">Resultados</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Empresa</h4>
+          <ul class="footer-links">
+            <li><a href="#">Sobre nós</a></li>
+            <li><a href="#">Carreiras</a></li>
+            <li><a href="#">Blog Gestão de Frotas</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Contato</h4>
+          <ul class="footer-links">
+            <li><a href="#oferta">Solicitar Proposta</a></li>
+            <li><a href="#">Suporte ao Cliente</a></li>
+            <li><a href="#">Parceiros Automotivos</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Multa Zero Tecnologia. Todos os direitos reservados.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg></a>
+          <a href="#" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+              </path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg></a>
+          <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg></a>
+        </div>
+        <div style="display: flex; gap: 16px;">
+          <a href="#" style="color: inherit; text-decoration: none;">Termos de Uso</a>
+          <a href="#" style="color: inherit; text-decoration: none;">Política de Privacidade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
