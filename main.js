@@ -209,4 +209,41 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 8. Modals Logic
+  const termsLink = document.getElementById('terms-link');
+  const privacyLink = document.getElementById('privacy-link');
+  const termsModal = document.getElementById('terms-modal');
+  const privacyModal = document.getElementById('privacy-modal');
+  const termsClose = document.getElementById('terms-close');
+  const privacyClose = document.getElementById('privacy-close');
+
+  function openModal(modal, e) {
+    if (e) e.preventDefault();
+    if (modal) {
+      modal.style.display = 'flex';
+      // Disable background scrolling
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeModal(modal) {
+    if (modal) {
+      modal.style.display = 'none';
+      // Enable background scrolling
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (termsLink) termsLink.addEventListener('click', (e) => openModal(termsModal, e));
+  if (privacyLink) privacyLink.addEventListener('click', (e) => openModal(privacyModal, e));
+
+  if (termsClose) termsClose.addEventListener('click', () => closeModal(termsModal));
+  if (privacyClose) privacyClose.addEventListener('click', () => closeModal(privacyModal));
+
+  // Close modals when clicking outside the modal content
+  window.addEventListener('click', (e) => {
+    if (e.target === termsModal) closeModal(termsModal);
+    if (e.target === privacyModal) closeModal(privacyModal);
+  });
 });

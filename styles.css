@@ -1112,6 +1112,13 @@ body {
     color: var(--text-secondary);
 }
 
+.footer-company-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8) var(--space-24);
+    justify-content: center;
+}
+
 @media (min-width: 768px) {
     .footer-bottom {
         flex-direction: row;
