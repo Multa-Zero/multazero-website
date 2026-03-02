@@ -132,7 +132,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 6. Number Counter Animation for Prova Social
+  // 6. Contact Form → Webhook
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+
+      // Collect form data
+      const formData = new FormData(contactForm);
+      const payload = {
+        nome: formData.get('nome'),
+        email: formData.get('email'),
+        empresa: formData.get('empresa'),
+        frota_tamanho: formData.get('frota_tamanho'),
+        origem: window.location.href,
+        data_envio: new Date().toISOString(),
+      };
+
+      // Loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando…';
+
+      try {
+        const response = await fetch('https://webhook.arvenoficial.com/webhook/foms-mz', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        // Success feedback
+        submitBtn.textContent = '✓ Solicitação enviada!';
+        submitBtn.style.backgroundColor = 'var(--success, #16a34a)';
+        contactForm.reset();
+
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+          submitBtn.style.backgroundColor = '';
+        }, 5000);
+      } catch (err) {
+        console.error('Erro ao enviar formulário:', err);
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Erro — tente novamente';
+        submitBtn.style.backgroundColor = 'var(--error, #dc2626)';
+
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.style.backgroundColor = '';
+        }, 4000);
+      }
+    });
+  }
+
+  // 7. Number Counter Animation for Prova Social
   const numbers = document.querySelectorAll('.reveal-number');
   numbers.forEach(number => {
     const target = parseInt(number.getAttribute('data-target'), 10);

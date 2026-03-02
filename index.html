@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Multa Zero — Gestão de Multas para Frotas</title>
+  <title>MultaZero — Gestão de Multas para Frotas</title>
+  <link rel="icon" type="image/png" href="./images/logomultazerodefault.png">
   <link rel="stylesheet" href="./styles.css">
 </head>
 
@@ -14,15 +15,8 @@
   <nav class="navbar transparent" id="navbar">
     <div class="container nav-container">
       <a href="#" class="nav-logo">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-        Multa Zero
+        <img src="./images/logomultazerobranca.png" alt="MultaZero" class="logo-white" height="36">
+        <img src="./images/logomultazeroblack.png" alt="MultaZero" class="logo-dark" height="36">
       </a>
 
       <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -54,7 +48,7 @@
 
     <div class="container hero-content">
       <div class="hero-text reveal-up">
-        <h1 class="heading-1">Multas da sua frota sob controle — da contestação ao pagamento.</h1>
+        <h1 class="heading-1">Multas da sua frota sob controle da contestação ao pagamento.</h1>
         <p class="body-L" style="margin-top: 16px; opacity: 0.9;">A Multa Zero centraliza multas, recursos e pagamentos
           da sua frota em um único ambiente. Recorra com apoio de IA, com confiabilidade e visibilidade total para a
           operação.</p>
@@ -392,20 +386,20 @@
         <form id="contact-form">
           <div class="form-group">
             <label class="form-label font-weight-bold">Nome completo</label>
-            <input type="text" class="form-input" placeholder="Seu nome" required>
+            <input type="text" name="nome" class="form-input" placeholder="Seu nome" required>
           </div>
           <div class="form-group">
             <label class="form-label font-weight-bold">E-mail corporativo</label>
-            <input type="email" class="form-input" placeholder="email@suaempresa.com.br" required>
+            <input type="email" name="email" class="form-input" placeholder="email@suaempresa.com.br" required>
           </div>
           <div class="grid grid-2">
             <div class="form-group">
               <label class="form-label font-weight-bold">Empresa</label>
-              <input type="text" class="form-input" placeholder="Nome da empresa" required>
+              <input type="text" name="empresa" class="form-input" placeholder="Nome da empresa" required>
             </div>
             <div class="form-group">
               <label class="form-label font-weight-bold">Tamanho da frota</label>
-              <select class="form-input" required>
+              <select name="frota_tamanho" class="form-input" required>
                 <option value="">Selecione</option>
                 <option value="1-20">1 a 20 veículos</option>
                 <option value="21-50">21 a 50 veículos</option>
@@ -532,16 +526,7 @@
       <div class="footer-grid">
         <div>
           <a href="#" class="footer-logo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-              style="vertical-align: middle; margin-right: 8px;">
-              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--blue-ribbon-6)" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-              <path d="M2 17L12 22L22 17" stroke="var(--blue-ribbon-6)" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-              <path d="M2 12L12 17L22 12" stroke="var(--blue-ribbon-6)" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-            Multa Zero
+            <img src="./images/logomultazeroblack.png" alt="MultaZero" height="36">
           </a>
           <p class="body-S text-secondary" style="max-width: 80%;">Gestão inteligente, recursos com IA e redução de
             burocracia para frotas corporativas.</p>
@@ -559,7 +544,7 @@
 
         <div>
           <h4 class="footer-title">Empresa</h4>
-          <ul class="footer-links">
+          <ul class="footer-links" style="display:none;">
             <li><a href="#">Sobre nós</a></li>
             <li><a href="#">Carreiras</a></li>
             <li><a href="#">Blog Gestão de Frotas</a></li>
@@ -571,12 +556,14 @@
           <ul class="footer-links">
             <li><a href="#oferta">Solicitar Proposta</a></li>
             <li><a href="#">Suporte ao Cliente</a></li>
-            <li><a href="#">Parceiros Automotivos</a></li>
+            <!-- <li><a href="#">Parceiros Automotivos</a></li> -->
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
+        <p class="footer-company-info">CNPJ: 65.205.605/0001-64 | Razão Social: MULTAZERO SOLUCOES EM TECNOLOGIA PARA
+          FROTAS LTDA</p>
         <p>© 2026 Multa Zero Tecnologia. Todos os direitos reservados.</p>
         <div class="social-icons">
           <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -600,8 +587,23 @@
             </svg></a>
         </div>
         <div style="display: flex; gap: 16px;">
-          <a href="#" style="color: inherit; text-decoration: none;">Termos de Uso</a>
-          <a href="#" style="color: inherit; text-decoration: none;">Política de Privacidade</a>
+          <a href="#" id="terms-link" style="color: inherit; text-decoration: none;">Termos de Uso</a>
+          <a href="#" id="privacy-link" style="color: inherit; text-decoration: none;">Política de Privacidade</a>
+        </div>
+        <!-- Modals -->
+        <div id="terms-modal" class="modal" style="display:none;">
+          <div class="modal-content">
+            <span class="close" id="terms-close">&times;</span>
+            <h2>Termos de Uso</h2>
+            <p>1. Termos de Uso: MultaZero ... (conteúdo completo aqui)</p>
+          </div>
+        </div>
+        <div id="privacy-modal" class="modal" style="display:none;">
+          <div class="modal-content">
+            <span class="close" id="privacy-close">&times;</span>
+            <h2>Política de Privacidade</h2>
+            <p>2. Política de Privacidade: MultaZero ... (conteúdo completo aqui)</p>
+          </div>
         </div>
       </div>
     </div>

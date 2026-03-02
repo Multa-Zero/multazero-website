@@ -483,12 +483,26 @@ body {
 }
 
 .nav-logo {
-    font-weight: 700;
-    font-size: 20px;
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: var(--space-8);
+}
+
+/* Logo visibility: white on transparent hero, dark on solid scroll */
+.navbar.transparent .logo-white {
+    display: block;
+}
+
+.navbar.transparent .logo-dark {
+    display: none;
+}
+
+.navbar.solid .logo-white {
+    display: none;
+}
+
+.navbar.solid .logo-dark {
+    display: block;
 }
 
 .nav-links {

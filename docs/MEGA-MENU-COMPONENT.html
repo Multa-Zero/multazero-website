@@ -1,0 +1,396 @@
+<!-- 
+  ============================================================
+  MEGA MENU COMPONENT — Multa Zero
+  ============================================================
+  Pronto para implementação futura.
+  Reutiliza tokens do design system existente (styles.css).
+  Inspirado no padrão Ramp: colunas com ícones + descrições.
+  
+  Para ativar: copie o HTML para dentro do <nav> no index.html
+  e o CSS para styles.css.
+  ============================================================
+-->
+
+<!-- ==================== HTML ==================== -->
+
+<!--
+  Substituir o bloco .nav-links atual por esta estrutura:
+
+  <div class="nav-links">
+    <div class="nav-item has-dropdown">
+      <button class="nav-link dropdown-trigger">
+        Plataforma
+        <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="mega-dropdown">
+        <div class="mega-dropdown-inner">
+          
+          <div class="mega-col">
+            <h4 class="mega-col-title">Produto</h4>
+            <a href="#solucao" class="mega-item">
+              <div class="mega-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              </div>
+              <div>
+                <span class="mega-item-title">Visão Geral</span>
+                <span class="mega-item-desc">Painel unificado de multas, recursos e pagamentos.</span>
+              </div>
+            </a>
+            <a href="#diferenciais" class="mega-item">
+              <div class="mega-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+              </div>
+              <div>
+                <span class="mega-item-title">Recursos com IA</span>
+                <span class="mega-item-desc">Defesas automáticas com base legal sólida.</span>
+              </div>
+            </a>
+            <a href="#como-funciona" class="mega-item">
+              <div class="mega-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div>
+                <span class="mega-item-title">Como Funciona</span>
+                <span class="mega-item-desc">Do cadastro ao acompanhamento em 4 passos.</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-col-title">Soluções</h4>
+            <a href="#" class="mega-item">
+              <div class="mega-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              </div>
+              <div>
+                <span class="mega-item-title">Gestão de Multas</span>
+                <span class="mega-item-desc">Centralize todas as infrações num único painel.</span>
+              </div>
+            </a>
+            <a href="#" class="mega-item">
+              <div class="mega-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <div>
+                <span class="mega-item-title">Identificação de Condutores</span>
+                <span class="mega-item-desc">Controle automático de indicação e prazos.</span>
+              </div>
+            </a>
+            <a href="#" class="mega-item">
+              <div class="mega-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+              </div>
+              <div>
+                <span class="mega-item-title">Pagamento Integrado</span>
+                <span class="mega-item-desc">Quite multas com desconto direto no sistema.</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mega-col">
+            <h4 class="mega-col-title">Recursos</h4>
+            <a href="#resultados" class="mega-item">
+              <div class="mega-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              </div>
+              <div>
+                <span class="mega-item-title">Resultados</span>
+                <span class="mega-item-desc">Dados reais de economia e performance.</span>
+              </div>
+            </a>
+            <a href="#faq" class="mega-item">
+              <div class="mega-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              </div>
+              <div>
+                <span class="mega-item-title">FAQ</span>
+                <span class="mega-item-desc">Perguntas frequentes sobre a plataforma.</span>
+              </div>
+            </a>
+            <a href="#" class="mega-item">
+              <div class="mega-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              </div>
+              <div>
+                <span class="mega-item-title">Blog</span>
+                <span class="mega-item-desc">Artigos sobre gestão de frotas e multas.</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mega-col mega-col-featured">
+            <h4 class="mega-col-title">Destaque</h4>
+            <div class="mega-featured-card">
+              <img src="./images/Visão Geral.png" alt="Dashboard Multa Zero" class="mega-featured-img">
+              <span class="mega-featured-title">Dashboard Multa Zero</span>
+              <span class="mega-featured-desc">Conheça a visão geral do painel de controle da plataforma.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <a href="#resultados" class="nav-link">Resultados</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+    <a href="#oferta" class="btn btn-primary btn-S">Falar com representante</a>
+  </div>
+-->
+
+
+<!-- ==================== CSS ==================== -->
+
+<!--
+  Adicionar ao styles.css quando for implementar:
+-->
+
+<style>
+    /* ================================================
+   MEGA MENU — Component Styles
+   Reusa tokens de styles.css (:root)
+   ================================================ */
+
+    /* Trigger button */
+    .dropdown-trigger {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: 600;
+        font-size: 16px;
+        color: inherit;
+        padding: 0;
+        transition: opacity 200ms;
+    }
+
+    .dropdown-trigger:hover {
+        opacity: 0.8;
+    }
+
+    .dropdown-arrow {
+        transition: transform 300ms ease;
+    }
+
+    .nav-item.active .dropdown-arrow {
+        transform: rotate(180deg);
+    }
+
+    /* Dropdown panel */
+    .mega-dropdown {
+        position: absolute;
+        top: 72px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-8px);
+        width: 960px;
+        max-width: calc(100vw - 48px);
+        background-color: var(--surface-elevated);
+        border: 1px solid var(--border-default);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-lg);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 250ms ease, transform 250ms ease, visibility 250ms;
+        z-index: 200;
+    }
+
+    .nav-item.active .mega-dropdown {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .mega-dropdown-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 240px;
+        gap: var(--space-8);
+        padding: var(--space-32);
+    }
+
+    /* Columns */
+    .mega-col {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+
+    .mega-col-title {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--text-secondary);
+        padding: var(--space-8) var(--space-12);
+        margin-bottom: var(--space-4);
+    }
+
+    /* Individual menu items */
+    .mega-item {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-12);
+        padding: var(--space-12);
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+        color: var(--text-primary);
+        transition: background-color 150ms ease;
+    }
+
+    .mega-item:hover {
+        background-color: var(--neutral-1);
+    }
+
+    .mega-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        background-color: var(--neutral-2);
+        border-radius: var(--radius-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-secondary);
+        transition: background-color 150ms ease, color 150ms ease;
+    }
+
+    .mega-item:hover .mega-icon {
+        background-color: var(--blue-ribbon-1);
+        color: var(--blue-ribbon-7);
+    }
+
+    .mega-item-title {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text-primary);
+        line-height: 1.3;
+    }
+
+    .mega-item-desc {
+        display: block;
+        font-size: 13px;
+        color: var(--text-secondary);
+        line-height: 1.4;
+        margin-top: 2px;
+    }
+
+    /* Featured column */
+    .mega-col-featured {
+        border-left: 1px solid var(--border-default);
+        padding-left: var(--space-24);
+    }
+
+    .mega-featured-card {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-8);
+        padding: var(--space-12);
+    }
+
+    .mega-featured-img {
+        width: 100%;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border-default);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .mega-featured-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text-primary);
+    }
+
+    .mega-featured-desc {
+        font-size: 13px;
+        color: var(--text-secondary);
+        line-height: 1.4;
+    }
+
+    /* ================================================
+   MOBILE MEGA MENU (accordion style)
+   ================================================ */
+    @media (max-width: 1024px) {
+        .mega-dropdown {
+            position: static;
+            transform: none;
+            width: 100%;
+            max-width: 100%;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            background-color: transparent;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 300ms ease, opacity 300ms ease;
+        }
+
+        .nav-item.active .mega-dropdown {
+            transform: none;
+            max-height: 600px;
+        }
+
+        .mega-dropdown-inner {
+            grid-template-columns: 1fr;
+            padding: var(--space-16) 0;
+            gap: var(--space-16);
+        }
+
+        .mega-col-featured {
+            border-left: none;
+            border-top: 1px solid var(--border-default);
+            padding-left: 0;
+            padding-top: var(--space-16);
+        }
+
+        .mega-col-title {
+            padding: var(--space-4) var(--space-12);
+        }
+    }
+</style>
+
+
+<!-- ==================== JS ==================== -->
+
+<!--
+  Adicionar ao main.js quando for implementar:
+
+  // Mega Menu Toggle
+  const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
+  
+  dropdownTriggers.forEach(trigger => {
+    const navItem = trigger.closest('.nav-item');
+    
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Close other open dropdowns
+      document.querySelectorAll('.nav-item.active').forEach(item => {
+        if (item !== navItem) item.classList.remove('active');
+      });
+      
+      navItem.classList.toggle('active');
+    });
+  });
+
+  // Close mega menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-item.has-dropdown')) {
+      document.querySelectorAll('.nav-item.active').forEach(item => {
+        item.classList.remove('active');
+      });
+    }
+  });
+
+  // Close mega menu on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.nav-item.active').forEach(item => {
+        item.classList.remove('active');
+      });
+    }
+  });
+-->
