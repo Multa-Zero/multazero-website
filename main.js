@@ -222,6 +222,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e) e.preventDefault();
     if (modal) {
       modal.style.display = 'flex';
+      // Slight delay to allow display:flex to apply before adding transition class
+      setTimeout(() => {
+        modal.classList.add('show');
+      }, 10);
       // Disable background scrolling
       document.body.style.overflow = 'hidden';
     }
@@ -229,7 +233,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function closeModal(modal) {
     if (modal) {
-      modal.style.display = 'none';
+      modal.classList.remove('show');
+      // Wait for the transition to finish before hiding
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 300);
       // Enable background scrolling
       document.body.style.overflow = '';
     }

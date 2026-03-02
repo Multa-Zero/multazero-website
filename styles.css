@@ -1156,16 +1156,24 @@ body {
     background-color: var(--blue-ribbon-1);
     color: var(--blue-ribbon-7);
 }
+
 /* Modals */
 .modal {
     position: fixed;
     inset: 0;
     z-index: 1000;
-    display: flex;
+    display: none;
+    /* Changed from flex to none */
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
+
+.modal.show {
+    opacity: 1;
 }
 
 .modal-content {
@@ -1179,6 +1187,12 @@ body {
     overflow-y: auto;
     box-shadow: var(--shadow-lg);
     color: var(--text-primary);
+    transform: translateY(20px) scale(0.98);
+    transition: transform 300ms ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0) scale(1);
 }
 
 .modal-content h2 {
