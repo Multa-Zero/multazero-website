@@ -1350,3 +1350,330 @@ body {
 .close:hover {
     color: var(--blue-ribbon-6);
 }
+
+/* ============ Contact CTA (expandable) ============ */
+.form-cta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 48px 0;
+}
+
+.contact-cta-btn {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background: #004FE5;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  padding: 18px 36px;
+  border-radius: 9999px;
+  transition: transform 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
+  box-shadow: 0 10px 30px rgba(0, 79, 229, 0.25);
+}
+
+.contact-cta-btn:hover {
+  background: #0041C1;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px rgba(0, 79, 229, 0.32);
+}
+
+.contact-cta-btn:active {
+  transform: translateY(0);
+}
+
+.contact-cta-trust {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* ============ Contact Modal ============ */
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  padding: 12px;
+  align-items: stretch;
+  justify-content: stretch;
+  background: rgba(0, 0, 0, 0);
+  transition: background-color 300ms ease;
+}
+
+.contact-modal[aria-hidden="false"] {
+  display: flex;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.contact-modal-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  background: #004FE5;
+  overflow: hidden;
+  transform-origin: top left;
+  transition: transform 400ms cubic-bezier(0.32, 0.72, 0, 1);
+  will-change: transform;
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background-color 200ms ease;
+}
+
+.contact-modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-modal-inner {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 40px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 200ms ease 100ms, transform 200ms ease 100ms;
+}
+
+.contact-modal[aria-hidden="false"] .contact-modal-inner {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (min-width: 960px) {
+  .contact-modal-inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+    padding: 64px;
+  }
+}
+
+/* Pitch column */
+.contact-modal-pitch {
+  flex: 1;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-modal-title {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.contact-modal-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 16px;
+}
+
+.contact-modal-bullet {
+  display: flex;
+  gap: 16px;
+}
+
+.contact-modal-bullet-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.contact-modal-bullet p {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.contact-modal-quote {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 24px;
+  margin-top: 24px;
+}
+
+.contact-modal-quote-text {
+  color: #FFFFFF;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+
+.contact-modal-quote-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-modal-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.contact-modal-author-name {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.contact-modal-author-role {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+/* Form column */
+.contact-modal-form-wrap {
+  flex: 1;
+  width: 100%;
+}
+
+.contact-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cmf-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cmf-label {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.cmf-input {
+  width: 100%;
+  height: 44px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #001F63;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 14px;
+  transition: box-shadow 200ms ease;
+}
+
+.cmf-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.cmf-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.cmf-select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+  background-color: #001F63;
+}
+
+.cmf-select option {
+  background: #001F63;
+  color: #FFFFFF;
+}
+
+.cmf-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .cmf-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.cmf-submit {
+  width: 100%;
+  height: 44px;
+  border: none;
+  border-radius: 9999px;
+  background: #FFFFFF;
+  color: #0041C1;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  cursor: pointer;
+  transition: background-color 200ms ease, transform 200ms ease;
+  margin-top: 8px;
+}
+
+.cmf-submit:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.cmf-submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+/* Prevent body scroll when modal open */
+body.modal-open {
+  overflow: hidden;
+}
