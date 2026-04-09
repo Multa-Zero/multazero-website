@@ -639,6 +639,116 @@
   </footer>
 
   <script type="module" src="./main.js"></script>
+
+  <!-- Contact Modal (expandable CTA) -->
+  <div id="contact-modal" class="contact-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <div class="contact-modal-card" data-modal-card>
+      <button type="button" class="contact-modal-close" data-modal-close aria-label="Fechar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="contact-modal-inner">
+        <!-- Left: pitch column -->
+        <div class="contact-modal-pitch">
+          <h2 id="contact-modal-title" class="contact-modal-title">Solicite uma proposta para sua frota</h2>
+
+          <div class="contact-modal-bullets">
+            <div class="contact-modal-bullet">
+              <div class="contact-modal-bullet-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <p>Descubra como a MultaZero reduz custos e automatiza a gestão de multas da sua operação.</p>
+            </div>
+            <div class="contact-modal-bullet">
+              <div class="contact-modal-bullet-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <p>Veja na prática como nossa plataforma acelera processos e protege sua frota.</p>
+            </div>
+          </div>
+
+          <div class="contact-modal-quote">
+            <p class="contact-modal-quote-text">"A MultaZero nos permitiu proteger nossos motoristas de forma ágil e transformou nossa gestão de multas."</p>
+            <div class="contact-modal-quote-author">
+              <div class="contact-modal-avatar" aria-hidden="true">TP</div>
+              <div>
+                <p class="contact-modal-author-name">Diretor de Operações</p>
+                <p class="contact-modal-author-role">Transportadora parceira</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form column -->
+        <div class="contact-modal-form-wrap">
+          <form id="contact-form" class="contact-modal-form" novalidate>
+            <div class="cmf-group">
+              <label for="cmf-nome" class="cmf-label">NOME COMPLETO *</label>
+              <input id="cmf-nome" type="text" name="nome" class="cmf-input" autocomplete="name" required>
+            </div>
+
+            <div class="cmf-group">
+              <label for="cmf-email" class="cmf-label">E-MAIL CORPORATIVO *</label>
+              <input id="cmf-email" type="email" name="email" class="cmf-input" autocomplete="email" required>
+            </div>
+
+            <div class="cmf-row">
+              <div class="cmf-group">
+                <label for="cmf-telefone" class="cmf-label">TELEFONE *</label>
+                <input id="cmf-telefone" type="tel" name="telefone" class="cmf-input" inputmode="tel" autocomplete="tel" maxlength="15" required>
+              </div>
+              <div class="cmf-group">
+                <label for="cmf-cnpj" class="cmf-label">CNPJ *</label>
+                <input id="cmf-cnpj" type="text" name="cnpj" class="cmf-input" inputmode="numeric" maxlength="18" required>
+              </div>
+            </div>
+
+            <div class="cmf-row">
+              <div class="cmf-group">
+                <label for="cmf-empresa" class="cmf-label">EMPRESA *</label>
+                <input id="cmf-empresa" type="text" name="empresa" class="cmf-input" autocomplete="organization" required>
+              </div>
+              <div class="cmf-group">
+                <label for="cmf-setor" class="cmf-label">SETOR *</label>
+                <select id="cmf-setor" name="setor" class="cmf-input cmf-select" required>
+                  <option value="">Selecione</option>
+                  <option value="transporte-cargas">Transporte de cargas</option>
+                  <option value="logistica">Logística</option>
+                  <option value="distribuicao">Distribuição</option>
+                  <option value="locacao-veiculos">Locação de veículos</option>
+                  <option value="passageiros">Transporte de passageiros</option>
+                  <option value="construcao">Construção</option>
+                  <option value="agronegocio">Agronegócio</option>
+                  <option value="servicos">Serviços</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="cmf-group">
+              <label for="cmf-frota" class="cmf-label">TAMANHO DA FROTA *</label>
+              <select id="cmf-frota" name="frota_tamanho" class="cmf-input cmf-select" required>
+                <option value="">Selecione</option>
+                <option value="1-20">1 a 20 veículos</option>
+                <option value="21-50">21 a 50 veículos</option>
+                <option value="51-100">51 a 100 veículos</option>
+                <option value="100+">Mais de 100 veículos</option>
+              </select>
+            </div>
+
+            <button type="submit" class="cmf-submit">Solicitar proposta</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
