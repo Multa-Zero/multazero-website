@@ -255,6 +255,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // 5.75 Masks for CNPJ and Telefone
+  const cnpjInput = document.getElementById('cmf-cnpj');
+  if (cnpjInput) {
+    cnpjInput.addEventListener('input', (ev) => {
+      let v = ev.target.value.replace(/\D/g, '').slice(0, 14);
+      v = v.replace(/^(\d{2})(\d)/, '$1.$2');
+      v = v.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
+      v = v.replace(/\.(\d{3})(\d)/, '.$1/$2');
+      v = v.replace(/(\d{4})(\d)/, '$1-$2');
+      ev.target.value = v;
+    });
+  }
+
+  const telefoneInput = document.getElementById('cmf-telefone');
+  if (telefoneInput) {
+    telefoneInput.addEventListener('input', (ev) => {
+      let v = ev.target.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length <= 10) {
+        v = v.replace(/^(\d{2})(\d)/, '($1) $2');
+        v = v.replace(/(\d{4})(\d)/, '$1-$2');
+      } else {
+        v = v.replace(/^(\d{2})(\d)/, '($1) $2');
+        v = v.replace(/(\d{5})(\d)/, '$1-$2');
+      }
+      ev.target.value = v;
+    });
+  }
+
   // 6. Contact Form → Webhook
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
@@ -269,7 +297,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const payload = {
         nome: formData.get('nome'),
         email: formData.get('email'),
+        telefone: formData.get('telefone'),
+        cnpj: formData.get('cnpj'),
         empresa: formData.get('empresa'),
+        setor: formData.get('setor'),
         frota_tamanho: formData.get('frota_tamanho'),
         origem: window.location.href,
         data_envio: new Date().toISOString(),
