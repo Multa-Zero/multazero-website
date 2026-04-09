@@ -139,9 +139,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactModalClose = contactModal?.querySelector('[data-modal-close]');
 
   let lastFocusedEl = null;
+  let pendingOnEnd = null;
+  let pendingFallback = null;
+
+  const clearPendingClose = () => {
+    if (pendingOnEnd && contactModalCard) {
+      contactModalCard.removeEventListener('transitionend', pendingOnEnd);
+    }
+    if (pendingFallback) {
+      clearTimeout(pendingFallback);
+    }
+    pendingOnEnd = null;
+    pendingFallback = null;
+  };
 
   const openContactModal = () => {
     if (!contactCta || !contactModal || !contactModalCard) return;
+    clearPendingClose();
     lastFocusedEl = document.activeElement;
 
     // First: capture CTA rect
@@ -196,10 +210,21 @@ document.addEventListener('DOMContentLoaded', () => {
     contactModalCard.style.transform = `translate(${dx}px, ${dy}px) scale(${sx}, ${sy})`;
     contactModalCard.style.borderRadius = '9999px';
 
+    // Clear any previous pending close handler before attaching a new one
+    clearPendingClose();
+
     const onEnd = (ev) => {
       // Only react to the card's own transform transition, not child bubbles
-      if (ev.target !== contactModalCard || ev.propertyName !== 'transform') return;
+      if (ev && ev.target !== contactModalCard) return;
+      if (ev && ev.propertyName && ev.propertyName !== 'transform') return;
+
       contactModalCard.removeEventListener('transitionend', onEnd);
+      if (pendingFallback) {
+        clearTimeout(pendingFallback);
+      }
+      pendingOnEnd = null;
+      pendingFallback = null;
+
       contactModal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('modal-open');
       contactModalCard.style.transition = '';
@@ -209,7 +234,11 @@ document.addEventListener('DOMContentLoaded', () => {
         lastFocusedEl.focus();
       }
     };
+
+    pendingOnEnd = onEnd;
     contactModalCard.addEventListener('transitionend', onEnd);
+    // Fallback: force completion after 450ms in case transitionend never fires
+    pendingFallback = setTimeout(() => onEnd(null), 450);
   };
 
   if (contactCta) {
