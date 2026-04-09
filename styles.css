@@ -902,39 +902,45 @@ body {
 /* Prova Social */
 #resultados {
     position: relative;
-    overflow: hidden;
+    padding-bottom: 0;
 }
 
-#resultados::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 260px;
-    height: 80px;
-    background-color: var(--neutral-3, #e5e7eb);
-    transform: translateX(-50%);
-    clip-path: polygon(0 0, 100% 0, 50% 100%);
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.6;
+.resultados-spacer {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: var(--space-64, 64px);
 }
 
-#resultados .container {
-    position: relative;
-    z-index: 1;
+.trust-label {
+    font-family: ui-monospace, 'SFMono-Regular', 'Menlo', 'Consolas', monospace;
+    font-size: 11px;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary, #6b7280);
+    text-align: center;
+    margin-top: var(--space-48, 48px);
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .trust-label {
+        font-size: 12px;
+    }
 }
 
 .stats-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-24);
-    margin: var(--space-48) 0;
+    gap: var(--space-32);
+    margin: var(--space-32, 32px) 0 var(--space-64, 64px);
 }
 
 @media (min-width: 768px) {
     .stats-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-40, 40px);
     }
 }
 
@@ -943,8 +949,8 @@ body {
     flex-direction: column;
     justify-content: space-between;
     gap: var(--space-64, 64px);
-    padding: var(--space-24);
-    min-height: 220px;
+    padding: var(--space-40, 40px) var(--space-32, 32px);
+    min-height: 280px;
     background-color: #ffffff;
 }
 
@@ -963,13 +969,13 @@ body {
 
 .stat-badge {
     display: inline-block;
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--blue-ribbon-8);
     background-color: var(--blue-ribbon-1);
-    padding: 4px 10px;
+    padding: 3px 8px;
     border-radius: 999px;
     white-space: nowrap;
 }
