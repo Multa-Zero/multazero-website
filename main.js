@@ -132,6 +132,100 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // 5.5 Contact Modal (expandable CTA with FLIP morph)
+  const contactCta = document.getElementById('contact-cta');
+  const contactModal = document.getElementById('contact-modal');
+  const contactModalCard = contactModal?.querySelector('[data-modal-card]');
+  const contactModalClose = contactModal?.querySelector('[data-modal-close]');
+
+  let lastFocusedEl = null;
+
+  const openContactModal = () => {
+    if (!contactCta || !contactModal || !contactModalCard) return;
+    lastFocusedEl = document.activeElement;
+
+    // First: capture CTA rect
+    const ctaRect = contactCta.getBoundingClientRect();
+
+    // Reveal modal (flips visibility and pointer-events via CSS)
+    contactModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+
+    // Last: measure card's natural full-viewport rect
+    const cardRect = contactModalCard.getBoundingClientRect();
+
+    // Invert: compute transform so card visually starts at CTA position
+    const dx = ctaRect.left - cardRect.left;
+    const dy = ctaRect.top - cardRect.top;
+    const sx = ctaRect.width / cardRect.width;
+    const sy = ctaRect.height / cardRect.height;
+
+    // Apply inverse instantly
+    contactModalCard.style.transition = 'none';
+    contactModalCard.style.transform = `translate(${dx}px, ${dy}px) scale(${sx}, ${sy})`;
+    contactModalCard.style.borderRadius = '9999px';
+
+    // Force reflow so the browser registers the starting state
+    void contactModalCard.offsetWidth;
+
+    // Play: animate to identity
+    contactModalCard.style.transition = 'transform 400ms cubic-bezier(0.32, 0.72, 0, 1), border-radius 400ms cubic-bezier(0.32, 0.72, 0, 1)';
+    contactModalCard.style.transform = 'translate(0, 0) scale(1, 1)';
+    contactModalCard.style.borderRadius = '24px';
+
+    // Focus first input after morph settles
+    setTimeout(() => {
+      const firstInput = contactModal.querySelector('input, select, textarea, button:not([data-modal-close])');
+      if (firstInput) firstInput.focus();
+    }, 420);
+  };
+
+  const closeContactModal = () => {
+    if (!contactCta || !contactModal || !contactModalCard) return;
+
+    // Recompute CTA rect (may have moved if user scrolled before modal opened)
+    const ctaRect = contactCta.getBoundingClientRect();
+    const cardRect = contactModalCard.getBoundingClientRect();
+
+    const dx = ctaRect.left - cardRect.left;
+    const dy = ctaRect.top - cardRect.top;
+    const sx = ctaRect.width / cardRect.width;
+    const sy = ctaRect.height / cardRect.height;
+
+    contactModalCard.style.transition = 'transform 400ms cubic-bezier(0.32, 0.72, 0, 1), border-radius 400ms cubic-bezier(0.32, 0.72, 0, 1)';
+    contactModalCard.style.transform = `translate(${dx}px, ${dy}px) scale(${sx}, ${sy})`;
+    contactModalCard.style.borderRadius = '9999px';
+
+    const onEnd = (ev) => {
+      // Only react to the card's own transform transition, not child bubbles
+      if (ev.target !== contactModalCard || ev.propertyName !== 'transform') return;
+      contactModalCard.removeEventListener('transitionend', onEnd);
+      contactModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      contactModalCard.style.transition = '';
+      contactModalCard.style.transform = '';
+      contactModalCard.style.borderRadius = '';
+      if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') {
+        lastFocusedEl.focus();
+      }
+    };
+    contactModalCard.addEventListener('transitionend', onEnd);
+  };
+
+  if (contactCta) {
+    contactCta.addEventListener('click', openContactModal);
+  }
+  if (contactModalClose) {
+    contactModalClose.addEventListener('click', closeContactModal);
+  }
+
+  // ESC to close
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape' && contactModal && contactModal.getAttribute('aria-hidden') === 'false') {
+      closeContactModal();
+    }
+  });
+
   // 6. Contact Form → Webhook
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
