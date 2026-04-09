@@ -227,9 +227,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       contactModal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('modal-open');
+      // Disable transitions first so resetting transform/border-radius is instant
+      // (prevents the card from animating back to full-viewport identity).
+      contactModalCard.style.transition = 'none';
+      contactModalCard.style.transform = 'none';
+      contactModalCard.style.borderRadius = '';
+      // Force reflow so the "none" transform is committed before we clear transition.
+      void contactModalCard.offsetWidth;
+      // Now restore the CSS-driven transition for future opens.
       contactModalCard.style.transition = '';
       contactModalCard.style.transform = '';
-      contactModalCard.style.borderRadius = '';
       if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') {
         lastFocusedEl.focus();
       }
