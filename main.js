@@ -180,6 +180,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 5.5.1 Typewriter Engine (Illustration 1)
+  const typewriterTarget = document.getElementById('typewriter-target');
+  if (typewriterTarget) {
+    const typewriterText = [
+      { text: 'A autuação apresenta ', highlight: false },
+      { text: 'vício formal', highlight: true },
+      { text: '. O equipamento não possui ', highlight: false },
+      { text: 'aferição válida', highlight: true },
+      { text: ' conforme Resolução 798/2020 do CONTRAN.', highlight: false },
+    ];
+
+    let twTimeout = null;
+
+    function runTypewriter() {
+      typewriterTarget.innerHTML = '';
+      const cursor = document.createElement('span');
+      cursor.className = 'illus-ai-cursor';
+
+      let segments = [];
+      typewriterText.forEach(seg => {
+        for (let i = 0; i < seg.text.length; i++) {
+          segments.push({ char: seg.text[i], highlight: seg.highlight });
+        }
+      });
+
+      let idx = 0;
+      typewriterTarget.appendChild(cursor);
+
+      function typeNext() {
+        if (idx >= segments.length) return;
+        const { char, highlight } = segments[idx];
+        const span = document.createElement('span');
+        span.textContent = char;
+        if (highlight) span.className = 'illus-ai-highlight';
+        typewriterTarget.insertBefore(span, cursor);
+        idx++;
+        twTimeout = setTimeout(typeNext, 30);
+      }
+
+      typeNext();
+    }
+
+    // Register reset so accordion can restart it
+    if (window.featuresRegisterReset) {
+      window.featuresRegisterReset(0, () => {
+        clearTimeout(twTimeout);
+        runTypewriter();
+      });
+    }
+
+    // Run on load (card 0 starts active)
+    runTypewriter();
+  }
+
   // 6. Number Counter Animation for Prova Social
   const numbers = document.querySelectorAll('.reveal-number');
   numbers.forEach(number => {

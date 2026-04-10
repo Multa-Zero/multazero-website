@@ -1031,6 +1031,131 @@ body {
     }
 }
 
+/* ========================
+   Illustration 1: AI Typewriter
+   ======================== */
+.illus-ai-card {
+    background: var(--surface-elevated);
+    border-radius: 12px;
+    padding: 20px 22px;
+    box-shadow: var(--shadow-sm);
+    width: 85%;
+    max-width: 340px;
+}
+
+.illus-ai-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.illus-ai-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--blue-ribbon-8);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.illus-ai-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--neutral-8);
+    display: block;
+}
+
+.illus-ai-status {
+    font-size: 11px;
+    color: var(--bg-success);
+    font-weight: 500;
+}
+
+.illus-ai-context {
+    background: var(--neutral-1);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border-default);
+}
+
+.illus-ai-context-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.illus-ai-context-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--neutral-6);
+}
+
+.illus-ai-badge-grave {
+    font-size: 10px;
+    background: rgba(195, 39, 39, 0.1);
+    color: var(--text-error);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.illus-ai-context-body {
+    font-size: 12px;
+    color: var(--neutral-8);
+    font-weight: 500;
+}
+
+.illus-ai-context-meta {
+    font-size: 11px;
+    color: var(--neutral-6);
+    margin-top: 2px;
+}
+
+.illus-ai-output {
+    border-left: 2px solid var(--blue-ribbon-6);
+    padding-left: 12px;
+}
+
+.illus-ai-output-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--blue-ribbon-6);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.illus-ai-typewriter {
+    font-size: 12px;
+    color: var(--neutral-7);
+    line-height: 1.65;
+    min-height: 40px;
+}
+
+.illus-ai-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 13px;
+    background: var(--blue-ribbon-6);
+    vertical-align: text-bottom;
+    margin-left: 1px;
+    animation: tw-blink 1s step-end infinite;
+}
+
+.illus-ai-highlight {
+    font-weight: 600;
+    color: var(--blue-ribbon-9);
+}
+
+@keyframes tw-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
 /* Prova Social */
 .stats-grid {
     display: grid;
