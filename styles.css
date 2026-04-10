@@ -1435,14 +1435,13 @@ body {
   background: rgba(0, 0, 0, 0);
   visibility: hidden;
   pointer-events: none;
-  transition: background-color 300ms ease, visibility 0s linear 400ms;
+  transition: background-color 300ms ease;
 }
 
 .contact-modal[aria-hidden="false"] {
   visibility: visible;
   pointer-events: auto;
   background: rgba(0, 0, 0, 0.35);
-  transition: background-color 300ms ease, visibility 0s linear 0s;
 }
 
 .contact-modal-card {

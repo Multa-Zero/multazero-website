@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactModal = document.getElementById('contact-modal');
   const contactModalCard = contactModal?.querySelector('[data-modal-card]');
   const contactModalClose = contactModal?.querySelector('[data-modal-close]');
+  const contactModalInner = contactModal?.querySelector('.contact-modal-inner');
 
   let lastFocusedEl = null;
   let pendingOnEnd = null;
@@ -197,6 +198,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeContactModal = () => {
     if (!contactCta || !contactModal || !contactModalCard) return;
 
+    // Fade out inner content + close button quickly so the morph doesn't
+    // show distortion from the non-uniform scale.
+    if (contactModalInner) {
+      contactModalInner.style.transition = 'opacity 150ms ease';
+      contactModalInner.style.opacity = '0';
+    }
+    if (contactModalClose) {
+      contactModalClose.style.transition = 'opacity 150ms ease';
+      contactModalClose.style.opacity = '0';
+    }
+
     // Recompute CTA rect (may have moved if user scrolled before modal opened)
     const ctaRect = contactCta.getBoundingClientRect();
     const cardRect = contactModalCard.getBoundingClientRect();
@@ -237,6 +249,15 @@ document.addEventListener('DOMContentLoaded', () => {
       // Now restore the CSS-driven transition for future opens.
       contactModalCard.style.transition = '';
       contactModalCard.style.transform = '';
+      // Reset inner/close-btn inline opacity overrides so the next open starts clean.
+      if (contactModalInner) {
+        contactModalInner.style.transition = '';
+        contactModalInner.style.opacity = '';
+      }
+      if (contactModalClose) {
+        contactModalClose.style.transition = '';
+        contactModalClose.style.opacity = '';
+      }
       if (lastFocusedEl && typeof lastFocusedEl.focus === 'function') {
         lastFocusedEl.focus();
       }
