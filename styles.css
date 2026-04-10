@@ -834,9 +834,37 @@ body {
 }
 
 /* Problema */
+.problema-header {
+    max-width: 600px;
+    margin-bottom: var(--space-48);
+}
+
+.problema-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-32);
+}
+
+@media (min-width: 768px) {
+    .problema-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-48) var(--space-32);
+    }
+}
+
+@media (min-width: 1024px) {
+    .problema-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.problema-item {
+    padding: 0;
+}
+
 .pain-icon {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
     background-color: var(--neutral-2);
     border-radius: var(--radius-sm);
     display: flex;
@@ -847,8 +875,8 @@ body {
 }
 
 .pain-icon svg {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
 }
 
 /* Solução */
