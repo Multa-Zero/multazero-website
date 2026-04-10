@@ -132,7 +132,132 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 5.5 Contact Modal (expandable CTA with FLIP morph)
+  // 5.5 Features Accordion
+  const featuresContainer = document.querySelector('.features-container');
+  if (featuresContainer) {
+    const cards = featuresContainer.querySelectorAll('.features-card');
+    const illustrations = featuresContainer.querySelectorAll('.features-illus');
+    let activeIndex = 0;
+
+    // Animation reset registry — each illustration can register a reset callback
+    const animationResets = {};
+
+    window.featuresRegisterReset = function (index, resetFn) {
+      animationResets[index] = resetFn;
+    };
+
+    function activateFeature(index) {
+      if (index === activeIndex) return;
+      activeIndex = index;
+
+      cards.forEach((card, i) => {
+        card.classList.toggle('features-card--active', i === index);
+      });
+
+      illustrations.forEach((illus, i) => {
+        illus.classList.toggle('active', i === index);
+      });
+
+      // Reset animation for the newly active illustration
+      if (animationResets[index]) {
+        animationResets[index]();
+      }
+    }
+
+    // Initialize: first card active
+    illustrations.forEach((illus, i) => {
+      illus.classList.toggle('active', i === 0);
+    });
+
+    // Click on accordion cards
+    cards.forEach((card, i) => {
+      card.addEventListener('click', () => activateFeature(i));
+    });
+
+    // Click on illustrations also activates (if user clicks a non-active illus area)
+    illustrations.forEach((illus, i) => {
+      illus.addEventListener('click', () => activateFeature(i));
+    });
+  }
+
+  // 5.5.1 Typewriter Engine (Illustration 1)
+  const typewriterTarget = document.getElementById('typewriter-target');
+  if (typewriterTarget) {
+    const typewriterText = [
+      { text: 'A autuação apresenta ', highlight: false },
+      { text: 'vício formal', highlight: true },
+      { text: '. O equipamento não possui ', highlight: false },
+      { text: 'aferição válida', highlight: true },
+      { text: ' conforme Resolução 798/2020 do CONTRAN.', highlight: false },
+    ];
+
+    let twTimeout = null;
+
+    function runTypewriter() {
+      typewriterTarget.innerHTML = '';
+      const cursor = document.createElement('span');
+      cursor.className = 'illus-ai-cursor';
+
+      let segments = [];
+      typewriterText.forEach(seg => {
+        for (let i = 0; i < seg.text.length; i++) {
+          segments.push({ char: seg.text[i], highlight: seg.highlight });
+        }
+      });
+
+      let idx = 0;
+      typewriterTarget.appendChild(cursor);
+
+      function typeNext() {
+        if (idx >= segments.length) return;
+        const { char, highlight } = segments[idx];
+        const span = document.createElement('span');
+        span.textContent = char;
+        if (highlight) span.className = 'illus-ai-highlight';
+        typewriterTarget.insertBefore(span, cursor);
+        idx++;
+        twTimeout = setTimeout(typeNext, 30);
+      }
+
+      typeNext();
+    }
+
+    // Register reset so accordion can restart it
+    if (window.featuresRegisterReset) {
+      window.featuresRegisterReset(0, () => {
+        clearTimeout(twTimeout);
+        runTypewriter();
+      });
+    }
+
+    // Run on load (card 0 starts active)
+    runTypewriter();
+  }
+
+  // 5.5.2 Pipeline Drag Reset (Illustration 2)
+  const pipelineDragging = document.querySelector('.illus-pipe-dragging');
+  if (pipelineDragging && window.featuresRegisterReset) {
+    window.featuresRegisterReset(1, () => {
+      pipelineDragging.style.animation = 'none';
+      pipelineDragging.offsetHeight; // force reflow
+      pipelineDragging.style.animation = '';
+    });
+  }
+
+  // 5.5.3 Steps Animation Reset (Illustration 3)
+  const stepsWrap = document.querySelector('.illus-steps-wrap');
+  if (stepsWrap && window.featuresRegisterReset) {
+    window.featuresRegisterReset(2, () => {
+      const steps = stepsWrap.querySelectorAll('.illus-step');
+      steps.forEach(step => {
+        step.style.animation = 'none';
+        step.offsetHeight;
+        step.style.animation = '';
+      });
+    });
+  }
+
+  // 5.6 Contact Modal (expandable CTA with FLIP morph)
   const contactCta = document.getElementById('contact-cta');
   const contactModal = document.getElementById('contact-modal');
   const contactModalCard = contactModal?.querySelector('[data-modal-card]');
