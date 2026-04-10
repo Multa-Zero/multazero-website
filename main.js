@@ -132,6 +132,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // 5.5 Features Accordion
+  const featuresContainer = document.querySelector('.features-container');
+  if (featuresContainer) {
+    const cards = featuresContainer.querySelectorAll('.features-card');
+    const illustrations = featuresContainer.querySelectorAll('.features-illus');
+    let activeIndex = 0;
+
+    // Animation reset registry — each illustration can register a reset callback
+    const animationResets = {};
+
+    window.featuresRegisterReset = function (index, resetFn) {
+      animationResets[index] = resetFn;
+    };
+
+    function activateFeature(index) {
+      if (index === activeIndex) return;
+      activeIndex = index;
+
+      cards.forEach((card, i) => {
+        card.classList.toggle('features-card--active', i === index);
+      });
+
+      illustrations.forEach((illus, i) => {
+        illus.classList.toggle('active', i === index);
+      });
+
+      // Reset animation for the newly active illustration
+      if (animationResets[index]) {
+        animationResets[index]();
+      }
+    }
+
+    // Initialize: first card active
+    illustrations.forEach((illus, i) => {
+      illus.classList.toggle('active', i === 0);
+    });
+
+    // Click on accordion cards
+    cards.forEach((card, i) => {
+      card.addEventListener('click', () => activateFeature(i));
+    });
+
+    // Click on illustrations also activates (if user clicks a non-active illus area)
+    illustrations.forEach((illus, i) => {
+      illus.addEventListener('click', () => activateFeature(i));
+    });
+  }
+
   // 6. Number Counter Animation for Prova Social
   const numbers = document.querySelectorAll('.reveal-number');
   numbers.forEach(number => {
