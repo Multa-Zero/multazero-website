@@ -19,6 +19,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // 1b. Nav CTA — appears after hero CTA scrolls out of view
+  const navCta = document.getElementById('nav-cta');
+  const heroCta = document.getElementById('hero-cta');
+
+  if (navCta && heroCta) {
+    const updateNavCta = () => {
+      const heroCtaBottom = heroCta.getBoundingClientRect().bottom;
+      if (heroCtaBottom < 0) {
+        navCta.classList.add('visible');
+      } else {
+        navCta.classList.remove('visible');
+      }
+    };
+    window.addEventListener('scroll', updateNavCta, { passive: true });
+    updateNavCta();
+  }
+
   // 2. Mobile Menu Toggle
   const mobileBtn = document.querySelector('.mobile-menu-btn');
   const navLinks = document.querySelector('.nav-links');

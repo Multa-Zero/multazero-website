@@ -512,6 +512,25 @@ body {
     align-items: center;
 }
 
+.nav-cta {
+    max-width: 0;
+    opacity: 0;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: max-width 450ms cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 350ms ease 100ms,
+                padding 450ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-cta.visible {
+    max-width: 260px;
+    opacity: 1;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
 .nav-link {
     text-decoration: none;
     font-weight: 600;
@@ -568,6 +587,16 @@ body {
         padding: var(--space-8) 0;
         width: 100%;
         text-align: center;
+    }
+
+    /* On mobile menu, always show CTA fully */
+    .nav-links .nav-cta {
+        max-width: none;
+        opacity: 1;
+        padding-left: 16px;
+        padding-right: 16px;
+        overflow: visible;
+        white-space: normal;
     }
 
     .mobile-menu-btn {
