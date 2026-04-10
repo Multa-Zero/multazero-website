@@ -234,6 +234,16 @@ document.addEventListener('DOMContentLoaded', () => {
     runTypewriter();
   }
 
+  // 5.5.2 Pipeline Drag Reset (Illustration 2)
+  const pipelineDragging = document.querySelector('.illus-pipe-dragging');
+  if (pipelineDragging && window.featuresRegisterReset) {
+    window.featuresRegisterReset(1, () => {
+      pipelineDragging.style.animation = 'none';
+      pipelineDragging.offsetHeight; // force reflow
+      pipelineDragging.style.animation = '';
+    });
+  }
+
   // 6. Number Counter Animation for Prova Social
   const numbers = document.querySelectorAll('.reveal-number');
   numbers.forEach(number => {
