@@ -629,13 +629,13 @@ body {
     display: flex;
     align-items: flex-start;
     padding-top: 140px;
-    padding-bottom: 320px;
+    padding-bottom: 80px;
 }
 
 @media (max-width: 1023px) {
     .hero {
         padding-top: 120px;
-        padding-bottom: 220px;
+        padding-bottom: 64px;
     }
 }
 
@@ -643,7 +643,7 @@ body {
     .hero {
         min-height: 85vh;
         padding-top: 100px;
-        padding-bottom: 160px;
+        padding-bottom: 48px;
     }
 }
 
@@ -717,9 +717,9 @@ body {
 .hero-dashboard-peek {
     position: absolute;
     left: 50%;
-    bottom: 40px;
-    transform: translateX(-50%);
-    width: min(1180px, calc(100% - 64px));
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    width: min(1080px, calc(100% - 64px));
     z-index: 3;
     pointer-events: none;
     border-radius: 16px;
@@ -736,14 +736,29 @@ body {
 @media (max-width: 1023px) {
     .hero-dashboard-peek {
         width: calc(100% - 32px);
-        bottom: 24px;
     }
 }
 
 @media (max-width: 768px) {
     .hero-dashboard-peek {
         width: calc(100% - 24px);
-        bottom: 16px;
+    }
+}
+
+/* Compensate for hero dashboard peek that straddles the hero/#problema boundary */
+#problema {
+    padding-top: 440px;
+}
+
+@media (max-width: 1023px) {
+    #problema {
+        padding-top: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    #problema {
+        padding-top: 320px;
     }
 }
 
