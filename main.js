@@ -244,6 +244,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 5.5.3 Steps Animation Reset (Illustration 3)
+  const stepsWrap = document.querySelector('.illus-steps-wrap');
+  if (stepsWrap && window.featuresRegisterReset) {
+    window.featuresRegisterReset(2, () => {
+      const steps = stepsWrap.querySelectorAll('.illus-step');
+      steps.forEach(step => {
+        step.style.animation = 'none';
+        step.offsetHeight;
+        step.style.animation = '';
+      });
+    });
+  }
+
   // 6. Number Counter Animation for Prova Social
   const numbers = document.querySelectorAll('.reveal-number');
   numbers.forEach(number => {

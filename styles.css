@@ -1347,6 +1347,288 @@ body {
     }
 }
 
+/* ========================
+   Illustration 3: 3-Step Resource
+   ======================== */
+.illus-steps-wrap {
+    position: relative;
+    width: 85%;
+    max-width: 320px;
+    height: 260px;
+}
+
+.illus-step {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background: var(--surface-elevated);
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.illus-step--1 { animation: feat-step1 10s ease-in-out infinite; animation-play-state: paused; }
+.illus-step--2 { animation: feat-step2 10s ease-in-out infinite; animation-play-state: paused; }
+.illus-step--3 { animation: feat-step3 10s ease-in-out infinite; animation-play-state: paused; }
+
+#illus-steps.active .illus-step--1,
+#illus-steps.active .illus-step--2,
+#illus-steps.active .illus-step--3 {
+    animation-play-state: running;
+}
+
+.illus-step-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.illus-step-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--blue-ribbon-8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.illus-step-num--done {
+    background: var(--bg-success);
+}
+
+.illus-step-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--neutral-8);
+}
+
+.illus-step-dots {
+    margin-left: auto;
+    display: flex;
+    gap: 4px;
+}
+
+.illus-step-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--neutral-3);
+}
+
+.illus-step-dot--active {
+    background: var(--blue-ribbon-8);
+}
+
+.illus-step-dot--done {
+    background: var(--bg-success);
+}
+
+/* Step 1: Context card */
+.illus-step-context {
+    background: var(--neutral-1);
+    border-radius: 8px;
+    padding: 12px 14px;
+    border: 1px solid var(--border-default);
+}
+
+.illus-step-context-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.illus-step-context-ait {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--neutral-8);
+}
+
+.illus-step-context-line {
+    font-size: 11px;
+    color: var(--neutral-6);
+    line-height: 1.6;
+}
+
+.illus-step-context-key {
+    color: var(--neutral-7);
+    font-weight: 600;
+}
+
+.illus-step-btn {
+    margin-top: 12px;
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.illus-step-btn--blue { background: var(--blue-ribbon-9); }
+.illus-step-btn--green { background: var(--bg-success); }
+
+/* Step 2: Checklist */
+.illus-step-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.illus-step-check-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--neutral-1);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 10px;
+    color: var(--neutral-7);
+}
+
+.illus-step-check-item--active {
+    background: var(--blue-ribbon-1);
+    border: 1px solid rgba(4, 71, 211, 0.2);
+    color: var(--blue-ribbon-7);
+    font-weight: 500;
+}
+
+.illus-step-check-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.illus-step-check-icon--done {
+    background: #D1FAE5;
+}
+
+.illus-step-check-icon--spin {
+    background: var(--blue-ribbon-2);
+    animation: feat-spin 1s linear infinite;
+}
+
+.illus-step-spinner {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--blue-ribbon-7);
+}
+
+.illus-step-progress {
+    margin-top: 14px;
+    background: var(--neutral-2);
+    border-radius: 4px;
+    height: 4px;
+    overflow: hidden;
+}
+
+.illus-step-progress-fill {
+    height: 100%;
+    background: var(--blue-ribbon-7);
+    border-radius: 4px;
+    animation: feat-progress-pulse 2s ease-in-out infinite;
+}
+
+/* Step 3: Document preview */
+.illus-step-doc {
+    background: var(--neutral-1);
+    border-radius: 8px;
+    padding: 14px;
+    border: 1px solid var(--border-default);
+}
+
+.illus-step-doc-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.illus-step-doc-icon {
+    width: 32px;
+    height: 40px;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-default);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.illus-step-doc-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--neutral-8);
+}
+
+.illus-step-doc-meta {
+    font-size: 9px;
+    color: var(--neutral-5);
+    margin-top: 2px;
+}
+
+.illus-step-doc-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 4px;
+}
+
+.illus-step-doc-line {
+    height: 3px;
+    background: var(--neutral-3);
+    border-radius: 2px;
+}
+
+.illus-step-doc-line--blue {
+    background: var(--blue-ribbon-2);
+}
+
+/* Step keyframes */
+@keyframes feat-step1 {
+    0%, 25% { opacity: 1; transform: translateY(0) scale(1); }
+    30%, 95% { opacity: 0; transform: translateY(10px) scale(0.97); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes feat-step2 {
+    0%, 25% { opacity: 0; transform: translateY(-10px) scale(0.97); }
+    30%, 58% { opacity: 1; transform: translateY(0) scale(1); }
+    63%, 100% { opacity: 0; transform: translateY(10px) scale(0.97); }
+}
+
+@keyframes feat-step3 {
+    0%, 58% { opacity: 0; transform: translateY(-10px) scale(0.97); }
+    63%, 92% { opacity: 1; transform: translateY(0) scale(1); }
+    97%, 100% { opacity: 0; transform: translateY(10px) scale(0.97); }
+}
+
+@keyframes feat-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes feat-progress-pulse {
+    0%, 100% { width: 55%; }
+    50% { width: 75%; }
+}
+
 /* Prova Social */
 .stats-grid {
     display: grid;
