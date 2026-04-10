@@ -629,13 +629,13 @@ body {
     display: flex;
     align-items: flex-start;
     padding-top: 140px;
-    padding-bottom: 460px;
+    padding-bottom: 320px;
 }
 
 @media (max-width: 1023px) {
     .hero {
         padding-top: 120px;
-        padding-bottom: 420px;
+        padding-bottom: 280px;
     }
 }
 
@@ -643,7 +643,7 @@ body {
     .hero {
         min-height: 85vh;
         padding-top: 100px;
-        padding-bottom: 240px;
+        padding-bottom: 200px;
     }
 }
 
@@ -720,6 +720,8 @@ body {
     bottom: 0;
     transform: translate(-50%, 50%);
     width: min(1080px, calc(100% - 64px));
+    aspect-ratio: 1080 / 440;
+    overflow: hidden;
     z-index: 3;
     pointer-events: none;
     border-radius: 16px;
@@ -730,7 +732,9 @@ body {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 @media (max-width: 1023px) {
@@ -747,18 +751,18 @@ body {
 
 /* Compensate for hero dashboard peek that straddles the hero/#problema boundary */
 #problema {
-    padding-top: 460px;
+    padding-top: 320px;
 }
 
 @media (max-width: 1023px) {
     #problema {
-        padding-top: 420px;
+        padding-top: 280px;
     }
 }
 
 @media (max-width: 768px) {
     #problema {
-        padding-top: 280px;
+        padding-top: 200px;
     }
 }
 
