@@ -810,9 +810,6 @@ body {
     .hero-visual {
         display: block;
         flex: 0 0 45%;
-        border-radius: var(--radius-md);
-        overflow: hidden;
-        box-shadow: var(--shadow-lg);
     }
 
     .hero-visual img {
