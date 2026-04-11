@@ -774,21 +774,10 @@ body {
     }
 }
 
-/* Compensate for hero dashboard peek that straddles the hero/#problema boundary */
+/* Compensate for hero dashboard peek that straddles the hero/#problema boundary.
+   Dashboard overflow ≈ dashWidth × 0.604; scales with viewport. */
 #problema {
-    padding-top: 740px;
-}
-
-@media (max-width: 1023px) {
-    #problema {
-        padding-top: 540px;
-    }
-}
-
-@media (max-width: 768px) {
-    #problema {
-        padding-top: 280px;
-    }
+    padding-top: clamp(420px, 60vw + 40px, 740px);
 }
 
 .hero-text {
