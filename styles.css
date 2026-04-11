@@ -722,8 +722,7 @@ body {
 .hero-content {
     color: var(--surface-elevated);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
     gap: var(--space-48);
 }
 
