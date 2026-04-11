@@ -119,37 +119,37 @@ body {
 /* Typography Classes */
 .heading-1 {
     font-size: 54px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.2;
 }
 
 .heading-2 {
     font-size: 42px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.25;
 }
 
 .heading-3 {
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.3;
 }
 
 .heading-4 {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.35;
 }
 
 .heading-5 {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.4;
 }
 
 .heading-6 {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.45;
 }
 
