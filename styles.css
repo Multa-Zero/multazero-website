@@ -1962,6 +1962,14 @@ body {
     padding-bottom: var(--space-24);
 }
 
+/* Headings menores nas seções abaixo de Resultados */
+#oferta .heading-2,
+#diferenciais .heading-2,
+#faq .heading-2,
+.cta-final .heading-2 {
+    font-size: 32px;
+}
+
 /* CTA Final */
 .cta-final {
     background-color: var(--blue-ribbon-9);
