@@ -1140,6 +1140,8 @@ body {
     .features-illustrations {
         border-radius: var(--radius-md) var(--radius-md) 0 0;
         min-height: 280px;
+        padding: var(--space-12);
+        box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.08);
     }
 
     .features-card:first-child {
@@ -1916,7 +1918,10 @@ body {
 }
 
 .faq-item {
-    border-bottom: 1px solid var(--border-default);
+    background-color: var(--neutral-1);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-12);
+    padding: 0 var(--space-24);
 }
 
 .faq-question {
