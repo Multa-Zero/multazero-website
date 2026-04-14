@@ -2956,7 +2956,7 @@ body.modal-open {
   .cond-top { gap: 14px; }
   .score-ring { width: 76px; height: 76px; border-width: 5px; }
   .score-ring__n { font-size: 22px; }
-  .bento-card--alerts .alerts { max-height: 240px; }
+  .bento-card--alerts .alerts { height: 240px; max-height: 240px; flex: 0 0 240px; }
   .alert-pill { padding: 8px 12px 8px 8px; gap: 10px; min-width: 0; }
   .alert-pill__icon { width: 30px; height: 30px; }
   .alert-pill__t1 { font-size: 12px; }
