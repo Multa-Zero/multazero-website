@@ -653,7 +653,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { color: 'blue',  icon: 'user',  t1: 'Análise condutor atualizada',        t2: 'José da Silva C. · Faixa A',  chip: 'NOVO'   },
       { color: 'green', icon: 'check', t1: 'Recurso deferido — DEF-92014',       t2: 'Economia de R$ 1.932,00',     chip: 'OK'     },
       { color: 'amber', icon: 'clock', t1: 'Defesa prévia AF-51887',             t2: 'Prazo em 5 dias',             chip: '5 DIAS' },
-      { color: 'red',   icon: 'bell',  t1: 'Multa não identificada, placa XYZ',  t2: 'Ação em 24h',                 chip: '24h'    },
+      { color: 'red',   icon: 'bell',  t1: 'Multa não identificada — placa XYZ', t2: 'Ação em 24h',                 chip: '24h'    },
     ];
 
     const MAX_VISIBLE = 6;
