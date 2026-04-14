@@ -131,6 +131,90 @@
     </div>
   </section>
 
+  <!-- 3b. Bento — Plataforma -->
+  <section class="section-padding card-neutral" id="plataforma-bento">
+    <div class="container">
+      <div class="text-center reveal-up bento-head">
+        <span class="bento-eyebrow">Uma plataforma, tudo resolvido</span>
+        <h2 class="heading-2">Gestão de multas com IA do começo ao fim</h2>
+        <p class="body-M text-secondary" style="margin-top: 12px;">Pergunte, monitore e analise — tudo que sua frota precisa numa experiência só.</p>
+      </div>
+
+      <div class="bento-grid reveal-up">
+
+        <!-- Card 1: IA Search -->
+        <div class="bento-card bento-card--hero">
+          <div class="ai-wrap">
+            <div class="ai-frame">
+              <span class="ai-base" aria-hidden="true"></span>
+              <span class="ai-border" id="aiBorder" aria-hidden="true"></span>
+              <span class="ai-glow-outer" id="aiGlow" aria-hidden="true"></span>
+              <div class="ai-inner">
+                <span class="ai-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 15.8l-1.8-4.6L6 9.4l4.2-1.8L12 3z"/>
+                    <path d="M19 14l.9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9L19 14z"/>
+                  </svg>
+                </span>
+                <input id="aiInput" class="ai-input" type="text" autocomplete="off" placeholder="Buscar com Inteligência Artificial" aria-label="Buscar com Inteligência Artificial" />
+              </div>
+            </div>
+          </div>
+          <h3 class="bento-card__title">Pergunte. A IA responde.</h3>
+          <p class="bento-card__desc">Consulte multas, recursos e prazos em linguagem natural. Sem filtros, sem abas, sem exportar planilha.</p>
+        </div>
+
+        <!-- Card 2: Alertas -->
+        <div class="bento-card bento-card--alerts">
+          <div class="bento-card__eyebrow">Alertas em tempo real</div>
+          <h3 class="bento-card__title">Nunca mais perca um prazo</h3>
+          <p class="bento-card__desc">Notificações inteligentes de vencimento, recursos e indicação de condutor — direto da plataforma.</p>
+          <div class="alerts" id="alertsList"></div>
+        </div>
+
+        <!-- Card 3: Análise do Condutor -->
+        <div class="bento-card bento-card--condutor">
+          <div class="bento-card__eyebrow">Análise do Condutor</div>
+          <h3 class="bento-card__title">Score em um piscar de olhos</h3>
+          <p class="bento-card__desc">Pontuação, faixa e infrações consolidadas por motorista — direto do prontuário CNH.</p>
+
+          <div class="cond">
+            <div class="cond-top">
+              <div class="score-ring">
+                <div>
+                  <div class="score-ring__n">100</div>
+                  <div class="score-ring__d">de 100</div>
+                </div>
+              </div>
+              <div class="cond-info">
+                <span class="badge-faixa">Faixa A</span>
+                <span class="cond-info__name">José da Silva C. Mota</span>
+                <span class="cond-info__cnh">CNH 12903901902</span>
+              </div>
+            </div>
+
+            <div class="infractions">
+              <div class="infractions__row"><span class="infractions__label">Score inicial</span><span class="infractions__pts infractions__pts--ok">100</span></div>
+              <div class="infractions__row"><span class="infractions__label">Excesso de velocidade</span><span class="infractions__pts infractions__pts--warn">−5</span></div>
+              <div class="infractions__row"><span class="infractions__label">Avanço de sinal</span><span class="infractions__pts infractions__pts--warn">−7</span></div>
+              <div class="infractions__row"><span class="infractions__label">Excesso (reincidência)</span><span class="infractions__pts infractions__pts--error">−10</span></div>
+              <div class="infractions__row infractions__row--total"><span class="infractions__label">Score atual</span><span class="infractions__pts">100</span></div>
+            </div>
+
+            <div class="grade-bar">
+              <div class="grade-bar__seg grade-bar__seg--a">A</div>
+              <div class="grade-bar__seg grade-bar__seg--b">B</div>
+              <div class="grade-bar__seg grade-bar__seg--c">C</div>
+              <div class="grade-bar__seg grade-bar__seg--d">D</div>
+              <div class="grade-bar__seg grade-bar__seg--e">E</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- 4. Resultados -->
   <section class="section-padding card-neutral" id="resultados">
     <div class="container">

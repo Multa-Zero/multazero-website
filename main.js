@@ -578,4 +578,137 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === termsModal) closeModal(termsModal);
     if (e.target === privacyModal) closeModal(privacyModal);
   });
+
+  // ==========================================================================
+  // Bento — Plataforma
+  // ==========================================================================
+
+  // --- AI search bar: breathing glow ---
+  const aiBorder = document.getElementById('aiBorder');
+  const aiGlow = document.getElementById('aiGlow');
+  if (aiBorder && aiGlow) {
+    const FADE_IN_MS = 900, PEAK_MS = 2800, FADE_OUT_MS = 900, WAIT_MS = 3000;
+    const breathe = () => {
+      aiBorder.style.transition = `opacity ${FADE_IN_MS}ms cubic-bezier(0.22, 1, 0.36, 1)`;
+      aiGlow.style.transition   = `opacity ${FADE_IN_MS}ms cubic-bezier(0.22, 1, 0.36, 1)`;
+      aiBorder.style.opacity = '1';
+      aiGlow.style.opacity   = '0.12';
+      setTimeout(() => {
+        aiBorder.style.transition = `opacity ${FADE_OUT_MS}ms cubic-bezier(0.64, 0, 0.78, 0)`;
+        aiGlow.style.transition   = `opacity ${FADE_OUT_MS}ms cubic-bezier(0.64, 0, 0.78, 0)`;
+        aiBorder.style.opacity = '0';
+        aiGlow.style.opacity   = '0';
+      }, FADE_IN_MS + PEAK_MS);
+      setTimeout(breathe, FADE_IN_MS + PEAK_MS + FADE_OUT_MS + WAIT_MS);
+    };
+    setTimeout(breathe, 1500);
+  }
+
+  // --- AI search bar: typewriter placeholder ---
+  const aiInput = document.getElementById('aiInput');
+  if (aiInput) {
+    const questions = [
+      'Quantas multas estão pendentes esse mês?',
+      'Qual o status do recurso da placa ABC-1D23?',
+      'Multas com prazo vencendo essa semana',
+      'Recursos deferidos nos últimos 30 dias',
+      'Quantas indicações de condutor faltam?',
+      'Multas por excesso de velocidade em SP',
+    ];
+    const TYPE_MS = 55, ERASE_MS = 25, HOLD_MS = 1800, BETWEEN_MS = 400;
+    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+    let qIdx = 0;
+    (async () => {
+      await sleep(1200);
+      aiInput.placeholder = '';
+      while (true) {
+        const text = questions[qIdx];
+        for (let i = 0; i <= text.length; i++) {
+          aiInput.placeholder = text.slice(0, i);
+          await sleep(TYPE_MS);
+        }
+        await sleep(HOLD_MS);
+        for (let i = text.length; i >= 0; i--) {
+          aiInput.placeholder = text.slice(0, i);
+          await sleep(ERASE_MS);
+        }
+        await sleep(BETWEEN_MS);
+        qIdx = (qIdx + 1) % questions.length;
+      }
+    })();
+  }
+
+  // --- Alertas: animated list with FLIP slide-down ---
+  const alertsList = document.getElementById('alertsList');
+  if (alertsList) {
+    const icons = {
+      clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+      bell:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9z"/><path d="M10 21a2 2 0 0 0 4 0"/></svg>',
+      user:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
+      check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+    };
+    const alerts = [
+      { color: 'red',   icon: 'clock', t1: 'Recurso ABC-1D23 vence HOJE',        t2: 'JARI · Defesa prévia',        chip: 'HOJE'   },
+      { color: 'amber', icon: 'bell',  t1: 'Indicação de condutor — AF-48291',   t2: 'Prazo em 2 dias',             chip: '2 DIAS' },
+      { color: 'blue',  icon: 'user',  t1: 'Análise condutor atualizada',        t2: 'José da Silva C. · Faixa A',  chip: 'NOVO'   },
+      { color: 'green', icon: 'check', t1: 'Recurso deferido — DEF-92014',       t2: 'Economia de R$ 1.932,00',     chip: 'OK'     },
+      { color: 'amber', icon: 'clock', t1: 'Defesa prévia AF-51887',             t2: 'Prazo em 5 dias',             chip: '5 DIAS' },
+      { color: 'red',   icon: 'bell',  t1: 'Multa não identificada — placa XYZ', t2: 'Ação em 24h',                 chip: '24h'    },
+    ];
+
+    const MAX_VISIBLE = 6;
+    const STEP_MS = 4200;
+    const SLIDE_MS = 1100;
+    const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
+    let i = 0;
+
+    const makePill = (a) => {
+      const el = document.createElement('div');
+      el.className = `alert-pill alert-pill--${a.color}`;
+      el.innerHTML = `
+        <span class="alert-pill__icon">${icons[a.icon]}</span>
+        <span class="alert-pill__txt">
+          <span class="alert-pill__t1">${a.t1}</span>
+          <span class="alert-pill__t2">${a.t2}</span>
+        </span>
+        <span class="alert-pill__chip">${a.chip}</span>
+      `;
+      return el;
+    };
+
+    const pushNext = () => {
+      const a = alerts[i % alerts.length];
+      const el = makePill(a);
+
+      const existing = Array.from(alertsList.children);
+      const oldRects = new Map();
+      existing.forEach((c) => oldRects.set(c, c.getBoundingClientRect()));
+
+      alertsList.insertBefore(el, alertsList.firstChild);
+
+      existing.forEach((c) => {
+        const oldRect = oldRects.get(c);
+        const newRect = c.getBoundingClientRect();
+        const dy = oldRect.top - newRect.top;
+        if (dy === 0) return;
+        c.animate(
+          [
+            { transform: `translateY(${dy}px)` },
+            { transform: 'translateY(0)' },
+          ],
+          { duration: SLIDE_MS, easing: EASE, fill: 'both' }
+        );
+      });
+
+      while (alertsList.children.length > MAX_VISIBLE) {
+        alertsList.lastElementChild.remove();
+      }
+      i++;
+    };
+
+    pushNext();
+    setTimeout(pushNext, 400);
+    setTimeout(pushNext, 800);
+    setInterval(pushNext, STEP_MS);
+  }
 });
