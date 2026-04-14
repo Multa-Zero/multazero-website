@@ -1901,8 +1901,12 @@ body {
 
 /* FAQ */
 .faq-list {
-    max-width: 800px;
+    max-width: 900px;
     margin: var(--space-48) auto 0;
+    background: var(--neutral-2, #F0F2F4);
+    border: 1px solid var(--border-light, #E6E9EE);
+    border-radius: 20px;
+    padding: 16px 32px;
 }
 
 .faq-item {
