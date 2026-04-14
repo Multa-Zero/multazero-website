@@ -999,6 +999,7 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     height: 480px;
+    border: 1px solid rgba(2, 37, 110, 0.08);
     border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: var(--shadow-md);
@@ -1006,6 +1007,7 @@ body {
 
 .features-illustrations {
     background: radial-gradient(120% 100% at 30% 30%, #F4F7FF 0%, #D7E4FE 100%);
+    border-right: 1px solid rgba(2, 37, 110, 0.08);
     border-radius: var(--radius-md) 0 0 var(--radius-md);
     position: relative;
     display: flex;
