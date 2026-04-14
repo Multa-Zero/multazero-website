@@ -1966,6 +1966,18 @@ body {
 }
 
 /* Oferta (dark) */
+#oferta {
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+@media (min-width: 1024px) {
+    #oferta {
+        padding-top: 220px;
+        padding-bottom: 220px;
+    }
+}
+
 #oferta .heading-2 {
     color: #FFFFFF;
 }
