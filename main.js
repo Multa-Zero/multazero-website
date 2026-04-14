@@ -649,11 +649,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     const alerts = [
       { color: 'red',   icon: 'clock', t1: 'Recurso ABC-1D23 vence HOJE',        t2: 'JARI · Defesa prévia',        chip: 'HOJE'   },
-      { color: 'amber', icon: 'bell',  t1: 'Indicação de condutor — AF-48291',   t2: 'Prazo em 2 dias',             chip: '2 DIAS' },
+      { color: 'amber', icon: 'bell',  t1: 'Indicação de condutor AF-48291',     t2: 'Prazo em 2 dias',             chip: '2 DIAS' },
       { color: 'blue',  icon: 'user',  t1: 'Análise condutor atualizada',        t2: 'José da Silva C. · Faixa A',  chip: 'NOVO'   },
-      { color: 'green', icon: 'check', t1: 'Recurso deferido — DEF-92014',       t2: 'Economia de R$ 1.932,00',     chip: 'OK'     },
+      { color: 'green', icon: 'check', t1: 'Recurso deferido DEF-92014',         t2: 'Economia de R$ 1.932,00',     chip: 'OK'     },
       { color: 'amber', icon: 'clock', t1: 'Defesa prévia AF-51887',             t2: 'Prazo em 5 dias',             chip: '5 DIAS' },
-      { color: 'red',   icon: 'bell',  t1: 'Multa não identificada — placa XYZ', t2: 'Ação em 24h',                 chip: '24h'    },
+      { color: 'red',   icon: 'bell',  t1: 'Multa não identificada, placa XYZ',  t2: 'Ação em 24h',                 chip: '24h'    },
     ];
 
     const MAX_VISIBLE = 6;
