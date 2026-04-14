@@ -1752,7 +1752,8 @@ body {
     width: 100%;
     height: auto;
     margin-top: 0;
-    margin-bottom: -1px;
+    margin-bottom: -2px;
+    background: #01143C;
 }
 
 .trust-label {
