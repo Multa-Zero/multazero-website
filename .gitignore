@@ -3,3 +3,18 @@ dist
 dist-ssr
 *.local
 .DS_Store
+
+# Claude / tooling
+.claude/
+.playwright-mcp/
+.superpowers/
+
+# Screenshots / debug images
+*.jpeg
+*.png
+*.jpg
+
+# Docs references & plans
+docs/references/
+docs/superpowers/
+docs/HERO-SNAPSHOT.md
