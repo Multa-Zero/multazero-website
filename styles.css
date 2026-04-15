@@ -1774,7 +1774,7 @@ body {
     display: block;
     width: 100%;
     height: auto;
-    margin-top: 0;
+    margin-top: -1px;
     margin-bottom: -2px;
     background: #01143C;
 }
