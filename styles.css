@@ -713,7 +713,7 @@ body {
 
 @media (max-width: 768px) {
     .hero-bg-image {
-        object-position: 35% center;
+        object-position: 65% center;
     }
 }
 
