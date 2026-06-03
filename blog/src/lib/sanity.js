@@ -117,6 +117,10 @@ export async function getPosts() {
     console.warn('[sanity] fetch falhou, usando dados de exemplo:', err?.message || err);
     docs = [];
   }
-  if (!docs || docs.length === 0) return sampleAsNormalized();
+  if (!docs || docs.length === 0) {
+    // Em produção nunca mostra posts fake: ou conteúdo real, ou vazio (empty state).
+    // Os dados de exemplo só ajudam a visualizar o layout em desenvolvimento.
+    return import.meta.env.DEV ? sampleAsNormalized() : [];
+  }
   return docs.map(normalize);
 }

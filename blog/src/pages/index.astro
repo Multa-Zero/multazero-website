@@ -16,22 +16,30 @@ const posts = await getPosts();
       <p class="list-hero__subtitle">Gestão de frotas, multas e tecnologia — sem burocracia.</p>
     </div>
 
-    <div class="post-grid">
-      {
-        posts.map((p) => (
-          <a class="post-card" href={`${base}post/${p.slug}`}>
-            <img class="post-card__cover" src={p.cover} alt={p.title} loading="lazy" />
-            <div class="post-card__body">
-              <span class="tag-pill">{p.tag}</span>
-              <h2 class="post-card__title">{p.title}</h2>
-              <p class="post-card__excerpt">{p.excerpt}</p>
-              <span class="post-card__meta">
-                {p.author.name} · {p.dateLabel} · {p.readingTime}
-              </span>
-            </div>
-          </a>
-        ))
-      }
-    </div>
+    {
+      posts.length > 0 ? (
+        <div class="post-grid">
+          {posts.map((p) => (
+            <a class="post-card" href={`${base}post/${p.slug}`}>
+              <img class="post-card__cover" src={p.cover} alt={p.title} loading="lazy" />
+              <div class="post-card__body">
+                <span class="tag-pill">{p.tag}</span>
+                <h2 class="post-card__title">{p.title}</h2>
+                <p class="post-card__excerpt">{p.excerpt}</p>
+                <span class="post-card__meta">
+                  {p.author.name} · {p.dateLabel} · {p.readingTime}
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p
+          style="text-align:center;color:var(--text-secondary);padding:48px 0 80px;font-size:18px;"
+        >
+          Em breve, novos artigos por aqui.
+        </p>
+      )
+    }
   </section>
 </Base>

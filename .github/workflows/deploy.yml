@@ -1,0 +1,50 @@
+name: Deploy site + blog (S3/CloudFront)
+
+# Dispara em: push na main (mudança de código) e quando a Sanity avisar que
+# um post foi publicado/editado (repository_dispatch type: sanity-publish).
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [sanity-publish]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      S3_BUCKET: ${{ secrets.S3_BUCKET }}
+      CF_DISTRIBUTION_ID: ${{ secrets.CF_DISTRIBUTION_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Instala deps da raiz
+        run: npm ci
+
+      - name: Build combinado (site + blog em dist/)
+        run: npm run build
+
+      # --- Os passos abaixo só rodam quando os secrets AWS estiverem configurados ---
+      - name: Configura credenciais AWS
+        if: env.S3_BUCKET != ''
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Sync dist/ -> S3
+        if: env.S3_BUCKET != ''
+        run: aws s3 sync dist/ "s3://${{ secrets.S3_BUCKET }}" --delete
+
+      - name: Invalida cache do CloudFront
+        if: env.CF_DISTRIBUTION_ID != ''
+        run: aws cloudfront create-invalidation --distribution-id "${{ secrets.CF_DISTRIBUTION_ID }}" --paths "/*"
