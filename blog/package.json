@@ -12,6 +12,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.4.3"
+    "@astrojs/react": "^5.0.7",
+    "@portabletext/to-html": "^5.0.2",
+    "@sanity/astro": "^3.4.0",
+    "@sanity/image-url": "^2.1.1",
+    "@sanity/vision": "^5.30.0",
+    "astro": "^6.4.3",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "sanity": "^5.30.0",
+    "styled-components": "^6.4.2"
   }
 }

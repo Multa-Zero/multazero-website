@@ -1,8 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
-import { posts } from '../data/posts.js';
+import { getPosts } from '../lib/sanity.js';
 
 const base = import.meta.env.BASE_URL;
+const posts = await getPosts();
 ---
 
 <Base
@@ -19,7 +20,7 @@ const base = import.meta.env.BASE_URL;
       {
         posts.map((p) => (
           <a class="post-card" href={`${base}post/${p.slug}`}>
-            <img class="post-card__cover" src={`${base}${p.cover}`} alt={p.title} loading="lazy" />
+            <img class="post-card__cover" src={p.cover} alt={p.title} loading="lazy" />
             <div class="post-card__body">
               <span class="tag-pill">{p.tag}</span>
               <h2 class="post-card__title">{p.title}</h2>
