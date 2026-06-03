@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import { posts } from '../data/posts.js';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Base
+  title="Blog · MultaZero"
+  description="Gestão de frotas, multas e tecnologia — conteúdo prático para operações que querem menos burocracia."
+>
+  <section class="blog-container">
+    <div class="list-hero">
+      <h1 class="list-hero__title">Blog MultaZero</h1>
+      <p class="list-hero__subtitle">Gestão de frotas, multas e tecnologia — sem burocracia.</p>
+    </div>
+
+    <div class="post-grid">
+      {
+        posts.map((p) => (
+          <a class="post-card" href={`${base}post/${p.slug}`}>
+            <img class="post-card__cover" src={`${base}${p.cover}`} alt={p.title} loading="lazy" />
+            <div class="post-card__body">
+              <span class="tag-pill">{p.tag}</span>
+              <h2 class="post-card__title">{p.title}</h2>
+              <p class="post-card__excerpt">{p.excerpt}</p>
+              <span class="post-card__meta">
+                {p.author.name} · {p.dateLabel} · {p.readingTime}
+              </span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Base>

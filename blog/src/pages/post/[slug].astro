@@ -1,0 +1,87 @@
+---
+import Base from '../../layouts/Base.astro';
+import { posts } from '../../data/posts.js';
+
+export function getStaticPaths() {
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const base = import.meta.env.BASE_URL;
+const { post } = Astro.props;
+---
+
+<Base title={`${post.title} · Blog MultaZero`} description={post.excerpt}>
+  <article class="post blog-container">
+    <div class="reading">
+      <div class="post__eyebrow"><span class="tag-pill">{post.tag}</span></div>
+      <h1 class="post__title">{post.title}</h1>
+      <p class="post__subtitle">{post.excerpt}</p>
+
+      <div class="byline">
+        <div class="byline__avatar byline__avatar--initials">{post.author.initials}</div>
+        <div class="byline__meta">
+          <span class="byline__name">{post.author.name}</span>
+          <span class="byline__sub">{post.readingTime} · {post.dateLabel}</span>
+        </div>
+      </div>
+
+      <div class="post__actions">
+        <button class="share-btn" type="button" data-share data-title={post.title}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          <span class="share-btn__label">Compartilhar</span>
+        </button>
+      </div>
+    </div>
+
+    <figure class="post__cover">
+      <img src={`${base}${post.cover}`} alt={post.title} />
+    </figure>
+
+    <div class="post__body" set:html={post.body}></div>
+
+    <div class="post__tags">
+      {post.tags.map((t) => <span class="tag-pill">{t}</span>)}
+    </div>
+
+    <section class="comments reading">
+      <h2 class="comments__title">Comentários</h2>
+      <div class="comments__placeholder">
+        Os comentários aparecerão aqui — a conectar (ex.: Cusdis, leve e open-source).
+      </div>
+    </section>
+  </article>
+</Base>
+
+<script>
+  document.querySelectorAll('[data-share]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const url = window.location.href;
+      const title = btn.getAttribute('data-title') || document.title;
+      const label = btn.querySelector('.share-btn__label');
+      if (navigator.share) {
+        try {
+          await navigator.share({ title, url });
+        } catch (_) {
+          /* user cancelled */
+        }
+      } else if (navigator.clipboard && label) {
+        try {
+          await navigator.clipboard.writeText(url);
+          const original = label.textContent;
+          label.textContent = 'Link copiado!';
+          setTimeout(() => {
+            label.textContent = original;
+          }, 1600);
+        } catch (_) {
+          /* clipboard blocked */
+        }
+      }
+    });
+  });
+</script>

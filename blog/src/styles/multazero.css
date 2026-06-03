@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: 'Aileron';
-    src: url('./font/aileron/Aileron-Regular.otf') format('opentype');
+    src: url('/blog/font/aileron/Aileron-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -11,7 +11,7 @@
 
 @font-face {
     font-family: 'Aileron';
-    src: url('./font/aileron/Aileron-SemiBold.otf') format('opentype');
+    src: url('/blog/font/aileron/Aileron-SemiBold.otf') format('opentype');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -19,7 +19,7 @@
 
 @font-face {
     font-family: 'Aileron';
-    src: url('./font/aileron/Aileron-Bold.otf') format('opentype');
+    src: url('/blog/font/aileron/Aileron-Bold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -27,7 +27,7 @@
 
 @font-face {
     font-family: 'Aileron';
-    src: url('./font/aileron/Aileron-Light.otf') format('opentype');
+    src: url('/blog/font/aileron/Aileron-Light.otf') format('opentype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -2982,56 +2982,4 @@ body.modal-open {
   .alert-pill__t1 { font-size: 12px; }
   .alert-pill__chip { font-size: 10px; padding: 2px 7px; }
   .infractions__row { padding: 9px 12px; font-size: 12px; }
-}
-/* ===== Blog teaser (seção acima da FAQ) ===== */
-.blog-teaser-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.blog-teaser-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--neutral-1);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  text-decoration: none;
-  color: inherit;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-.blog-teaser-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-.blog-teaser-card__cover {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background-size: cover;
-  background-position: center;
-  background-color: var(--neutral-2);
-}
-.blog-teaser-card__body {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-}
-.blog-teaser-card__body .tag {
-  align-self: flex-start;
-  margin: 0;
-}
-.blog-teaser-card__title {
-  color: var(--text-primary);
-}
-.blog-teaser-card__meta {
-  margin-top: 4px;
-  font-size: 13px;
-  color: var(--neutral-5);
-}
-@media (max-width: 900px) {
-  .blog-teaser-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 600px) {
-  .blog-teaser-grid { grid-template-columns: 1fr; }
 }

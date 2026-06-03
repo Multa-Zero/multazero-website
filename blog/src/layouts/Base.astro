@@ -1,0 +1,55 @@
+---
+import '../styles/multazero.css';
+import '../styles/blog.css';
+
+const base = import.meta.env.BASE_URL; // '/blog/'
+
+const {
+  title = 'Blog · MultaZero',
+  description = 'Conteúdo sobre gestão de frotas, multas e tecnologia — sem burocracia.',
+} = Astro.props;
+
+const site = 'https://multazero.com';
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href={`${base}images/favicon-multazero-light.png`} />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <header class="blog-nav">
+      <div class="blog-nav__inner">
+        <a href={base} class="blog-nav__logo" aria-label="MultaZero — Blog">
+          <img src={`${base}images/logomultazeroblack.png`} alt="MultaZero" />
+        </a>
+        <nav class="blog-nav__links">
+          <a class="blog-nav__link" href={`${site}/#diferenciais`}>Plataforma</a>
+          <a class="blog-nav__link" href={`${site}/#resultados`}>Resultados</a>
+          <a class="blog-nav__link" href={base}>Blog</a>
+          <a class="blog-nav__cta" href={`${site}/#oferta`}>Falar com representante</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="blog-footer">
+      <div class="blog-footer__inner">
+        <img src={`${base}images/logomultazeroblack.png`} alt="MultaZero" />
+        <p class="blog-footer__copy">© 2026 MultaZero Tecnologia. Todos os direitos reservados.</p>
+        <div class="blog-footer__links">
+          <a href={site}>Site</a>
+          <a href="https://app.multazero.co/">Área Interna</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
