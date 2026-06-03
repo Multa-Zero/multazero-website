@@ -25,6 +25,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            blog/package-lock.json
+
+      # Cacheia os ~900 pacotes do blog; build-all pula o `npm ci` do blog se a pasta existir
+      - name: Cache blog/node_modules
+        uses: actions/cache@v4
+        with:
+          path: blog/node_modules
+          key: blog-node-modules-${{ hashFiles('blog/package-lock.json') }}
 
       - name: Instala deps da raiz
         run: npm ci
