@@ -603,6 +603,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (on) { void p.offsetWidth; p.classList.add('tw-run'); }
       });
       moveIndicator();
+      if (i === 0) runCondutor();
+      else if (i === 2) boletoReset();
     }
     function stopAuto() { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
     function startAuto() {
@@ -621,9 +623,109 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => { computeHeight(); moveIndicator(); });
     if (document.fonts && document.fonts.ready) { document.fonts.ready.then(() => { computeHeight(); moveIndicator(); }); }
 
-    // Auto-advance enquanto visível (para na primeira interação do usuário)
+    // --- Interações dos painéis ---
+    // PIX: copiar código
+    const pixCopyBtn = tabsWidget.querySelector('[data-pix-copy]');
+    const pixCode = tabsWidget.querySelector('.tw-pixq-code');
+    if (pixCopyBtn) {
+      pixCopyBtn.addEventListener('click', () => {
+        userTook = true; stopAuto();
+        const txt = pixCode ? pixCode.textContent.trim() : '';
+        if (navigator.clipboard && txt) navigator.clipboard.writeText(txt).catch(() => {});
+        pixCopyBtn.textContent = 'Copiado ✓';
+        pixCopyBtn.classList.add('is-copied');
+        clearTimeout(pixCopyBtn._t);
+        pixCopyBtn._t = setTimeout(() => { pixCopyBtn.textContent = 'Copiar'; pixCopyBtn.classList.remove('is-copied'); }, 1800);
+      });
+    }
+
+    // Boleto: emitir -> loader -> boleto emitido
+    const boletoEmit = tabsWidget.querySelector('[data-boleto-emit]');
+    const boletoActions = tabsWidget.querySelector('[data-boleto-actions]');
+    const boletoLoader = tabsWidget.querySelector('[data-boleto-loader]');
+    const boletoEmitted = tabsWidget.querySelector('[data-boleto-emitted]');
+    let boletoTimers = [];
+    function boletoReset() {
+      boletoTimers.forEach(clearTimeout); boletoTimers = [];
+      if (boletoActions) boletoActions.classList.add('is-on');
+      if (boletoLoader) boletoLoader.classList.remove('is-on');
+      if (boletoEmitted) boletoEmitted.classList.remove('is-on');
+    }
+    if (boletoEmit) {
+      boletoEmit.addEventListener('click', () => {
+        userTook = true; stopAuto();
+        boletoTimers.forEach(clearTimeout); boletoTimers = [];
+        boletoActions.classList.remove('is-on');
+        boletoLoader.classList.add('is-on');
+        boletoTimers.push(setTimeout(() => {
+          boletoLoader.classList.remove('is-on');
+          boletoEmitted.classList.add('is-on');
+        }, 1300));
+      });
+    }
+
+    // Condutor: digitação + autocomplete + seleção + resultado
+    const condTyped = tabsWidget.querySelector('[data-cond-typed]');
+    const condCaret = tabsWidget.querySelector('[data-cond-caret]');
+    const condDrop = tabsWidget.querySelector('[data-cond-drop]');
+    const condOpt = tabsWidget.querySelector('[data-cond-opt]');
+    const condResult = tabsWidget.querySelector('[data-cond-result]');
+    let condTimers = [];
+    let condToken = 0;
+    const CONDQ = 'José da Silva';
+    function condReset() {
+      condTimers.forEach(clearTimeout); condTimers = [];
+      condToken++;
+      if (condTyped) condTyped.textContent = '';
+      if (condCaret) condCaret.style.display = '';
+      if (condDrop) condDrop.classList.remove('is-on');
+      if (condOpt) condOpt.classList.remove('is-hover');
+      if (condResult) condResult.classList.remove('is-on');
+    }
+    function runCondutor() {
+      if (!condTyped) return;
+      condReset();
+      if (reduce) {
+        if (condCaret) condCaret.style.display = 'none';
+        condTyped.textContent = CONDQ;
+        if (condResult) condResult.classList.add('is-on');
+        return;
+      }
+      const my = condToken;
+      let i = 0;
+      (function type() {
+        if (my !== condToken) return;
+        if (i <= CONDQ.length) {
+          condTyped.textContent = CONDQ.slice(0, i);
+          i++;
+          condTimers.push(setTimeout(type, 85));
+        } else {
+          condTimers.push(setTimeout(() => {
+            if (my !== condToken) return;
+            condDrop.classList.add('is-on');
+            condTimers.push(setTimeout(() => {
+              if (my !== condToken) return;
+              condOpt.classList.add('is-hover');
+              condTimers.push(setTimeout(() => {
+                if (my !== condToken) return;
+                condDrop.classList.remove('is-on');
+                if (condCaret) condCaret.style.display = 'none';
+                condResult.classList.add('is-on');
+              }, 650));
+            }, 550));
+          }, 350));
+        }
+      })();
+    }
+
+    boletoReset();
+
+    // Auto-advance enquanto visível + dispara a animação do condutor
     const tabsIO = new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) startAuto(); else stopAuto(); });
+      entries.forEach((e) => {
+        if (e.isIntersecting) { startAuto(); if (active === 0) runCondutor(); }
+        else stopAuto();
+      });
     }, { threshold: 0.35 });
     tabsIO.observe(tabsWidget);
   }

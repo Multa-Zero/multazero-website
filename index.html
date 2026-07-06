@@ -83,7 +83,7 @@
               <p class="tw-desc">Identifique e indique o condutor correto de cada infração, com apoio da IA — direto na plataforma, sem planilha.</p>
             </div>
             <div class="tw-visual">
-              <div class="tw-mock">
+              <div class="tw-mock tw-cond">
                 <div class="tw-mock-head">
                   <span class="tw-chip tw-chip--ai">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.2L18 8.8l-4.4 1.6L12 15l-1.6-4.6L6 8.8l4.4-1.6L12 3z"/></svg>
@@ -91,15 +91,32 @@
                   </span>
                   <span class="tw-mock-ait">AIT129031</span>
                 </div>
-                <div class="tw-cond-row">
-                  <span class="tw-avatar">JS</span>
-                  <div class="tw-cond-info">
-                    <span class="tw-cond-name">José da Silva C. Mota</span>
-                    <span class="tw-cond-sub">CNH 12903901902 · Faixa A</span>
-                  </div>
-                  <span class="tw-check" data-anim="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                <div class="tw-cond-search">
+                  <svg class="tw-cond-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+                  <span class="tw-cond-typed" data-cond-typed></span><span class="tw-cond-caret" data-cond-caret></span>
                 </div>
-                <div class="tw-btn tw-btn--blue">Confirmar indicação</div>
+                <div class="tw-cond-stage">
+                  <div class="tw-cond-drop" data-cond-drop>
+                    <div class="tw-cond-opt" data-cond-opt>
+                      <span class="tw-avatar">JS</span>
+                      <div class="tw-cond-info">
+                        <span class="tw-cond-name">José da Silva C. Mota</span>
+                        <span class="tw-cond-sub">CNH 12903901902 · Faixa A</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tw-cond-result" data-cond-result>
+                    <div class="tw-cond-row">
+                      <span class="tw-avatar">JS</span>
+                      <div class="tw-cond-info">
+                        <span class="tw-cond-name">José da Silva C. Mota</span>
+                        <span class="tw-cond-sub">CNH 12903901902 · Faixa A</span>
+                      </div>
+                      <span class="tw-check tw-cond-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    </div>
+                    <div class="tw-btn tw-btn--blue">Confirmar indicação</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -123,8 +140,8 @@
                 </div>
                 <img class="tw-pixq-qr" src="/pix-qr.svg" alt="" width="120" height="120">
                 <div class="tw-pixq-copy">
-                  <span class="tw-pixq-code">00020126830014BR.GOV.BCB.PIX0136a629…</span>
-                  <span class="tw-pixq-copybtn">Copiar</span>
+                  <span class="tw-pixq-code">00020126580014BR.GOV.BCB.PIX0136a629cc5e-aaa0-4d77-9614-c0e1a2b3c4d5520400005303986540528167802BR5913MULTAZERO PAY6009SAO PAULO62070503***6304A1B2</span>
+                  <button type="button" class="tw-pixq-copybtn" data-pix-copy>Copiar</button>
                 </div>
                 <div class="tw-pixq-expire">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
@@ -157,20 +174,42 @@
                   </div>
                   <span class="tw-multa-status">Em andamento</span>
                 </div>
-                <div class="tw-multa-actions">
-                  <span class="tw-multa-action">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
-                    Ver boleto
-                  </span>
-                  <span class="tw-multa-action">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
-                    Entrar com recurso
-                  </span>
-                  <span class="tw-multa-action tw-multa-action--primary" data-anim="boleto">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M7 15h4"/></svg>
-                    Emitir boleto c/ desconto
-                    <span class="tw-40badge">40%</span>
-                  </span>
+                <div class="tw-multa-stage">
+                  <div class="tw-multa-actions" data-boleto-actions>
+                    <span class="tw-multa-action">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                      Ver boleto
+                    </span>
+                    <span class="tw-multa-action">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+                      Entrar com recurso
+                    </span>
+                    <button type="button" class="tw-multa-action tw-multa-action--primary" data-boleto-emit>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M7 15h4"/></svg>
+                      Emitir boleto c/ desconto
+                      <span class="tw-40badge">40%</span>
+                    </button>
+                  </div>
+                  <div class="tw-multa-loader" data-boleto-loader aria-hidden="true">
+                    <span class="tw-spinner"></span>
+                    <span>Gerando boleto com 40% de desconto…</span>
+                  </div>
+                  <div class="tw-multa-emitted" data-boleto-emitted aria-hidden="true">
+                    <div class="tw-emit-head">
+                      <span class="tw-emit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                      <span class="tw-emit-title">Boleto emitido · 40% de desconto</span>
+                    </div>
+                    <div class="tw-emit-vals">
+                      <span class="tw-strike">R$ 195,20</span>
+                      <span class="tw-boleto-total">R$ 117,12</span>
+                    </div>
+                    <div class="tw-barcode2" aria-hidden="true"></div>
+                    <div class="tw-emit-line">34191.79001 01043.510047 91020.150008 8 9123456789</div>
+                    <div class="tw-btn tw-btn--green">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                      Baixar boleto
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

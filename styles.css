@@ -3388,7 +3388,8 @@ body.modal-open {
 .tw-chip--pix { background: rgba(50, 175, 140, 0.14); color: #0f7a5c; }
 .tw-mock-ait { font-size: 12px; font-weight: 600; color: var(--neutral-5); font-variant-numeric: tabular-nums; }
 
-.tw-btn { text-align: center; font-size: 14px; font-weight: 600; padding: 11px; border-radius: 10px; color: #fff; }
+.tw-btn { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; font-weight: 600; padding: 11px; border-radius: 10px; color: #fff; }
+.tw-btn svg { width: 15px; height: 15px; flex: 0 0 auto; }
 .tw-btn--blue { background: var(--blue-ribbon-7); }
 .tw-btn--green { background: #179D71; }
 
@@ -3476,7 +3477,6 @@ body.modal-open {
 .tabs-panel.tw-run .illus-pipe-dragging { animation-play-state: running; }
 
 /* Anim triggers (JS adiciona .tw-run no painel ativo) */
-.tabs-panel.tw-run .tw-check { animation: tw-pop 0.45s 0.35s ease forwards; }
 .tabs-panel.tw-run .tw-pixq-check { animation: tw-pop 0.45s 0.2s ease forwards; }
 .tabs-panel.tw-run .tw-pixq-qr { animation: tw-fadein 0.5s 0.35s ease forwards; }
 .tabs-panel.tw-run .tw-multa-action--primary { animation: tw-actionpulse 0.7s 0.5s ease; }
@@ -3516,3 +3516,63 @@ body.modal-open {
   .tw-pipe-flyer { left: calc(66.66% + 2px); }
   .tabs-panel, .tabs-panels, .tabs-indicator { transition: none; }
 }
+
+/* --- Condutor: busca + autocomplete + resultado --- */
+.tw-cond { gap: 12px; }
+.tw-cond-search {
+  display: flex; align-items: center; gap: 8px;
+  padding: 11px 14px; border-radius: 999px;
+  background: #fff; border: 1px solid var(--border-default);
+  font-size: 13px; color: var(--neutral-8);
+  box-shadow: 0 1px 3px rgba(15,20,25,0.05);
+}
+.tw-cond-search-icon { width: 16px; height: 16px; color: var(--neutral-5); flex: 0 0 auto; }
+.tw-cond-typed { white-space: nowrap; overflow: hidden; }
+.tw-cond-typed:empty::before { content: "Buscar condutor por nome ou CNH…"; color: var(--neutral-5); }
+.tw-cond-caret { width: 1.5px; height: 15px; background: var(--blue-ribbon-6); flex: 0 0 auto; animation: tw-caret 1s steps(1) infinite; }
+@keyframes tw-caret { 50% { opacity: 0; } }
+.tw-cond-stage { position: relative; min-height: 116px; }
+.tw-cond-drop, .tw-cond-result {
+  position: absolute; inset: 0 0 auto 0;
+  opacity: 0; transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+.tw-cond-drop.is-on, .tw-cond-result.is-on { opacity: 1; transform: none; }
+.tw-cond-opt {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px; border-radius: 12px;
+  background: #fff; border: 1px solid var(--border-default);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.tw-cond-opt.is-hover { background: var(--blue-ribbon-1); border-color: var(--blue-ribbon-3); }
+.tw-cond-check { transform: scale(0); }
+.tw-cond-result.is-on .tw-cond-check { animation: tw-pop 0.4s 0.15s ease forwards; }
+
+/* --- Boleto: emitir -> loader -> emitido --- */
+button.tw-multa-action { font-family: inherit; cursor: pointer; width: 100%; text-align: left; }
+.tw-multa-stage { position: relative; min-height: 174px; }
+.tw-multa-actions, .tw-multa-loader, .tw-multa-emitted {
+  position: absolute; inset: 0 0 auto 0;
+  opacity: 0; transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+.tw-multa-actions.is-on, .tw-multa-loader.is-on, .tw-multa-emitted.is-on { opacity: 1; transform: none; pointer-events: auto; }
+.tw-multa-loader { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 28px 0; text-align: center; font-size: 13px; font-weight: 600; color: var(--neutral-7); }
+.tw-spinner { width: 28px; height: 28px; border-radius: 50%; border: 3px solid var(--blue-ribbon-2); border-top-color: var(--blue-ribbon-6); animation: tw-spin 0.8s linear infinite; }
+@keyframes tw-spin { to { transform: rotate(360deg); } }
+.tw-multa-emitted { display: flex; flex-direction: column; gap: 10px; }
+.tw-emit-head { display: flex; align-items: center; gap: 8px; }
+.tw-emit-check { width: 22px; height: 22px; border-radius: 50%; background: #16A34A; color: #fff; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+.tw-emit-check svg { width: 12px; height: 12px; }
+.tw-emit-title { font-size: 13px; font-weight: 700; color: var(--neutral-9); }
+.tw-emit-vals { display: flex; align-items: baseline; gap: 10px; }
+.tw-emit-vals .tw-strike { font-size: 13px; }
+.tw-emit-vals .tw-boleto-total { font-size: 20px; }
+.tw-barcode2 { height: 46px; border-radius: 6px; background: repeating-linear-gradient(90deg, var(--neutral-9) 0 2px, #fff 2px 3px, var(--neutral-9) 3px 5px, #fff 5px 6px, var(--neutral-9) 6px 7px, #fff 7px 10px); }
+.tw-emit-line { font-size: 10px; color: var(--neutral-5); font-family: ui-monospace, Menlo, monospace; text-align: center; letter-spacing: 0.02em; }
+
+/* --- PIX: botão copiar --- */
+.tw-pixq-copybtn { border: none; cursor: pointer; font-family: inherit; transition: background 0.2s ease; }
+.tw-pixq-copybtn.is-copied { background: #16A34A; }
