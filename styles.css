@@ -3436,14 +3436,55 @@ body.modal-open {
 .tw-pipe-card--paid { border-color: rgba(23,157,113,0.4); }
 .tw-pipe-flyer { position: absolute; top: 34px; left: 4px; width: 82px; background: #fff; border: 1px solid var(--blue-ribbon-4); border-radius: 8px; padding: 8px; box-shadow: 0 8px 18px rgba(4,71,211,0.18); opacity: 0; }
 
+/* PIX — estilo "PIX gerado com sucesso" (Figma) */
+.tw-pixq-head { display: flex; align-items: center; gap: 10px; }
+.tw-pixq-check { width: 26px; height: 26px; border-radius: 50%; background: #16A34A; color: #fff; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; transform: scale(0); }
+.tw-pixq-check svg { width: 14px; height: 14px; }
+.tw-pixq-title { font-size: 15px; font-weight: 700; color: var(--neutral-9); }
+.tw-pixq-amount { text-align: center; display: flex; flex-direction: column; gap: 2px; }
+.tw-pixq-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--neutral-5); }
+.tw-pixq-value { font-size: 26px; font-weight: 700; color: var(--neutral-9); letter-spacing: -0.02em; }
+.tw-pixq-sub { font-size: 12px; color: var(--text-secondary); }
+.tw-pixq-qr { position: relative; width: 116px; height: 116px; margin: 2px auto; border-radius: 10px; background-color: #fff; box-shadow: inset 0 0 0 1px var(--border-default); background-image: radial-gradient(var(--neutral-9) 34%, transparent 36%); background-size: 9px 9px; background-position: 5px 5px; }
+.tw-qr-f { position: absolute; width: 30px; height: 30px; border: 6px solid var(--neutral-9); border-radius: 4px; background: #fff; }
+.tw-qr-f::after { content: ""; position: absolute; inset: 5px; background: var(--neutral-9); border-radius: 1px; }
+.tw-qr-f--tl { top: 8px; left: 8px; }
+.tw-qr-f--tr { top: 8px; right: 8px; }
+.tw-qr-f--bl { bottom: 8px; left: 8px; }
+.tw-pixq-copy { display: flex; align-items: center; gap: 8px; padding: 6px 6px 6px 12px; border: 1px solid var(--border-default); border-radius: 10px; background: #fff; }
+.tw-pixq-code { flex: 1 1 auto; min-width: 0; font-size: 12px; color: var(--neutral-6); font-family: ui-monospace, "SF Mono", Menlo, monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tw-pixq-copybtn { flex: 0 0 auto; font-size: 12px; font-weight: 700; color: #fff; background: var(--blue-ribbon-6); padding: 6px 12px; border-radius: 8px; }
+.tw-pixq-expire { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: var(--blue-ribbon-7); background: var(--blue-ribbon-1); padding: 8px 12px; border-radius: 8px; }
+.tw-pixq-expire svg { width: 15px; height: 15px; flex: 0 0 auto; }
+
+/* Boleto — estilo "Detalhes da Multa" (Figma) */
+.tw-multa { gap: 12px; }
+.tw-multa-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.tw-multa-title { font-size: 15px; font-weight: 700; color: var(--neutral-9); }
+.tw-multa-ait { font-size: 12px; color: var(--text-secondary); margin-top: 1px; }
+.tw-chip--grave { background: rgba(245,158,11,0.16); color: #B45309; }
+.tw-multa-driver { display: flex; align-items: center; gap: 10px; padding: 10px; background: #fff; border: 1px solid var(--border-default); border-radius: 12px; }
+.tw-multa-status { margin-left: auto; flex: 0 0 auto; font-size: 11px; font-weight: 700; color: var(--blue-ribbon-8); background: var(--blue-ribbon-1); padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
+.tw-multa-actions { display: flex; flex-direction: column; gap: 8px; }
+.tw-multa-action { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--neutral-7); background: #fff; border: 1px solid var(--border-default); border-radius: 10px; padding: 10px 12px; }
+.tw-multa-action svg { width: 16px; height: 16px; flex: 0 0 auto; color: var(--neutral-5); }
+.tw-multa-action--primary { color: var(--blue-ribbon-7); border-color: var(--blue-ribbon-3); background: var(--blue-ribbon-1); }
+.tw-multa-action--primary svg { color: var(--blue-ribbon-7); }
+.tw-40badge { margin-left: auto; flex: 0 0 auto; font-size: 12px; font-weight: 800; color: var(--blue-ribbon-8); background: var(--blue-ribbon-2); padding: 3px 10px; border-radius: 999px; }
+
 /* Anim triggers (JS adiciona .tw-run no painel ativo) */
 .tabs-panel.tw-run .tw-check { animation: tw-pop 0.45s 0.35s ease forwards; }
-.tabs-panel.tw-run .tw-pix-status { animation: tw-fadeup 0.5s 0.85s ease forwards; }
-.tabs-panel.tw-run .tw-disc { animation: tw-fadein 0.5s 0.5s ease forwards; }
+.tabs-panel.tw-run .tw-pixq-check { animation: tw-pop 0.45s 0.2s ease forwards; }
+.tabs-panel.tw-run .tw-pixq-qr { animation: tw-fadein 0.5s 0.35s ease forwards; }
+.tabs-panel.tw-run .tw-multa-action--primary { animation: tw-actionpulse 0.7s 0.5s ease; }
 .tabs-panel.tw-run .tw-pipe-flyer { animation: tw-fly 2.6s 0.35s cubic-bezier(0.5,0,0.2,1) forwards; }
 @keyframes tw-pop { to { transform: scale(1); } }
-@keyframes tw-fadeup { to { opacity: 1; transform: none; } }
-@keyframes tw-fadein { to { opacity: 1; } }
+@keyframes tw-fadein { from { opacity: 0.35; } to { opacity: 1; } }
+@keyframes tw-actionpulse {
+  0% { transform: scale(0.99); box-shadow: 0 0 0 0 rgba(4,71,211,0); }
+  45% { transform: scale(1); box-shadow: 0 0 0 4px rgba(4,71,211,0.14); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(4,71,211,0); }
+}
 @keyframes tw-fly {
   0% { left: 4px; opacity: 0; }
   12% { opacity: 1; }
@@ -3467,9 +3508,8 @@ body.modal-open {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .tw-check { transform: scale(1); }
-  .tw-pix-status, .tw-disc, .tw-pipe-flyer { opacity: 1; }
-  .tw-pix-status { transform: none; }
+  .tw-check, .tw-pixq-check { transform: scale(1); }
+  .tw-pixq-qr, .tw-pipe-flyer { opacity: 1; }
   .tw-pipe-flyer { left: calc(66.66% + 2px); }
   .tabs-panel, .tabs-panels, .tabs-indicator { transition: none; }
 }

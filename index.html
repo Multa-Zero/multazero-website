@@ -111,19 +111,28 @@
               <p class="tw-desc">Quite infrações na hora, com PIX integrado — sem sair do sistema e sem intermediários.</p>
             </div>
             <div class="tw-visual">
-              <div class="tw-mock">
-                <div class="tw-mock-head">
-                  <span class="tw-chip tw-chip--pix">PIX</span>
-                  <span class="tw-mock-ait">AIT490122</span>
+              <div class="tw-mock tw-pixq">
+                <div class="tw-pixq-head">
+                  <span class="tw-pixq-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="tw-pixq-title">PIX gerado com sucesso</span>
                 </div>
-                <div class="tw-pix-amount">
-                  <span class="tw-pix-label">Valor da multa</span>
-                  <span class="tw-pix-value">R$ 195,20</span>
+                <div class="tw-pixq-amount">
+                  <span class="tw-pixq-label">Valor a pagar</span>
+                  <span class="tw-pixq-value">R$ 281,67</span>
+                  <span class="tw-pixq-sub">ABC-1234 · Parcela 2/3 do IPVA 2026</span>
                 </div>
-                <div class="tw-pix-qr" data-anim="pix" aria-hidden="true"></div>
-                <div class="tw-pix-status" data-anim="pixstatus">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  Pagamento confirmado via PIX
+                <div class="tw-pixq-qr" aria-hidden="true">
+                  <span class="tw-qr-f tw-qr-f--tl"></span>
+                  <span class="tw-qr-f tw-qr-f--tr"></span>
+                  <span class="tw-qr-f tw-qr-f--bl"></span>
+                </div>
+                <div class="tw-pixq-copy">
+                  <span class="tw-pixq-code">00020126830014BR.GOV.BCB.PIX0136a629…</span>
+                  <span class="tw-pixq-copybtn">Copiar</span>
+                </div>
+                <div class="tw-pixq-expire">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  Este código expira em 30 minutos
                 </div>
               </div>
             </div>
@@ -136,18 +145,37 @@
               <p class="tw-desc">Emita boletos com o desconto legal aplicado automaticamente — 40% à vista ou 20%, sem cálculo manual.</p>
             </div>
             <div class="tw-visual">
-              <div class="tw-mock">
-                <div class="tw-mock-head">
-                  <span class="tw-chip">Boleto</span>
-                  <span class="tw-mock-ait">AIT651098</span>
+              <div class="tw-mock tw-multa">
+                <div class="tw-multa-head">
+                  <div>
+                    <div class="tw-multa-title">Detalhes da Multa</div>
+                    <div class="tw-multa-ait">Auto da Infração AF12890319</div>
+                  </div>
+                  <span class="tw-chip tw-chip--grave">Grave</span>
                 </div>
-                <div class="tw-boleto-rows">
-                  <div class="tw-boleto-row"><span>Valor original</span><span class="tw-strike">R$ 195,20</span></div>
-                  <div class="tw-boleto-row"><span>Desconto (40%)</span><span class="tw-disc" data-anim="disc">−R$ 78,08</span></div>
-                  <div class="tw-boleto-row tw-boleto-row--total"><span>Com desconto</span><span class="tw-boleto-total">R$ 117,12</span></div>
+                <div class="tw-multa-driver">
+                  <span class="tw-avatar">JS</span>
+                  <div class="tw-cond-info">
+                    <span class="tw-cond-name">José da Silva C. Mota</span>
+                    <span class="tw-cond-sub">Scania 380i · 2024/2025</span>
+                  </div>
+                  <span class="tw-multa-status">Em andamento</span>
                 </div>
-                <div class="tw-barcode" aria-hidden="true"></div>
-                <div class="tw-btn tw-btn--green">Baixar boleto (40%)</div>
+                <div class="tw-multa-actions">
+                  <span class="tw-multa-action">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    Ver boleto
+                  </span>
+                  <span class="tw-multa-action">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+                    Entrar com recurso
+                  </span>
+                  <span class="tw-multa-action tw-multa-action--primary" data-anim="boleto">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M7 15h4"/></svg>
+                    Emitir boleto c/ desconto
+                    <span class="tw-40badge">40%</span>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
