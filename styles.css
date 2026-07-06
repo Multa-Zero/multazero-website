@@ -3346,15 +3346,18 @@ body.modal-open {
 
 /* ===== Widget de abas (dobra "O que é o multazero") ===== */
 .tabs-widget {
-  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+  margin: -190px auto 0;
   max-width: 980px;
   background: #fff;
   border: 1px solid var(--border-default);
   border-radius: 24px;
-  box-shadow: 0 10px 40px rgba(15, 20, 25, 0.06);
+  box-shadow: 0 30px 80px rgba(15, 20, 25, 0.22), 0 4px 16px rgba(15, 20, 25, 0.08);
   padding: 20px;
 }
 @media (min-width: 768px) { .tabs-widget { padding: 28px; } }
+@media (max-width: 768px) { .tabs-widget { margin-top: -90px; } }
 
 .tabs-panels {
   position: relative;
