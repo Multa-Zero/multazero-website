@@ -272,7 +272,7 @@ body {
 
 @media (min-width: 1024px) {
     .section-padding {
-        padding: 120px 0;
+        padding: 88px 0;
     }
 }
 
@@ -2162,8 +2162,8 @@ body {
 /* Oferta (dark) */
 @media (min-width: 1024px) {
     #oferta {
-        padding-top: 144px;
-        padding-bottom: 144px;
+        padding-top: 64px;
+        padding-bottom: 64px;
     }
 }
 
@@ -2377,7 +2377,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  padding: 48px 0;
+  padding: 24px 0 0;
 }
 
 .contact-cta-btn {
