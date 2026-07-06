@@ -566,6 +566,65 @@ document.addEventListener('DOMContentLoaded', () => {
       }, '-=0.1');
   }
 
+  // 7.6 Widget de abas (dobra "O que é o multazero")
+  const tabsWidget = document.getElementById('sistemaTabs');
+  if (tabsWidget) {
+    const tabs = Array.from(tabsWidget.querySelectorAll('.tabs-tab'));
+    const panels = Array.from(tabsWidget.querySelectorAll('.tabs-panel'));
+    const panelsWrap = tabsWidget.querySelector('[data-tabs-panels]');
+    const indicator = tabsWidget.querySelector('[data-tabs-indicator]');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let active = 0;
+    let autoTimer = null;
+    let userTook = false;
+
+    function setHeight() {
+      panelsWrap.style.height = panels[active].offsetHeight + 'px';
+    }
+    function moveIndicator() {
+      const t = tabs[active];
+      indicator.style.transform = 'translateX(' + t.offsetLeft + 'px)';
+      indicator.style.width = t.offsetWidth + 'px';
+    }
+    function activate(i) {
+      active = i;
+      tabs.forEach((t, idx) => {
+        const on = idx === i;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      panels.forEach((p, idx) => {
+        const on = idx === i;
+        p.classList.toggle('is-active', on);
+        p.classList.remove('tw-run');
+        if (on) { void p.offsetWidth; p.classList.add('tw-run'); }
+      });
+      moveIndicator();
+      requestAnimationFrame(setHeight);
+    }
+    function stopAuto() { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
+    function startAuto() {
+      if (reduce || userTook || autoTimer) return;
+      autoTimer = setInterval(() => activate((active + 1) % tabs.length), 5000);
+    }
+
+    tabs.forEach((t, i) => t.addEventListener('click', () => { userTook = true; stopAuto(); activate(i); }));
+
+    // Mede posições/altura (funciona mesmo com reveal-up em opacity 0)
+    requestAnimationFrame(() => {
+      moveIndicator();
+      setHeight();
+      panels[0].classList.add('tw-run');
+    });
+    window.addEventListener('resize', () => { moveIndicator(); setHeight(); });
+
+    // Auto-advance enquanto visível (para na primeira interação do usuário)
+    const tabsIO = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) startAuto(); else stopAuto(); });
+    }, { threshold: 0.35 });
+    tabsIO.observe(tabsWidget);
+  }
+
   // 8. Modals Logic
   const termsLink = document.getElementById('terms-link');
   const privacyLink = document.getElementById('privacy-link');
