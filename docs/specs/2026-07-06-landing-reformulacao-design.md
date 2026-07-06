@@ -2,7 +2,7 @@
 
 **Data:** 2026-07-06
 **Autor:** Renato (brief) + Claude (design)
-**Arquivos afetados:** `index.html`, `styles.css`, `main.js`
+**Arquivos afetados:** `index.html`, `styles.css`, `main.js`, `public/hero-truck-sunset.jpg` (novo asset)
 
 ---
 
@@ -30,8 +30,8 @@ Reposicionar a página de "venda de copy/dores" para **demonstração de funcion
 ## Decisões tomadas (brainstorming)
 
 - **Motions das novas dobras:** construídos em código (CSS/JS) no mesmo estilo dos existentes — não dependem de exports de Figma.
-- **Foto do hero:** o cliente enviará a foto nova (fase 2).
-- **Escopo desta rodada (fase 1):** copy + estrutura. Motions animados e foto do hero ficam para a **fase 2**.
+- **Foto do hero:** **asset já recebido** (`public/hero-truck-sunset.jpg`) → troca entra na **fase 1**. Imagem original enviada pelo cliente (`public/7504e8a6-...png`, caminhão com sol ao fundo) foi cortada para remover a marca d'água "HIGGSFIELD AI" do canto inferior direito, convertida para JPG e otimizada (1376×672, ~133KB). ⚠️ Caveat: a marca d'água é do gerador (Higgsfield free tier) — cabe ao cliente garantir a licença de uso comercial da imagem.
+- **Escopo desta rodada (fase 1):** copy + estrutura **+ troca da foto do hero**. Apenas os **motions animados** ficam para a **fase 2**.
 - **Seção `#diferenciais` (Conheça o MultaZero):** **mantida**. A nova dobra "Recursos com IA" entra como resumo benefício-first; `#diferenciais` segue como o "como funciona" detalhado.
 
 ## Não-objetivos (fora desta rodada)
@@ -71,11 +71,11 @@ Nenhum link de navegação/rodapé precisa mudar (mantemos `#diferenciais`, `#re
 
 Todas as novas seções reutilizam classes existentes: `section-padding`, `card-neutral`, `container`, `heading-2`, `heading-5`, `body-M`/`body-S`, `text-secondary`, `reveal-up`, `tag`/eyebrow, `btn btn-primary btn-M`. CTAs "Falar com representante" apontam para `#oferta` (abre o modal de contato existente), seguindo o padrão atual.
 
-### Hero — subheadline
+### Hero — subheadline + foto
 Trocar o texto de `.hero-subtitle`:
 > Solução inteligente para captura, gestão e pagamento de infrações em tempo real, com inteligência artificial.
 
-(H1, CTAs e foto **inalterados** nesta fase.)
+Trocar a foto de fundo (`.hero-bg-image`, `src="/truckoptmizedfinalv3.jpg"`) por `/hero-truck-sunset.jpg`. (H1 e CTAs **inalterados** nesta fase.)
 
 ### Dobra A — "O que é o multazero" (substitui `#problema`)
 Remover o bloco inteiro `<section ... id="problema">`. No lugar, nova seção com:
@@ -102,7 +102,10 @@ Motions atuais dos cards **permanecem**. Trocar apenas título + descrição:
 
 Adicionar, ao fim da seção, um CTA centralizado: `Falar com representante` → `#oferta`.
 
-*(Opcional a confirmar na revisão: ajustar o sub-título do cabeçalho do bento que hoje diz "Pergunte, monitore e analise…" para refletir os novos títulos.)*
+**Sub-título do cabeçalho do bento** (decisão: alterar) — trocar o `body-M` que hoje diz "Pergunte, monitore e analise tudo que sua frota precisa numa experiência só." por texto alinhado aos 3 novos cards:
+> Inteligência artificial, prazos em dia e acompanhamento em tempo real — tudo numa experiência só.
+
+(Eyebrow "Uma plataforma, tudo resolvido" e H2 "Gestão de multas com IA do começo ao fim" permanecem.)
 
 ### Dobra B — "Recursos com IA" (nova, após o Bento)
 Eyebrow/tag: **Recursos**. Título e corpo:
@@ -135,21 +138,16 @@ Elementos de apoio (usar só o que já existe/for trivial): selo "Parceiro crede
 - **"DPAVAT/SPAVAT" → "DPVAT/SPVAT"** (nome correto do seguro obrigatório)
 - "nossos sistema" → "nosso sistema"
 
-## ⚠️ Pontos para o cliente revisar
+## Pontos revisados com o cliente (resolvidos)
 
-1. **Números divergentes entre seções** (mantidos exatamente como no brief):
-   - Dobra B (Recursos): "40% a 80%"
-   - Card de Resultados (`#resultados`): "40%"
-   - Dobra C (Institucional): "20% a 140%"
-   Se quiser padronizar, ajustar antes da implementação.
-2. **DPVAT/SPVAT** — confirmar a grafia correta.
-3. **Sub-título do cabeçalho do Bento** — ajustar ou manter?
+1. **Números divergentes entre seções** → **manter exatamente como no brief** (40–80% na Dobra B, 40% em Resultados, 20–140% na Dobra C). ✅
+2. **DPVAT/SPVAT** → grafia correta confirmada. ✅
+3. **Sub-título do cabeçalho do Bento** → **alterar** (novo texto definido na seção do Bento). ✅
 
 ---
 
 ## Estratégia de fase 2 (backlog, não implementar agora)
 
-- Trocar foto do hero pela imagem enviada pelo cliente (sol/luz/cores vibrantes).
 - Motion Dobra A: indicação de condutor, PIX, boleto 40/20, pipeline caindo.
 - Motion Dobra B: recurso sendo gerado + medidor de % da IA animado.
 - Reavaliar fusão da Dobra B com `#diferenciais`, se fizer sentido.
