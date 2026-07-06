@@ -3562,7 +3562,7 @@ button.tw-multa-action { font-family: inherit; cursor: pointer; width: 100%; tex
 .tw-multa-loader { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 28px 0; text-align: center; font-size: 13px; font-weight: 600; color: var(--neutral-7); }
 .tw-spinner { width: 28px; height: 28px; border-radius: 50%; border: 3px solid var(--blue-ribbon-2); border-top-color: var(--blue-ribbon-6); animation: tw-spin 0.8s linear infinite; }
 @keyframes tw-spin { to { transform: rotate(360deg); } }
-.tw-multa-emitted { display: flex; flex-direction: column; gap: 10px; }
+.tw-multa-emitted { display: flex; flex-direction: column; gap: 8px; }
 .tw-emit-head { display: flex; align-items: center; gap: 8px; }
 .tw-emit-check { width: 22px; height: 22px; border-radius: 50%; background: #16A34A; color: #fff; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
 .tw-emit-check svg { width: 12px; height: 12px; }
@@ -3570,8 +3570,16 @@ button.tw-multa-action { font-family: inherit; cursor: pointer; width: 100%; tex
 .tw-emit-vals { display: flex; align-items: baseline; gap: 10px; }
 .tw-emit-vals .tw-strike { font-size: 13px; }
 .tw-emit-vals .tw-boleto-total { font-size: 20px; }
-.tw-barcode2 { height: 46px; border-radius: 6px; background: repeating-linear-gradient(90deg, var(--neutral-9) 0 2px, #fff 2px 3px, var(--neutral-9) 3px 5px, #fff 5px 6px, var(--neutral-9) 6px 7px, #fff 7px 10px); }
-.tw-emit-line { font-size: 10px; color: var(--neutral-5); font-family: ui-monospace, Menlo, monospace; text-align: center; letter-spacing: 0.02em; }
+.tw-barcode2 { height: 42px; border-radius: 6px; background: repeating-linear-gradient(90deg, var(--neutral-9) 0 2px, #fff 2px 3px, var(--neutral-9) 3px 5px, #fff 5px 6px, var(--neutral-9) 6px 7px, #fff 7px 10px); }
+.tw-emit-line { font-size: 10px; color: var(--neutral-5); font-family: ui-monospace, Menlo, monospace; text-align: center; letter-spacing: 0.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Boleto: palco mais alto no mobile (cabe o boleto emitido) + condutor menos apertado */
+@media (max-width: 640px) {
+  .tw-multa-stage { min-height: 208px; }
+}
+.tw-multa-driver { flex-wrap: wrap; row-gap: 6px; }
+.tw-multa-driver .tw-cond-info { flex: 1 1 120px; }
+.tw-multa-driver .tw-multa-status { margin-left: auto; }
 
 /* --- PIX: botão copiar --- */
 .tw-pixq-copybtn { border: none; cursor: pointer; font-family: inherit; transition: background 0.2s ease; }
