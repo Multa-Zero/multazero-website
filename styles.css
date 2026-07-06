@@ -945,6 +945,8 @@ body {
   border: 1px solid var(--border-default);
   border-radius: var(--radius-md);
   padding: var(--space-24);
+  display: flex;
+  flex-direction: column;
 }
 .sistema-feature-icon {
   width: 44px;
@@ -969,6 +971,112 @@ body {
   line-height: 1.5;
   color: var(--text-secondary);
   margin: 0;
+}
+
+/* Dobra A — mini-demos animados dos cards */
+.sistema-feature-demo {
+  margin-top: auto;
+  padding-top: var(--space-16);
+  border-top: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 34px;
+  position: relative;
+  overflow: hidden;
+}
+.sistema-feature-demo > * { position: relative; }
+
+/* Condutor */
+.demo-avatar {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--blue-ribbon-1); color: var(--blue-ribbon-8);
+  font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex: 0 0 auto;
+}
+.demo-cond-name { font-size: 12px; font-weight: 600; color: var(--neutral-8); white-space: nowrap; }
+.demo-check {
+  margin-left: auto;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: #179D71; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex: 0 0 auto;
+  transform: scale(0);
+  animation: demo-check-pop 3.4s ease-in-out infinite;
+}
+.demo-check svg { width: 11px; height: 11px; }
+@keyframes demo-check-pop {
+  0%, 22% { transform: scale(0); }
+  36%, 82% { transform: scale(1); }
+  96%, 100% { transform: scale(0); }
+}
+
+/* PIX */
+.demo-pix-val { font-size: 13px; font-weight: 700; color: var(--neutral-9); }
+.demo-pix-badge {
+  margin-left: auto;
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 10px; font-weight: 700;
+  color: #179D71; background: rgba(23, 157, 113, 0.12);
+  padding: 3px 8px; border-radius: 999px;
+  animation: demo-pix-pulse 2.6s ease-in-out infinite;
+}
+.demo-pix-badge svg { width: 10px; height: 10px; }
+@keyframes demo-pix-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(0.94); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Boleto */
+.demo-disc {
+  font-size: 12px; font-weight: 800;
+  padding: 4px 10px; border-radius: 8px;
+}
+.demo-disc--40 {
+  color: var(--blue-ribbon-8); background: var(--blue-ribbon-1);
+  animation: demo-disc-a 3s ease-in-out infinite;
+}
+.demo-disc--20 {
+  color: var(--neutral-7); background: var(--neutral-2);
+  animation: demo-disc-b 3s ease-in-out infinite;
+}
+@keyframes demo-disc-a {
+  0%, 42% { transform: scale(1); opacity: 1; }
+  58%, 100% { transform: scale(0.92); opacity: 0.45; }
+}
+@keyframes demo-disc-b {
+  0%, 42% { transform: scale(0.92); opacity: 0.45; }
+  58%, 100% { transform: scale(1); opacity: 1; }
+}
+
+/* Pipeline */
+.demo-pipe { gap: 6px; }
+.demo-pipe-col {
+  flex: 1; height: 22px; border-radius: 6px;
+  background: var(--neutral-2);
+  border: 1px dashed var(--neutral-3);
+}
+.demo-pipe-chip {
+  position: absolute; top: 50%; left: 0;
+  width: 26px; height: 15px; border-radius: 4px;
+  background: var(--blue-ribbon-6);
+  box-shadow: 0 2px 6px rgba(4, 71, 211, 0.35);
+  transform: translateY(-50%);
+  animation: demo-pipe-move 3.6s ease-in-out infinite;
+}
+@keyframes demo-pipe-move {
+  0%, 12% { left: 2px; }
+  44%, 56% { left: calc(50% - 13px); }
+  88%, 100% { left: calc(100% - 28px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-check, .demo-pix-badge, .demo-disc--40, .demo-disc--20, .demo-pipe-chip {
+    animation: none;
+  }
+  .demo-check { transform: scale(1); }
+  .demo-pipe-chip { left: calc(50% - 13px); }
 }
 
 /* Solução */
