@@ -2162,8 +2162,8 @@ body {
 /* Oferta (dark) */
 @media (min-width: 1024px) {
     #oferta {
-        padding-top: 80px;
-        padding-bottom: 80px;
+        padding-top: 120px;
+        padding-bottom: 120px;
     }
 }
 
