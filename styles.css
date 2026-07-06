@@ -3339,13 +3339,12 @@ body.modal-open {
 .tabs-panels {
   position: relative;
   overflow: hidden;
-  transition: height 0.42s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .tabs-panel {
   position: absolute;
-  top: 0; left: 0; width: 100%;
+  top: 50%; left: 0; width: 100%;
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(calc(-50% + 10px));
   transition: opacity 0.4s ease, transform 0.4s ease;
   pointer-events: none;
   display: grid;
@@ -3357,9 +3356,8 @@ body.modal-open {
   .tabs-panel { grid-template-columns: 0.95fr 1.05fr; gap: 40px; }
 }
 .tabs-panel.is-active {
-  position: relative;
   opacity: 1;
-  transform: none;
+  transform: translateY(-50%);
   pointer-events: auto;
   z-index: 1;
 }
@@ -3445,7 +3443,7 @@ body.modal-open {
 .tw-pixq-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--neutral-5); }
 .tw-pixq-value { font-size: 26px; font-weight: 700; color: var(--neutral-9); letter-spacing: -0.02em; }
 .tw-pixq-sub { font-size: 12px; color: var(--text-secondary); }
-.tw-pixq-qr { position: relative; width: 116px; height: 116px; margin: 2px auto; border-radius: 10px; background-color: #fff; box-shadow: inset 0 0 0 1px var(--border-default); background-image: radial-gradient(var(--neutral-9) 34%, transparent 36%); background-size: 9px 9px; background-position: 5px 5px; }
+.tw-pixq-qr { display: block; width: 128px; height: 128px; margin: 2px auto; padding: 9px; box-sizing: border-box; border-radius: 10px; background: #fff; box-shadow: inset 0 0 0 1px var(--border-default); }
 .tw-qr-f { position: absolute; width: 30px; height: 30px; border: 6px solid var(--neutral-9); border-radius: 4px; background: #fff; }
 .tw-qr-f::after { content: ""; position: absolute; inset: 5px; background: var(--neutral-9); border-radius: 1px; }
 .tw-qr-f--tl { top: 8px; left: 8px; }
@@ -3471,6 +3469,11 @@ body.modal-open {
 .tw-multa-action--primary { color: var(--blue-ribbon-7); border-color: var(--blue-ribbon-3); background: var(--blue-ribbon-1); }
 .tw-multa-action--primary svg { color: var(--blue-ribbon-7); }
 .tw-40badge { margin-left: auto; flex: 0 0 auto; font-size: 12px; font-weight: 800; color: var(--blue-ribbon-8); background: var(--blue-ribbon-2); padding: 3px 10px; border-radius: 999px; }
+
+/* Pipeline — adaptação do illus-pipe (Gestão de Multas) */
+.tw-mock--pipe { align-items: center; padding: 24px 20px; }
+.tw-mock--pipe .illus-pipe-wrap { width: 100%; max-width: 360px; margin: 0 auto; }
+.tabs-panel.tw-run .illus-pipe-dragging { animation-play-state: running; }
 
 /* Anim triggers (JS adiciona .tw-run no painel ativo) */
 .tabs-panel.tw-run .tw-check { animation: tw-pop 0.45s 0.35s ease forwards; }

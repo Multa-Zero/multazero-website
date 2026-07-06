@@ -578,8 +578,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let autoTimer = null;
     let userTook = false;
 
-    function setHeight() {
-      panelsWrap.style.height = panels[active].offsetHeight + 'px';
+    function computeHeight() {
+      // Altura fixa = maior painel, pra não pular ao trocar de aba
+      let max = 0;
+      panels.forEach((p) => { if (p.scrollHeight > max) max = p.scrollHeight; });
+      panelsWrap.style.height = max + 'px';
     }
     function moveIndicator() {
       const t = tabs[active];
@@ -600,7 +603,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (on) { void p.offsetWidth; p.classList.add('tw-run'); }
       });
       moveIndicator();
-      requestAnimationFrame(setHeight);
     }
     function stopAuto() { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
     function startAuto() {
@@ -612,11 +614,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mede posições/altura (funciona mesmo com reveal-up em opacity 0)
     requestAnimationFrame(() => {
+      computeHeight();
       moveIndicator();
-      setHeight();
       panels[0].classList.add('tw-run');
     });
-    window.addEventListener('resize', () => { moveIndicator(); setHeight(); });
+    window.addEventListener('resize', () => { computeHeight(); moveIndicator(); });
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(() => { computeHeight(); moveIndicator(); }); }
 
     // Auto-advance enquanto visível (para na primeira interação do usuário)
     const tabsIO = new IntersectionObserver((entries) => {
