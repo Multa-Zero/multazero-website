@@ -534,6 +534,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // 7.5 Recurso com IA — "recurso sendo gerado" + anel de % (Dobra B)
+  const recursoCard = document.querySelector('.recurso-card');
+  if (recursoCard) {
+    const lines = recursoCard.querySelectorAll('.recurso-card-lines span');
+    const gaugeRing = recursoCard.querySelector('.recurso-gauge-ring');
+    const gaugeNum = gaugeRing?.querySelector('span');
+    const meta = recursoCard.querySelector('.recurso-card-meta');
+    const targetPct = 87;
+
+    // Estado inicial (antes de entrar na tela)
+    gsap.set(lines, { scaleX: 0, transformOrigin: 'left center' });
+    if (gaugeRing) gaugeRing.style.setProperty('--gauge-pct', 0);
+    if (gaugeNum) gaugeNum.textContent = '0%';
+    if (meta) meta.textContent = 'Analisando com IA…';
+
+    const pct = { v: 0 };
+    gsap.timeline({
+      scrollTrigger: { trigger: recursoCard, start: 'top 78%', once: true }
+    })
+      .to(lines, { scaleX: 1, duration: 0.5, stagger: 0.18, ease: 'power2.out' })
+      .add(() => { if (meta) meta.textContent = 'Gerado pela IA · 3 páginas'; })
+      .to(pct, {
+        v: targetPct,
+        duration: 1.4,
+        ease: 'power2.out',
+        onUpdate() {
+          if (gaugeRing) gaugeRing.style.setProperty('--gauge-pct', pct.v);
+          if (gaugeNum) gaugeNum.textContent = Math.round(pct.v) + '%';
+        }
+      }, '-=0.1');
+  }
+
   // 8. Modals Logic
   const termsLink = document.getElementById('terms-link');
   const privacyLink = document.getElementById('privacy-link');

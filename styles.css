@@ -3152,11 +3152,17 @@ body.modal-open {
   padding-top: var(--space-24);
   border-top: 1px solid var(--border-default);
 }
+@property --gauge-pct {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 87;
+}
 .recurso-gauge-ring {
+  --gauge-pct: 87;
   width: 84px; height: 84px; border-radius: 50%;
   flex: 0 0 auto;
   display: flex; align-items: center; justify-content: center;
-  background: conic-gradient(var(--blue-ribbon-6) 0turn 0.87turn, var(--neutral-2) 0.87turn 1turn);
+  background: conic-gradient(var(--blue-ribbon-6) calc(var(--gauge-pct) * 1%), var(--neutral-2) 0);
 }
 .recurso-gauge-ring span {
   width: 62px; height: 62px; border-radius: 50%;
