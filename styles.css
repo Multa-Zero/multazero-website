@@ -452,6 +452,12 @@ body {
 .navbar.transparent .nav-link,
 .navbar.transparent .nav-logo {
     color: var(--surface-elevated);
+    /* legibilidade sobre o pôr do sol claro do hero */
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+
+.navbar.transparent .mobile-menu-btn {
+    filter: drop-shadow(0 1px 6px rgba(0, 0, 0, 0.45));
 }
 
 .navbar.solid {
@@ -797,14 +803,11 @@ body {
 
 
 .hero-text {
-    flex: 0 0 100%;
+    /* largura fixa do tablet pra cima: não muda entre tablet e web
+       (antes virava flex 50% em >=1024px e a largura oscilava) */
+    flex: 0 0 auto;
+    width: 100%;
     max-width: 600px;
-}
-
-@media (min-width: 1024px) {
-    .hero-text {
-        flex: 0 0 50%;
-    }
 }
 
 .hero-visual {
@@ -3373,7 +3376,7 @@ body.modal-open {
   padding: 20px;
 }
 @media (min-width: 768px) { .tabs-widget { padding: 28px; } }
-@media (max-width: 768px) { .tabs-widget { margin-top: -56px; } }
+@media (max-width: 768px) { .tabs-widget { margin-top: -120px; } }
 
 .tabs-panels {
   position: relative;
