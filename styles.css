@@ -927,8 +927,8 @@ body {
 /* Dobra A — O que é o multazero */
 .sistema-intro {
   max-width: 760px;
-  /* mais respiro acima (não colar no widget) — bloco solto e centrado */
-  margin: 96px auto 0;
+  /* bloco isolado e bem espaçado entre o widget (acima) e os cards (abaixo) */
+  margin: 120px auto 0;
   text-align: center;
 }
 .sistema-lead {
