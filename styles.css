@@ -927,8 +927,9 @@ body {
 /* Dobra A — O que é o multazero */
 .sistema-intro {
   max-width: 760px;
-  /* bloco isolado e bem espaçado entre o widget (acima) e os cards (abaixo) */
-  margin: 120px auto 0;
+  /* mais respiro no topo: a sombra do widget acima "ocupa" espaço e dá a
+     ilusão de menos distância */
+  margin: 152px auto 0;
   text-align: center;
 }
 .sistema-lead {
@@ -3367,7 +3368,7 @@ body.modal-open {
 /* ===== Widget de abas (dobra "O que é o multazero") ===== */
 /* #sistema sem padding-top: o overlap do widget = |margin-top| (consistente).
    padding-bottom menor pra reduzir o vão até a próxima dobra (bloco A centrado) */
-#sistema { padding-top: 0; padding-bottom: 48px; }
+#sistema { padding-top: 0; padding-bottom: 36px; }
 
 .tabs-widget {
   position: relative;
