@@ -927,7 +927,8 @@ body {
 /* Dobra A — O que é o multazero */
 .sistema-intro {
   max-width: 760px;
-  margin: 48px auto 0;
+  /* mais respiro acima (não colar no widget) — bloco solto e centrado */
+  margin: 96px auto 0;
   text-align: center;
 }
 .sistema-lead {
@@ -3364,8 +3365,9 @@ body.modal-open {
 .sobre-cta { margin-top: var(--space-32); }
 
 /* ===== Widget de abas (dobra "O que é o multazero") ===== */
-/* #sistema sem padding-top: o overlap do widget = |margin-top| (consistente) */
-#sistema { padding-top: 0; }
+/* #sistema sem padding-top: o overlap do widget = |margin-top| (consistente).
+   padding-bottom menor pra reduzir o vão até a próxima dobra (bloco A centrado) */
+#sistema { padding-top: 0; padding-bottom: 48px; }
 
 .tabs-widget {
   position: relative;
