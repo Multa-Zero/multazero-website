@@ -3361,6 +3361,12 @@ body.modal-open {
 }
 @media (min-width: 768px) { .tabs-widget { padding: 28px; } }
 @media (max-width: 768px) { .tabs-widget { margin-top: -56px; } }
+/* Tablet/mobile: painéis alinhados ao topo com respiro (título não fica colado) */
+@media (max-width: 859px) {
+  .tabs-widget { padding-top: 34px; }
+  .tabs-panel { top: 0; transform: translateY(14px); }
+  .tabs-panel.is-active { transform: translateY(0); }
+}
 
 .tabs-panels {
   position: relative;
