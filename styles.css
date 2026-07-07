@@ -662,7 +662,10 @@ body {
 .hero {
     position: relative;
     z-index: 0;
-    min-height: 76vh;
+    /* altura fixa (não vh): o espaço entre os botões e o widget fica
+       consistente em qualquer viewport — vh esticava o gap em telas altas
+       (tablet) e cobria os botões em telas baixas */
+    min-height: 640px;
     display: flex;
     align-items: flex-start;
     padding-top: 140px;
@@ -678,7 +681,9 @@ body {
 
 @media (max-width: 768px) {
     .hero {
-        min-height: 80vh;
+        /* imagem menor no mobile (altura fixa): widget e seção branca sobem
+           e o gap fica consistente em qualquer altura de tela */
+        min-height: 560px;
         padding-top: 100px;
         padding-bottom: 56px;
     }
@@ -3365,9 +3370,9 @@ body.modal-open {
 .tabs-widget {
   position: relative;
   z-index: 5;
-  /* mesma largura do grid do hero (preenche o .container) e sobe mais pra
-     dentro da imagem, ficando na região do caminhão */
-  margin: -200px auto 0;
+  /* mesma largura do grid do hero (preenche o .container); overlap menor
+     pra sobrar espaço entre os botões e o widget e não cobri-los */
+  margin: -80px auto 0;
   max-width: none;
   background: #fff;
   border: 1px solid var(--border-default);
@@ -3376,7 +3381,7 @@ body.modal-open {
   padding: 20px;
 }
 @media (min-width: 768px) { .tabs-widget { padding: 28px; } }
-@media (max-width: 768px) { .tabs-widget { margin-top: -120px; } }
+@media (max-width: 768px) { .tabs-widget { margin-top: -70px; } }
 
 .tabs-panels {
   position: relative;
