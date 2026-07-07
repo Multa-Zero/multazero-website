@@ -3239,10 +3239,19 @@ body.modal-open {
   gap: var(--space-48);
   align-items: center;
 }
+.recursos-cta { margin-top: 0; }
 @media (min-width: 1024px) {
-  .recursos-wrap { grid-template-columns: 1.1fr 0.9fr; gap: 64px; }
+  .recursos-wrap {
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-rows: auto auto;
+    column-gap: 64px;
+    row-gap: 0;
+    align-items: start;
+  }
+  .recursos-text { grid-column: 1; grid-row: 1; }
+  .recursos-visual { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+  .recursos-cta { grid-column: 1; grid-row: 2; margin-top: var(--space-32); }
 }
-.recursos-cta { margin-top: var(--space-32); }
 
 .recurso-card {
   background: var(--surface-elevated);
@@ -3361,12 +3370,6 @@ body.modal-open {
 }
 @media (min-width: 768px) { .tabs-widget { padding: 28px; } }
 @media (max-width: 768px) { .tabs-widget { margin-top: -56px; } }
-/* Tablet/mobile: painéis alinhados ao topo com respiro (título não fica colado) */
-@media (max-width: 859px) {
-  .tabs-widget { padding-top: 34px; }
-  .tabs-panel { top: 0; transform: translateY(14px); }
-  .tabs-panel.is-active { transform: translateY(0); }
-}
 
 .tabs-panels {
   position: relative;
@@ -3392,6 +3395,14 @@ body.modal-open {
   transform: translateY(-50%);
   pointer-events: auto;
   z-index: 1;
+}
+
+/* Tablet/mobile: painel ativo com altura natural, topo alinhado (título no topo, sem vazão) */
+@media (max-width: 859px) {
+  .tabs-widget { padding-top: 28px; }
+  .tabs-panels { height: auto !important; }
+  .tabs-panel { top: 0; transform: translateY(12px); }
+  .tabs-panel.is-active { position: relative; transform: translateY(0); }
 }
 
 .tw-title { font-size: 24px; font-weight: 700; color: var(--neutral-9); margin: 0 0 10px; letter-spacing: -0.01em; }
