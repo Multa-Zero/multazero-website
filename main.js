@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let threshold = 50;
     if (heroWidget) {
       const rect = heroWidget.getBoundingClientRect();
-      threshold = rect.bottom + window.scrollY - navbar.offsetHeight;
+      // vira sólida quando o TOPO do widget (fundo claro) chega sob a navbar,
+      // senão o texto branco transparente fica invisível sobre o branco
+      threshold = rect.top + window.scrollY - navbar.offsetHeight;
     }
     if (window.scrollY >= threshold) {
       navbar.classList.remove('transparent');
