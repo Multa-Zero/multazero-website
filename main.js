@@ -6,18 +6,26 @@ gsap.registerPlugin(ScrollTrigger);
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Navbar Scroll Effect — stays transparent until logos section
   const navbar = document.getElementById('navbar');
-  const logosSection = document.querySelector('.logos-section');
+  const heroWidget = document.getElementById('sistemaTabs');
 
-  window.addEventListener('scroll', () => {
-    const threshold = logosSection ? logosSection.offsetTop - navbar.offsetHeight : 50;
-    if (window.scrollY > threshold) {
+  function updateNavbar() {
+    // Navbar só aparece depois que o bottom do widget do hero passa
+    let threshold = 50;
+    if (heroWidget) {
+      const rect = heroWidget.getBoundingClientRect();
+      threshold = rect.bottom + window.scrollY - navbar.offsetHeight;
+    }
+    if (window.scrollY >= threshold) {
+      navbar.classList.remove('nav-hidden');
       navbar.classList.remove('transparent');
       navbar.classList.add('solid');
     } else {
-      navbar.classList.add('transparent');
-      navbar.classList.remove('solid');
+      navbar.classList.add('nav-hidden');
     }
-  });
+  }
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  window.addEventListener('resize', updateNavbar, { passive: true });
+  updateNavbar();
 
   // 1b. Nav CTA — appears after hero CTA scrolls out of view
   const navCta = document.getElementById('nav-cta');

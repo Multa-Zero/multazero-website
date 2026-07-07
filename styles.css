@@ -442,7 +442,13 @@ body {
     width: 100%;
     height: 72px;
     z-index: 100;
-    transition: all 300ms ease;
+    transition: transform 350ms ease, background-color 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+}
+
+/* Escondida até passar o bottom do widget do hero; depois desliza pra baixo */
+.navbar.nav-hidden {
+    transform: translateY(-100%);
+    pointer-events: none;
 }
 
 .navbar.transparent {
@@ -3397,12 +3403,12 @@ body.modal-open {
   z-index: 1;
 }
 
-/* Tablet/mobile: painel ativo com altura natural, topo alinhado (título no topo, sem vazão) */
+/* Tablet/mobile: altura fixa (como no desktop) mas painéis alinhados ao topo
+   (título no topo com respiro; o espaço que sobra fica embaixo, não em cima) */
 @media (max-width: 859px) {
   .tabs-widget { padding-top: 28px; }
-  .tabs-panels { height: auto !important; }
   .tabs-panel { top: 0; transform: translateY(12px); }
-  .tabs-panel.is-active { position: relative; transform: translateY(0); }
+  .tabs-panel.is-active { transform: translateY(0); }
 }
 
 .tw-title { font-size: 24px; font-weight: 700; color: var(--neutral-9); margin: 0 0 10px; letter-spacing: -0.01em; }
