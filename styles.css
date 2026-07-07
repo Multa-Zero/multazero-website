@@ -445,12 +445,6 @@ body {
     transition: transform 350ms ease, background-color 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
 }
 
-/* Escondida até passar o bottom do widget do hero; depois desliza pra baixo */
-.navbar.nav-hidden {
-    transform: translateY(-100%);
-    pointer-events: none;
-}
-
 .navbar.transparent {
     background-color: transparent;
 }

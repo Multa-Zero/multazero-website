@@ -4,23 +4,23 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Navbar Scroll Effect — stays transparent until logos section
+  // 1. Navbar Scroll Effect — visível (transparente) desde o load;
+  //    vira a versão sólida depois que o bottom do widget do hero passa
   const navbar = document.getElementById('navbar');
   const heroWidget = document.getElementById('sistemaTabs');
 
   function updateNavbar() {
-    // Navbar só aparece depois que o bottom do widget do hero passa
     let threshold = 50;
     if (heroWidget) {
       const rect = heroWidget.getBoundingClientRect();
       threshold = rect.bottom + window.scrollY - navbar.offsetHeight;
     }
     if (window.scrollY >= threshold) {
-      navbar.classList.remove('nav-hidden');
       navbar.classList.remove('transparent');
       navbar.classList.add('solid');
     } else {
-      navbar.classList.add('nav-hidden');
+      navbar.classList.add('transparent');
+      navbar.classList.remove('solid');
     }
   }
   window.addEventListener('scroll', updateNavbar, { passive: true });
