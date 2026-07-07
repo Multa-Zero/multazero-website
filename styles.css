@@ -3345,10 +3345,13 @@ body.modal-open {
 .sobre-cta { margin-top: var(--space-32); }
 
 /* ===== Widget de abas (dobra "O que é o multazero") ===== */
+/* #sistema sem padding-top: o overlap do widget = |margin-top| (consistente) */
+#sistema { padding-top: 0; }
+
 .tabs-widget {
   position: relative;
   z-index: 5;
-  margin: -190px auto 0;
+  margin: -90px auto 0;
   max-width: 980px;
   background: #fff;
   border: 1px solid var(--border-default);
@@ -3357,7 +3360,7 @@ body.modal-open {
   padding: 20px;
 }
 @media (min-width: 768px) { .tabs-widget { padding: 28px; } }
-@media (max-width: 768px) { .tabs-widget { margin-top: -90px; } }
+@media (max-width: 768px) { .tabs-widget { margin-top: -56px; } }
 
 .tabs-panels {
   position: relative;
