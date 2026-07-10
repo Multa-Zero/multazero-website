@@ -6,7 +6,9 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://multazero.co',
-  base: '/blog',
+  // Trailing slash obrigatória: o código monta URLs como `${BASE_URL}post/...`
+  // e o Astro 5+ entrega BASE_URL exatamente como configurado aqui.
+  base: '/blog/',
   integrations: [
     sanity({
       projectId: '57jbjtzh',
