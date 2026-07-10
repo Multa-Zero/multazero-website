@@ -2534,10 +2534,20 @@ body {
 /* Pitch column */
 .contact-modal-pitch {
   flex: 1;
+  /* o ticker (nowrap) não pode ditar a largura da coluna */
+  min-width: 0;
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.contact-modal-mark {
+  width: 44px;
+  height: auto;
+  margin-bottom: 4px;
+  /* caminhão branco sobre o fundo escuro do modal */
+  filter: brightness(0) invert(1);
 }
 
 .contact-modal-title {
@@ -2623,6 +2633,41 @@ body {
   margin: 0;
   color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
+}
+
+.contact-modal-avatar--photo {
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+.contact-modal-tremea-logo {
+  height: 30px;
+  width: auto;
+  margin-left: auto;
+  flex: 0 0 auto;
+}
+
+/* Ticker das cidades atendidas (Treméa) — linha única, scroll lento,
+   fade transparente -> 100% nas duas pontas */
+.cities-ticker {
+  margin-top: 20px;
+  max-width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 48px, #000 calc(100% - 48px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 48px, #000 calc(100% - 48px), transparent 100%);
+}
+.cities-ticker__track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: cities-scroll 60s linear infinite;
+}
+.cities-ticker__seq {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.55);
+}
+@keyframes cities-scroll {
+  to { transform: translateX(-50%); }
 }
 
 /* Form column */
@@ -3364,6 +3409,25 @@ body.modal-open {
 }
 .sobre-badge svg { width: 16px; height: 16px; color: var(--blue-ribbon-7); flex: 0 0 auto; }
 .sobre-cta { margin-top: var(--space-32); }
+
+/* Selo "Parceiro oficial:" + logo do Banco do Brasil */
+.parceiro-oficial {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: var(--space-32);
+}
+.parceiro-oficial__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.parceiro-oficial__logo {
+  height: 46px;
+  width: auto;
+  display: block;
+}
 
 /* ===== Widget de abas (dobra "O que é o multazero") ===== */
 /* #sistema sem padding-top: o overlap do widget = |margin-top| (consistente).
