@@ -3298,6 +3298,15 @@ body.modal-open {
 @media (max-width: 600px) {
   .blog-teaser-grid { grid-template-columns: 1fr; }
 }
+/* Com 1 ou 2 posts (classe aplicada no build por inject-blog-teasers.mjs),
+   os cards ficam centralizados em vez de largados à esquerda do grid de 3. */
+.blog-teaser-grid--1,
+.blog-teaser-grid--2 { justify-content: center; }
+.blog-teaser-grid--1 { grid-template-columns: minmax(0, 400px); }
+.blog-teaser-grid--2 { grid-template-columns: repeat(2, minmax(0, 400px)); }
+@media (max-width: 600px) {
+  .blog-teaser-grid--2 { grid-template-columns: minmax(0, 400px); }
+}
 
 /* Dobra B — Recursos com IA */
 .recursos-wrap {
