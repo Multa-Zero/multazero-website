@@ -3415,6 +3415,8 @@ body.modal-open {
   background: var(--surface-elevated);
   font-size: 13px;
   font-weight: 600;
+  /* line-height herdado deixava o texto mais alto que ícones/logo */
+  line-height: 1;
   color: var(--neutral-8);
 }
 .sobre-badge svg { width: 16px; height: 16px; color: var(--blue-ribbon-7); flex: 0 0 auto; }
