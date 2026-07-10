@@ -342,6 +342,18 @@ body {
     border-color: rgba(255, 255, 255, 0.8);
 }
 
+/* Outline escuro, para fundos claros */
+.btn-outline {
+    background-color: transparent;
+    color: var(--neutral-8);
+    border: 1.5px solid var(--border-default);
+}
+
+.btn-outline:hover {
+    background-color: var(--neutral-2);
+    border-color: var(--neutral-5);
+}
+
 /* Button Sizes */
 .btn-L {
     font-size: 20px;
