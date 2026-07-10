@@ -3418,26 +3418,10 @@ body.modal-open {
   color: var(--neutral-8);
 }
 .sobre-badge svg { width: 16px; height: 16px; color: var(--blue-ribbon-7); flex: 0 0 auto; }
+/* Selo com o logo do Banco do Brasil no lugar do texto "credenciado" */
+.sobre-badge--bb { gap: 10px; }
+.sobre-badge__bb-logo { height: 17px; width: auto; display: block; flex: 0 0 auto; }
 .sobre-cta { margin-top: var(--space-32); }
-
-/* Selo "Parceiro oficial:" + logo do Banco do Brasil */
-.parceiro-oficial {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: var(--space-32);
-}
-.parceiro-oficial__label {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  white-space: nowrap;
-}
-.parceiro-oficial__logo {
-  height: 46px;
-  width: auto;
-  display: block;
-}
 
 /* ===== Widget de abas (dobra "O que é o multazero") ===== */
 /* #sistema sem padding-top: o overlap do widget = |margin-top| (consistente).
