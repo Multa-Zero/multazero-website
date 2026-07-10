@@ -8,6 +8,9 @@ const run = (cmd, cwd) => execSync(cmd, { stdio: 'inherit', cwd });
 // 1) Site Vite -> dist/  (o Vite limpa o dist/ antes)
 run('npm run build:site');
 
+// 1b) Cards do blog na home: injeta os posts mais recentes do Sanity em dist/index.html
+run('node scripts/inject-blog-teasers.mjs');
+
 // 2) Garante deps do blog (em CI/limpo) e builda o Astro -> blog/dist/
 if (!existsSync('blog/node_modules')) run('npm ci', 'blog');
 run('npm run build', 'blog');
