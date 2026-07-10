@@ -373,6 +373,10 @@
         </div>
 
       </div>
+
+      <div class="bento-cta reveal-up">
+        <a href="#oferta" class="btn btn-primary btn-M">Falar com representante</a>
+      </div>
     </div>
   </section>
 
@@ -412,9 +416,6 @@
           </div>
         </div>
 
-        <div class="recursos-cta reveal-up">
-          <a href="#oferta" class="btn btn-primary btn-M">Falar com representante</a>
-        </div>
       </div>
     </div>
   </section>
@@ -1164,15 +1165,28 @@
               </div>
             </div>
 
-            <div class="cmf-group">
-              <label for="cmf-frota-tamanho" class="cmf-label">Tamanho da frota *</label>
-              <select id="cmf-frota-tamanho" name="frota_tamanho" class="cmf-input cmf-select" required>
-                <option value="">Selecione</option>
-                <option value="1-20">1 a 20 veículos</option>
-                <option value="21-50">21 a 50 veículos</option>
-                <option value="51-100">51 a 100 veículos</option>
-                <option value="100+">Mais de 100 veículos</option>
-              </select>
+            <div class="cmf-row">
+              <div class="cmf-group">
+                <label for="cmf-frota-tamanho" class="cmf-label">Tamanho da frota *</label>
+                <select id="cmf-frota-tamanho" name="frota_tamanho" class="cmf-input cmf-select" required>
+                  <option value="">Selecione</option>
+                  <option value="1-20">1 a 20 veículos</option>
+                  <option value="21-50">21 a 50 veículos</option>
+                  <option value="51-100">51 a 100 veículos</option>
+                  <option value="100+">Mais de 100 veículos</option>
+                </select>
+              </div>
+              <div class="cmf-group">
+                <label for="cmf-multas-mes" class="cmf-label">Multas no último mês *</label>
+                <select id="cmf-multas-mes" name="multas_ultimo_mes" class="cmf-input cmf-select" required>
+                  <option value="">Selecione</option>
+                  <option value="0">Nenhuma</option>
+                  <option value="1-10">1 a 10</option>
+                  <option value="11-30">11 a 30</option>
+                  <option value="31-100">31 a 100</option>
+                  <option value="100+">Mais de 100</option>
+                </select>
+              </div>
             </div>
 
             <button type="submit" class="cmf-submit">Solicitar proposta</button>

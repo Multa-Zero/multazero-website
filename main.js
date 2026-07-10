@@ -482,6 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
         empresa: formData.get('empresa'),
         setor: formData.get('setor'),
         frota_tamanho: formData.get('frota_tamanho'),
+        multas_ultimo_mes: formData.get('multas_ultimo_mes'),
         origem: window.location.href,
         data_envio: new Date().toISOString(),
       };
