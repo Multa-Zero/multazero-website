@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap');
 
+/* WOFF2 = TrueType + ttfautohint (increase-x-height=0): renderiza bem no
+   Windows/DirectWrite, ao contrário do OTF (CFF sem hinting), que fica como fallback. */
 @font-face {
     font-family: 'Aileron';
-    src: url('/blog/font/aileron/Aileron-Regular.otf') format('opentype');
+    src: url('/blog/font/aileron/woff2/Aileron-Regular.woff2') format('woff2'),
+         url('/blog/font/aileron/Aileron-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -11,7 +14,8 @@
 
 @font-face {
     font-family: 'Aileron';
-    src: url('/blog/font/aileron/Aileron-SemiBold.otf') format('opentype');
+    src: url('/blog/font/aileron/woff2/Aileron-SemiBold.woff2') format('woff2'),
+         url('/blog/font/aileron/Aileron-SemiBold.otf') format('opentype');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -19,7 +23,8 @@
 
 @font-face {
     font-family: 'Aileron';
-    src: url('/blog/font/aileron/Aileron-Bold.otf') format('opentype');
+    src: url('/blog/font/aileron/woff2/Aileron-Bold.woff2') format('woff2'),
+         url('/blog/font/aileron/Aileron-Bold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -27,7 +32,8 @@
 
 @font-face {
     font-family: 'Aileron';
-    src: url('/blog/font/aileron/Aileron-Light.otf') format('opentype');
+    src: url('/blog/font/aileron/woff2/Aileron-Light.woff2') format('woff2'),
+         url('/blog/font/aileron/Aileron-Light.otf') format('opentype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
