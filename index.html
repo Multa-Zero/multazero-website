@@ -277,6 +277,85 @@
             </div>
           </div>
 
+          <!-- Panel 4: Relatórios -->
+          <div class="tabs-panel" data-panel="4">
+            <div class="tw-copy">
+              <h3 class="tw-title">Relatórios completos da frota</h3>
+              <p class="tw-desc">Rankings de infrações, condutores e veículos por período — filtre, compare valores e exporte tudo em CSV.</p>
+            </div>
+            <div class="tw-visual">
+              <div class="tw-mock tw-rel">
+                <div class="tw-rel-tabs" data-rel-tabs>
+                  <button class="tw-rel-tab is-active" type="button" data-rel-tab="0">Ranking de infrações</button>
+                  <button class="tw-rel-tab" type="button" data-rel-tab="1">Motoristas x multas</button>
+                  <button class="tw-rel-tab" type="button" data-rel-tab="2">Veículos</button>
+                </div>
+                <div class="tw-rel-filters">
+                  <span class="tw-rel-pill">Mensal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                  <span class="tw-rel-pill">Julho · 2026 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                  <span class="tw-rel-export">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Exportar CSV
+                  </span>
+                </div>
+                <div class="tw-rel-stage">
+
+                  <!-- Relatório 0: ranking de infrações (dados fictícios) -->
+                  <div class="tw-rel-view is-on" data-rel-view="0">
+                    <div class="tw-rel-titles">
+                      <div class="tw-rel-title">Maior número de ocorrências</div>
+                      <div class="tw-rel-sub">Infrações por código no período</div>
+                    </div>
+                    <div class="tw-rel-chart">
+                      <div class="tw-rel-tip">
+                        <span class="tw-rel-tip-code">6050</span>
+                        <span class="tw-rel-tip-occ">12 ocorrências</span>
+                        <span class="tw-rel-tip-val">R$ 3.418,20</span>
+                      </div>
+                      <div class="tw-rel-plot">
+                        <div class="tw-rel-col" style="--h:100%; --i:0"><span class="tw-rel-bar" style="background:var(--blue-ribbon-6)"></span><span class="tw-rel-code">6050</span></div>
+                        <div class="tw-rel-col" style="--h:78%; --i:1"><span class="tw-rel-bar" style="background:var(--blue-ribbon-9)"></span><span class="tw-rel-code">5185</span></div>
+                        <div class="tw-rel-col" style="--h:60%; --i:2"><span class="tw-rel-bar" style="background:var(--blue-ribbon-5)"></span><span class="tw-rel-code">7030</span></div>
+                        <div class="tw-rel-col" style="--h:44%; --i:3"><span class="tw-rel-bar" style="background:var(--neutral-5)"></span><span class="tw-rel-code">5010</span></div>
+                        <div class="tw-rel-col" style="--h:30%; --i:4"><span class="tw-rel-bar" style="background:var(--neutral-3)"></span><span class="tw-rel-code">6262</span></div>
+                        <div class="tw-rel-col" style="--h:14%; --i:5"><span class="tw-rel-bar" style="background:var(--blue-ribbon-8)"></span><span class="tw-rel-code">7331</span></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Relatório 1: motoristas indicados x multas (dados fictícios) -->
+                  <div class="tw-rel-view" data-rel-view="1">
+                    <div class="tw-rel-titles">
+                      <div class="tw-rel-title">Motoristas indicados x multas</div>
+                      <div class="tw-rel-sub">Condutores com mais indicações no período</div>
+                    </div>
+                    <div class="tw-rel-rows">
+                      <div class="tw-rel-row" style="--w:90%; --i:0"><span class="tw-rel-row-label">C. Almeida</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-7)"></span></span><span class="tw-rel-row-val">9</span></div>
+                      <div class="tw-rel-row" style="--w:70%; --i:1"><span class="tw-rel-row-label">R. Barros</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-6)"></span></span><span class="tw-rel-row-val">7</span></div>
+                      <div class="tw-rel-row" style="--w:50%; --i:2"><span class="tw-rel-row-label">M. Duarte</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-5)"></span></span><span class="tw-rel-row-val">5</span></div>
+                      <div class="tw-rel-row" style="--w:30%; --i:3"><span class="tw-rel-row-label">P. Siqueira</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-4)"></span></span><span class="tw-rel-row-val">3</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Relatório 2: veículos com mais infrações (dados fictícios) -->
+                  <div class="tw-rel-view" data-rel-view="2">
+                    <div class="tw-rel-titles">
+                      <div class="tw-rel-title">Veículos com mais infrações</div>
+                      <div class="tw-rel-sub">Placas com mais ocorrências no período</div>
+                    </div>
+                    <div class="tw-rel-rows">
+                      <div class="tw-rel-row" style="--w:88%; --i:0"><span class="tw-rel-plate">RTX-4B21</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-7)"></span></span><span class="tw-rel-row-val">8</span></div>
+                      <div class="tw-rel-row" style="--w:66%; --i:1"><span class="tw-rel-plate">KWD-7E88</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-6)"></span></span><span class="tw-rel-row-val">6</span></div>
+                      <div class="tw-rel-row" style="--w:44%; --i:2"><span class="tw-rel-plate">PZM-1C09</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-5)"></span></span><span class="tw-rel-row-val">4</span></div>
+                      <div class="tw-rel-row" style="--w:22%; --i:3"><span class="tw-rel-plate">JQX-5T72</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-4)"></span></span><span class="tw-rel-row-val">2</span></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <div class="tabs-bar">
@@ -286,6 +365,7 @@
             <button class="tabs-tab" type="button" role="tab" data-tab="1">Pagamento via PIX</button>
             <button class="tabs-tab" type="button" role="tab" data-tab="2">Boleto 40/20</button>
             <button class="tabs-tab" type="button" role="tab" data-tab="3">Pipeline</button>
+            <button class="tabs-tab" type="button" role="tab" data-tab="4">Relatórios</button>
           </div>
           <a href="#oferta" class="tabs-cta">Falar com representante</a>
         </div>
@@ -1071,23 +1151,10 @@
             </div>
           </div>
 
-          <div class="contact-modal-quote">
-            <p class="contact-modal-quote-text">"O sistema é super funcional e didático, além de ter um visual muito bonito, que particularmente gostei. Tínhamos problemas em visualizar de forma organizada nossas multas, e agora tem dado certo."</p>
-            <div class="contact-modal-quote-author">
-              <img src="/rafaela-tremea.png" alt="Rafaela, da Treméa" class="contact-modal-avatar contact-modal-avatar--photo" width="48" height="48">
-              <div>
-                <p class="contact-modal-author-name">Rafaela</p>
-                <p class="contact-modal-author-role">Treméa · frota com 1.100+ caminhões</p>
-              </div>
-              <img src="/tremea-logo.png" alt="Treméa — Transporte e Logística Rodofluvial" class="contact-modal-tremea-logo" loading="lazy">
-            </div>
-            <div class="cities-ticker" aria-hidden="true">
-              <div class="cities-ticker__track">
-                <span class="cities-ticker__seq">Xaxim / SC&nbsp;&nbsp;•&nbsp;&nbsp;São Paulo / SP&nbsp;&nbsp;•&nbsp;&nbsp;Boa Vista / RR&nbsp;&nbsp;•&nbsp;&nbsp;Manaus / AM&nbsp;&nbsp;•&nbsp;&nbsp;Porto Velho / RO&nbsp;&nbsp;•&nbsp;&nbsp;Belém / PA&nbsp;&nbsp;•&nbsp;&nbsp;Santarém / PA&nbsp;&nbsp;•&nbsp;&nbsp;Macapá / AP&nbsp;&nbsp;•&nbsp;&nbsp;Buriti Alegre / GO&nbsp;&nbsp;•&nbsp;&nbsp;Recife / PE&nbsp;&nbsp;•&nbsp;&nbsp;Várzea Grande / MT&nbsp;&nbsp;•&nbsp;&nbsp;Araguaína / TO&nbsp;&nbsp;•&nbsp;&nbsp;Araporã / MG&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-                <span class="cities-ticker__seq">Xaxim / SC&nbsp;&nbsp;•&nbsp;&nbsp;São Paulo / SP&nbsp;&nbsp;•&nbsp;&nbsp;Boa Vista / RR&nbsp;&nbsp;•&nbsp;&nbsp;Manaus / AM&nbsp;&nbsp;•&nbsp;&nbsp;Porto Velho / RO&nbsp;&nbsp;•&nbsp;&nbsp;Belém / PA&nbsp;&nbsp;•&nbsp;&nbsp;Santarém / PA&nbsp;&nbsp;•&nbsp;&nbsp;Macapá / AP&nbsp;&nbsp;•&nbsp;&nbsp;Buriti Alegre / GO&nbsp;&nbsp;•&nbsp;&nbsp;Recife / PE&nbsp;&nbsp;•&nbsp;&nbsp;Várzea Grande / MT&nbsp;&nbsp;•&nbsp;&nbsp;Araguaína / TO&nbsp;&nbsp;•&nbsp;&nbsp;Araporã / MG&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-              </div>
-            </div>
-          </div>
+          <!-- ARQUIVADO (2026-07-12): depoimento Rafaela/Treméa + ticker de cidades.
+               Será reativado futuramente — ver docs/ARQUIVADOS.md para o snippet completo
+               e instruções de reativação. CSS correspondente mantido em styles.css
+               (.contact-modal-quote, .contact-modal-avatar, .contact-modal-tremea-logo, .cities-ticker). -->
         </div>
 
         <!-- Right: form column -->
@@ -1136,27 +1203,16 @@
               </div>
             </div>
 
-            <div class="cmf-row">
-              <div class="cmf-group">
-                <label for="cmf-frota-tamanho" class="cmf-label">Tamanho da frota *</label>
-                <select id="cmf-frota-tamanho" name="frota_tamanho" class="cmf-input cmf-select" required>
-                  <option value="">Selecione</option>
-                  <option value="1-20">1 a 20 veículos</option>
-                  <option value="21-50">21 a 50 veículos</option>
-                  <option value="51-100">51 a 100 veículos</option>
-                  <option value="100+">Mais de 100 veículos</option>
-                </select>
-              </div>
-              <div class="cmf-group">
-                <label for="cmf-multas-mes" class="cmf-label">Multas no último mês (R$) *</label>
-                <select id="cmf-multas-mes" name="multas_ultimo_mes" class="cmf-input cmf-select" required>
-                  <option value="">Selecione</option>
-                  <option value="0-500">R$ 0 a 500</option>
-                  <option value="500-1000">R$ 500 a 1.000</option>
-                  <option value="1000-5000">R$ 1.000 a 5.000</option>
-                  <option value="5000+">Mais de R$ 5.000</option>
-                </select>
-              </div>
+            <div class="cmf-group">
+              <label for="cmf-frota-tamanho" class="cmf-label">Tamanho da frota *</label>
+              <select id="cmf-frota-tamanho" name="frota_tamanho" class="cmf-input cmf-select" required>
+                <option value="">Selecione</option>
+                <option value="1-50">1 a 50 veículos</option>
+                <option value="51-100">51 a 100 veículos</option>
+                <option value="100-500">100 a 500 veículos</option>
+                <option value="500-1000">500 a 1.000 veículos</option>
+                <option value="1000-2000">1.000 a 2.000 veículos</option>
+              </select>
             </div>
 
             <button type="submit" class="cmf-submit">Solicitar proposta</button>

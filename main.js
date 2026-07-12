@@ -482,7 +482,6 @@ document.addEventListener('DOMContentLoaded', () => {
         empresa: formData.get('empresa'),
         setor: formData.get('setor'),
         frota_tamanho: formData.get('frota_tamanho'),
-        multas_ultimo_mes: formData.get('multas_ultimo_mes'),
         origem: window.location.href,
         data_envio: new Date().toISOString(),
       };
@@ -674,6 +673,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1300));
       });
     }
+
+    // Relatórios: mini-abas trocam o relatório exibido
+    const relTabs = Array.from(tabsWidget.querySelectorAll('[data-rel-tab]'));
+    const relViews = Array.from(tabsWidget.querySelectorAll('[data-rel-view]'));
+    relTabs.forEach((t) => {
+      t.addEventListener('click', () => {
+        userTook = true; stopAuto();
+        const i = t.getAttribute('data-rel-tab');
+        relTabs.forEach((b) => b.classList.toggle('is-active', b === t));
+        relViews.forEach((v) => v.classList.toggle('is-on', v.getAttribute('data-rel-view') === i));
+      });
+    });
 
     // Condutor: digitação + autocomplete + seleção + resultado
     const condTyped = tabsWidget.querySelector('[data-cond-typed]');
