@@ -4,8 +4,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Navbar Scroll Effect — visível (transparente) desde o load;
-  //    vira a versão sólida depois que o bottom do widget do hero passa
+  // 1. Navbar Scroll Effect — parada no hero (absolute, sai com o scroll);
+  //    só depois que o FIM do widget passa ela surge fixa (sólida)
   const navbar = document.getElementById('navbar');
   const heroWidget = document.getElementById('sistemaTabs');
 
@@ -13,9 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let threshold = 50;
     if (heroWidget) {
       const rect = heroWidget.getBoundingClientRect();
-      // vira sólida quando o TOPO do widget (fundo claro) chega sob a navbar,
-      // senão o texto branco transparente fica invisível sobre o branco
-      threshold = rect.top + window.scrollY - navbar.offsetHeight;
+      threshold = rect.bottom + window.scrollY;
     }
     if (window.scrollY >= threshold) {
       navbar.classList.remove('transparent');

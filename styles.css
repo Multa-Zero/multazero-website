@@ -446,9 +446,10 @@ body {
     min-height: 100px;
 }
 
-/* Navbar */
+/* Navbar — parada no hero (sai junto com o scroll); vira fixa e
+   desliza de volta só depois que a dobra dos widgets termina */
 .navbar {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -473,9 +474,15 @@ body {
 }
 
 .navbar.solid {
+    position: fixed;
     background-color: transparent;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: var(--shadow-sm);
+    animation: nav-slidein 350ms ease;
+}
+@keyframes nav-slidein {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
 }
 
 /* Blur applied via pseudo-element so stacking context doesn't
