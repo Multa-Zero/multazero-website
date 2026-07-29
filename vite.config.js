@@ -11,8 +11,10 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        sobre: resolve(__dirname, 'sobre/index.html'),
+        institucional: resolve(__dirname, 'institucional/index.html'),
         planos: resolve(__dirname, 'planos/index.html'),
+        // redirect legado: /sobre/ -> /institucional/
+        sobre: resolve(__dirname, 'sobre/index.html'),
       },
     },
   },

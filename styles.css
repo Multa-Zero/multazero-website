@@ -3870,3 +3870,185 @@ button.tw-multa-action { font-family: inherit; cursor: pointer; width: 100%; tex
 @keyframes tw-relbar { to { transform: scaleY(1); } }
 @keyframes tw-reltip { to { opacity: 1; transform: none; } }
 @keyframes tw-relhbar { to { transform: scaleX(1); } }
+
+/* ===================================================================
+   Planos e preços (/planos/)
+   Estrutura inspirada em pluggy.ai/precos: hero centralizado, toggle
+   segmentado, dois cards e tabela comparativa por grupos. Cores e
+   tipografia são as do multazero, não as da referência.
+   =================================================================== */
+
+.planos-hero { text-align: center; max-width: 720px; margin: 0 auto; }
+.planos-hero .body-L { margin-top: var(--space-16); color: var(--text-secondary); }
+
+/* Toggle segmentado — pílula com a opção ativa em branco elevado */
+.planos-toggle {
+  display: inline-flex;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  margin-top: var(--space-32);
+  border-radius: 999px;
+  background: var(--blue-ribbon-1);
+  border: 1px solid var(--border-default);
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.planos-toggle__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
+}
+.planos-toggle__btn svg { width: 16px; height: 16px; flex: 0 0 auto; }
+.planos-toggle__btn:hover { color: var(--text-primary); }
+.planos-toggle__btn[aria-selected="true"] {
+  background: var(--surface-elevated);
+  border-color: var(--border-default);
+  color: var(--blue-ribbon-7);
+  box-shadow: var(--shadow-sm);
+}
+.planos-note {
+  margin-top: var(--space-16);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.planos-note a { color: var(--blue-ribbon-7); font-weight: 600; }
+
+/* Cards de preço */
+.planos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-24);
+  margin-top: var(--space-48);
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .planos-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-32); }
+}
+.plano-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-32);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--surface-elevated);
+}
+.plano-card[hidden] { display: none; }
+.plano-card__eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-ribbon-7);
+}
+.plano-card__price {
+  margin-top: var(--space-16);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+.plano-card__period { font-size: 16px; font-weight: 400; color: var(--text-secondary); }
+.plano-card__hint {
+  margin-top: var(--space-8);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue-ribbon-7);
+}
+.plano-card__desc {
+  margin-top: var(--space-16);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+.plano-card__features {
+  list-style: none;
+  margin: var(--space-32) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+.plano-feat { display: grid; grid-template-columns: 20px 1fr; gap: var(--space-12); }
+.plano-feat > svg {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  color: var(--blue-ribbon-7);
+  flex: 0 0 auto;
+}
+.plano-feat__title { font-size: 15px; font-weight: 700; line-height: 1.4; color: var(--text-primary); }
+.plano-feat__desc { margin-top: 2px; font-size: 14px; line-height: 1.5; color: var(--text-secondary); }
+.plano-card__cta { margin-top: auto; padding-top: var(--space-32); }
+.plano-card__cta .btn { width: 100%; }
+
+/* Tabela comparativa */
+.compare-wrap { margin-top: var(--space-80); }
+.compare-scroll { overflow-x: auto; }
+.compare {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  text-align: left;
+}
+.compare th, .compare td { padding: var(--space-16) var(--space-12); }
+.compare thead th { vertical-align: bottom; border-bottom: 1px solid var(--border-default); }
+.compare__label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.compare__plan { text-align: center; }
+.compare__plan-name {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-ribbon-7);
+  margin-bottom: var(--space-12);
+}
+.compare__group td {
+  padding-top: var(--space-32);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.compare__group-inner { display: inline-flex; align-items: center; gap: var(--space-8); }
+.compare__group-inner svg { width: 15px; height: 15px; color: var(--blue-ribbon-7); }
+.compare tbody tr:not(.compare__group) { border-top: 1px solid var(--border-default); }
+.compare__feat { font-size: 15px; color: var(--text-primary); }
+.compare__mark { text-align: center; }
+.compare__mark svg { width: 18px; height: 18px; }
+.compare__mark--yes svg { color: var(--text-primary); }
+.compare__mark--no svg { color: var(--neutral-4, #B9BEC7); }
+
+/* CTA de fechamento */
+.planos-cta { text-align: center; margin-top: var(--space-80); }
+.planos-cta .heading-3 { margin-bottom: var(--space-16); }
+
+/* Um card só (modo "gestao"): centraliza em vez de deixar a coluna vazia */
+@media (min-width: 900px) {
+  .planos-grid[data-view="gestao"] {
+    grid-template-columns: minmax(0, 520px);
+    justify-content: center;
+  }
+}

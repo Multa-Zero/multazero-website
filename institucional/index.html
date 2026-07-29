@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>multazero | A empresa</title>
+  <meta name="description" content="O multazero é uma LogTech focada na redução de custos com infrações. Conheça a empresa e o time por trás da plataforma.">
+  <link rel="icon" type="image/png" href="/images/favicon-multazero-dark.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="/images/favicon-multazero-light.png" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+  <nav class="navbar solid navbar--page" id="navbar">
+    <div class="container nav-container">
+      <a href="/institucional/" class="nav-logo">
+        <img src="/images/logomultazerobranca.png" alt="multazero" class="logo-white" height="52">
+        <img src="/images/logomultazeroblack.png" alt="multazero" class="logo-dark" height="52">
+      </a>
+
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="nav-links">
+        <a href="/institucional/#quem-somos" class="nav-link" aria-current="page">Quem somos</a>
+        <a href="/planos/" class="nav-link">Planos e preços</a>
+        <a href="/blog" class="nav-link">Blog</a>
+        <a href="/" class="nav-link">Produto</a>
+        <!-- .visible fixo: o JS só revela o CTA depois que o CTA do hero sai de
+             cena, e aqui não há hero — sem isso o botão fica com max-width 0. -->
+        <a href="/#oferta" class="btn btn-primary btn-S nav-cta visible">Falar com representante</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section-padding" id="sobre">
+    <div class="container">
+      <div class="sobre-wrap reveal-up">
+        <div class="sobre-text">
+        <h1 class="heading-2">Uma LogTech focada em reduzir custos com infrações</h1>
+        <div class="sobre-body">
+          <p class="body-M text-secondary">O multazero é uma LogTech, fundada em 2025 com foco 100% na redução de custos e no manejo de infrações. O objetivo central é garantir confiabilidade nos dados, gestão aguçada de prazos e status, e pagamentos facilitados.</p>
+          <p class="body-M text-secondary">Somos parceiros credenciados do Banco do Brasil e atuamos com API própria documentada, de fácil integração a sistemas terceiros e com compliance absoluto.</p>
+          <p class="body-M text-secondary">A economia no mercado de infrações vem da organização, de recursos bem deferidos e de meios de pagamento mais ágeis. Se sua frota busca economizar entre 20% e 140% ao mês com infrações, fale com nossos representantes.</p>
+        </div>
+        <div class="sobre-badges">
+          <span class="sobre-badge sobre-badge--bb">
+            Parceiro oficial
+            <img src="/banco-do-brasil.svg" alt="Banco do Brasil" class="sobre-badge__bb-logo" loading="lazy">
+          </span>
+          <span class="sobre-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            API própria documentada
+          </span>
+          <span class="sobre-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Compliance &amp; LGPD
+          </span>
+        </div>
+        <div class="sobre-cta">
+          <a href="/#oferta" class="btn btn-primary btn-M">Falar com representante</a>
+        </div>
+        </div>
+        <div class="sobre-media">
+          <img src="/sobre-multazero.jpg" alt="Time do multazero no Web Summit Rio" class="sobre-img" width="1080" height="1440">
+        </div>
+      </div>
+
+      <div class="time-block reveal-up" id="quem-somos">
+        <p class="time-eyebrow">Quem somos</p>
+        <ul class="time-grid">
+          <li class="time-card">
+            <img src="/time-lucas-mendo.webp" alt="" class="time-avatar" width="144" height="144" loading="lazy" decoding="async">
+            <p class="time-name">Lucas Mendo</p>
+            <p class="time-role">CEO Multazero</p>
+            <p class="time-cred">5 anos de experiência no setor de transportes</p>
+          </li>
+          <li class="time-card">
+            <img src="/time-renato-campos.webp" alt="" class="time-avatar" width="144" height="144" loading="lazy" decoding="async">
+            <p class="time-name">Renato Campos</p>
+            <p class="time-role">CTO Multazero</p>
+            <p class="time-cred">Formado em Gestão de TI (FIAP)</p>
+          </li>
+          <li class="time-card">
+            <img src="/time-rafael-lassen.webp" alt="" class="time-avatar" width="144" height="144" loading="lazy" decoding="async">
+            <p class="time-name">Rafael Lassen</p>
+            <p class="time-role">Especialista em Vendas e Marketing</p>
+            <p class="time-cred">Fundador da ARVEN Aquisição &middot; Desenvolvedor de sistemas (IFSC)</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="footer-logo">
+            <img src="/images/logomultazeroblack.png" alt="multazero" height="52">
+          </a>
+          <p class="body-S text-secondary" style="max-width: 80%;">Gestão inteligente, recursos com IA e redução de
+            burocracia para frotas corporativas.</p>
+          <div class="social-icons" style="margin-top: 24px;">
+            <a href="https://www.linkedin.com/company/multazerosistema" target="_blank" aria-label="LinkedIn"><svg
+                width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg></a>
+            <a href="https://www.instagram.com/multazerosoftware/" target="_blank" aria-label="Instagram"><svg
+                width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Produto</h4>
+          <ul class="footer-links">
+            <li><a href="/#diferenciais">Plataforma</a></li>
+            <li><a href="/#resultados">Resultados</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Empresa</h4>
+          <ul class="footer-links">
+            <li><a href="/institucional/">A empresa</a></li>
+            <li><a href="/institucional/#quem-somos">Quem somos</a></li>
+            <li><a href="/planos/">Planos e preços</a></li>
+            <li><a href="/blog">Blog</a></li>
+          </ul>
+        </div>
+
+
+        <div>
+          <h4 class="footer-title">Contato</h4>
+          <ul class="footer-links">
+            <li><a href="/#oferta">Solicitar Proposta</a></li>
+            <li><a href="mailto:multazero@multazero.co">Suporte ao Cliente</a></li>
+            <!-- <li><a href="#">Parceiros Automotivos</a></li> -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 multazero Tecnologia. Todos os direitos reservados.</p>
+        <div class="footer-company-row">
+          <p class="footer-company-info">CNPJ: 65.205.605/0001-64</p>
+          <p class="footer-company-info">Razão Social: MULTAZERO SOLUCOES EM TECNOLOGIA PARA FROTAS LTDA</p>
+        </div>
+        <div style="display: flex; gap: 16px;">
+          <a href="https://app.multazero.co/" target="_blank" style="color: inherit; text-decoration: none;">Área
+            Interna</a>
+          <a href="#" id="terms-link" style="color: inherit; text-decoration: none;">Termos de Uso</a>
+          <a href="#" id="privacy-link" style="color: inherit; text-decoration: none;">Política de Privacidade</a>
+        </div>
+        <!-- Modals -->
+        <div id="terms-modal" class="modal" style="display:none;">
+          <div class="modal-content">
+            <span class="close" id="terms-close">&times;</span>
+            <h2>Termos de Uso</h2>
+            <br>
+            <h3>1. Termos de Uso: multazero</h3><br>
+            <p>Estes Termos de Uso regem o acesso e a utilização da plataforma multazero, um software como serviço
+              (SaaS) focado na gestão inteligente de infrações de trânsito.</p>
+            <br>
+            <h3>1.1. Objeto e Aceite</h3><br>
+            <p>O multazero oferece uma solução tecnológica que centraliza a gestão de multas através da integração
+              oficial com a API e-Frotas (SERPRO/SENATRAN). Ao contratar o serviço, a empresa ("Contratante") aceita
+              integralmente estas condições.</p>
+            <br>
+            <h3>1.2. Descrição dos Serviços</h3><br>
+            <p>A plataforma disponibiliza os seguintes módulos, conforme o plano contratado:</p>
+            <p>Gestão de Multas: Consulta automática e centralizada de infrações por placa/CNPJ.</p>
+            <p>Indicação de Condutor: Workflow automatizado para identificação de infratores.</p>
+            <p>Pagamento Inteligente: Facilitação do acesso ao desconto de 40% para pagamentos antecipados via sistema
+              oficial.</p>
+            <p>Inteligência e Relatórios: Dashboards de ROI, rankings de condutores e mapas de calor para fins de
+              conformidade e ESG.</p>
+            <br>
+            <h3>1.3. Responsabilidades da Contratante</h3><br>
+            <p>Dados e Acesso: A Contratante deve garantir a veracidade dos dados de veículos e condutores inseridos.
+            </p>
+            <p>Credenciamento: É responsabilidade da Contratante possuir a certificação digital ICP-Brasil e o
+              credenciamento necessário junto ao SENATRAN/SERPRO para o funcionamento da integração.</p>
+            <p>Pagamento das Multas: O multazero é uma ferramenta de gestão; a responsabilidade pelo pagamento efetivo
+              das multas e pela observância dos prazos fatais é exclusiva da Contratante.</p>
+            <br>
+            <h3>1.4. Modelo Comercial e Rescisão</h3><br>
+            <p>Assinatura: A cobrança é realizada mensalmente com base no número de veículos na frota (Tiers 1, 2 ou 3)
+              .</p>
+            <p>Prazos: O contrato inicial padrão possui vigência de 12 meses, tornando-se mensal após esse período.</p>
+            <p>Suspensão: O atraso nos pagamentos da mensalidade poderá resultar na suspensão do acesso às consultas
+              automáticas da API e-Frotas.</p>
+            <br>
+            <h3>1.5. Limitação de Responsabilidade</h3><br>
+            <p>O multazero não garante o deferimento de recursos ou defesas, fornecendo apenas os templates e o controle
+              de prazos. Não nos responsabilizamos por instabilidades técnicas nos sistemas governamentais
+              (SERPRO/DETRAN).</p>
+          </div>
+        </div>
+        <div id="privacy-modal" class="modal" style="display:none;">
+          <div class="modal-content">
+            <span class="close" id="privacy-close">&times;</span>
+            <h2>Política de Privacidade</h2>
+            <br>
+            <h3>2. Política de Privacidade: multazero</h3><br>
+            <p>Esta Política descreve como o multazero trata dados pessoais e corporativos em total conformidade com a
+              Lei Geral de Proteção de Dados (LGPD).</p>
+            <br>
+            <h3>2.1. Coleta de Dados</h3><br>
+            <p>Para o funcionamento da plataforma, processamos:</p>
+            <p>Dados da Contratante: CNPJ, razão social e informações de faturamento.</p>
+            <p>Dados dos Veículos: Placa, RENAVAM e histórico de infrações obtidos via API e-Frotas.</p>
+            <p>Dados dos Condutores: Nome, CPF e informações da CNH necessários para a indicação de condutor e gestão de
+              segurança.</p>
+            <br>
+            <h3>2.2. Finalidade do Tratamento</h3><br>
+            <p>Os dados são utilizados estritamente para:</p>
+            <p>Monitoramento de infrações e alertas de vencimento.</p>
+            <p>Automatização de processos administrativos (indicação de condutor).</p>
+            <p>Geração de inteligência de dados para redução de custos e prevenção de acidentes.</p>
+            <p>Cálculo de ROI e economia gerada para a empresa.</p>
+            <br>
+            <h3>2.3. Compartilhamento e Operadores</h3><br>
+            <p>O multazero compartilha dados apenas com:</p>
+            <p>Órgãos de Trânsito: Para envio de indicações de condutores e consultas oficiais via SERPRO.</p>
+            <p>Infraestrutura: Hospedagem em nuvem (AWS), garantindo criptografia e alta disponibilidade.</p>
+            <p>Gateways de Pagamento: Para processamento das assinaturas do SaaS.</p>
+            <br>
+            <h3>2.4. Segurança da Informação</h3><br>
+            <p>Empregamos medidas técnicas de segurança para proteger a base de dados contra acessos não autorizados e
+              incidentes. O acesso aos dados dos condutores é restrito aos gestores autorizados pela Contratante.</p>
+            <br>
+            <h3>2.5. Direitos do Titular</h3><br>
+            <p>A Contratante, na qualidade de Controladora dos dados de seus motoristas, deve assegurar que estes
+              possuam ciência do tratamento de dados para fins de gestão de frota. O multazero atua como Operador,
+              garantindo o direito de correção e exclusão de dados conforme solicitado formalmente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+
+</body>
+
+</html>

@@ -119,6 +119,25 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   });
 
+  // 4b. Planos — toggle entre "só gestão" e "gestão + pagamentos".
+  // Só existe em /planos/; nas outras páginas o bloco inteiro é ignorado.
+  const planosToggle = document.querySelector('[data-planos-toggle]');
+  if (planosToggle) {
+    const botoes = planosToggle.querySelectorAll('[data-view]');
+    const cards = document.querySelectorAll('[data-plano]');
+    const aplicar = (view) => {
+      botoes.forEach(b => b.setAttribute('aria-selected', String(b.dataset.view === view)));
+      // "gestao" esconde o módulo adicional; "completo" mostra os dois
+      cards.forEach(c => { c.hidden = view === 'gestao' && c.dataset.plano === 'pagamentos'; });
+      // avisa o CSS para centralizar o card sobrando em vez de deixá-lo
+      // encostado na coluna da esquerda
+      const grid = document.querySelector('.planos-grid');
+      if (grid) grid.dataset.view = view;
+      ScrollTrigger.refresh();
+    };
+    botoes.forEach(b => b.addEventListener('click', () => aplicar(b.dataset.view)));
+  }
+
   // Fontes e imagens grandes terminam de carregar depois que os ScrollTriggers
   // já mediram a página, deslocando tudo que vem abaixo. Sem este refresh, um
   // bloco após uma imagem alta pode nunca chegar ao seu start e ficar invisível.

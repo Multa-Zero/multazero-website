@@ -15,7 +15,7 @@
 
   <nav class="navbar solid navbar--page" id="navbar">
     <div class="container nav-container">
-      <a href="/" class="nav-logo">
+      <a href="/institucional/" class="nav-logo">
         <img src="/images/logomultazerobranca.png" alt="multazero" class="logo-white" height="52">
         <img src="/images/logomultazeroblack.png" alt="multazero" class="logo-dark" height="52">
       </a>
@@ -30,9 +30,10 @@
       </button>
 
       <div class="nav-links">
-        <a href="/sobre/" class="nav-link">Quem somos</a>
+        <a href="/institucional/#quem-somos" class="nav-link">Quem somos</a>
         <a href="/planos/" class="nav-link" aria-current="page">Planos e preços</a>
         <a href="/blog" class="nav-link">Blog</a>
+        <a href="/" class="nav-link">Produto</a>
         <!-- .visible fixo: o JS só revela o CTA depois que o CTA do hero sai de
              cena, e aqui não há hero — sem isso o botão fica com max-width 0. -->
         <a href="/#oferta" class="btn btn-primary btn-S nav-cta visible">Falar com representante</a>
@@ -42,13 +43,200 @@
 
   <section class="section-padding">
     <div class="container">
-      <h1 class="heading-2">Planos e preços</h1>
-      <p class="body-M text-secondary" style="margin-top: 16px; max-width: 640px;">Estamos finalizando o comparativo de planos. Enquanto isso, fale com um representante para uma proposta sob medida para o tamanho da sua frota.</p>
-      <div style="margin-top: 32px;">
+
+      <div class="planos-hero reveal-up">
+        <h1 class="heading-2">O plano certo para cada operação</h1>
+        <p class="body-L">Gestão das multas da frota ou gestão com o pagamento já resolvido dentro do sistema. Escolha o que faz sentido para a sua operação.</p>
+
+        <div class="planos-toggle" role="tablist" aria-label="Tipo de operação" data-planos-toggle>
+          <button type="button" class="planos-toggle__btn" role="tab" aria-selected="false" data-view="gestao">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11H3v10h6V11z"></path><path d="M21 3h-6v18h6V3z"></path><path d="M15 7H9v14h6V7z"></path></svg>
+            Só quero organizar as multas
+          </button>
+          <button type="button" class="planos-toggle__btn" role="tab" aria-selected="true" data-view="completo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+            Quero organizar e pagar
+          </button>
+        </div>
+
+        <p class="planos-note">O preço acompanha o tamanho da frota. Mesmo que hoje você só precise organizar, o módulo de pagamentos pode entrar depois — <a href="/#oferta">fale com um representante</a> e receba uma proposta para a sua operação.</p>
+      </div>
+
+      <div class="planos-grid reveal-up">
+
+        <div class="plano-card" data-plano="gestao">
+          <p class="plano-card__eyebrow">Gestão</p>
+          <!-- PREÇO: trocar "Sob consulta" pelo valor quando definido -->
+          <p class="plano-card__price">Sob consulta<span class="plano-card__period">/mês</span></p>
+          <p class="plano-card__hint">Proposta por tamanho de frota</p>
+          <p class="plano-card__desc">Centralize multas, motoristas e veículos em um lugar só, com prazo controlado do começo ao fim.</p>
+
+          <ul class="plano-card__features">
+            <li class="plano-feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div>
+                <p class="plano-feat__title">Placas e veículos</p>
+                <p class="plano-feat__desc">Cadastro da frota com consulta automática de infrações por placa e CNPJ, via integração oficial e-Frotas.</p>
+              </div>
+            </li>
+            <li class="plano-feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div>
+                <p class="plano-feat__title">Motoristas e indicação de condutor</p>
+                <p class="plano-feat__desc">Workflow de identificação do infrator dentro do prazo, sem planilha paralela e sem perder a data fatal.</p>
+              </div>
+            </li>
+            <li class="plano-feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div>
+                <p class="plano-feat__title">Relatórios e dashboards</p>
+                <p class="plano-feat__desc">ROI, ranking de condutores e mapa de calor de infrações — material pronto para conformidade e ESG.</p>
+              </div>
+            </li>
+            <li class="plano-feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div>
+                <p class="plano-feat__title">Suporte técnico por ticket</p>
+                <p class="plano-feat__desc">Canal dedicado com o time que construiu a plataforma. Resposta útil, não script de atendimento.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="plano-card__cta">
+            <a href="/#oferta" class="btn btn-outline btn-M">Falar com representante</a>
+          </div>
+        </div>
+
+        <div class="plano-card" data-plano="pagamentos">
+          <p class="plano-card__eyebrow">Pagamentos</p>
+          <!-- PREÇO: trocar "Sob consulta" pelo valor quando definido -->
+          <p class="plano-card__price">Sob consulta<span class="plano-card__period">/mês</span></p>
+          <p class="plano-card__hint">Módulo adicional ao plano Gestão</p>
+          <p class="plano-card__desc">Pague IPVA e débitos do veículo pelo próprio sistema, sem sair para o portal do órgão.</p>
+
+          <ul class="plano-card__features">
+            <li class="plano-feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div>
+                <p class="plano-feat__title">Pagamento de multas</p>
+                <p class="plano-feat__desc">Quitação pelo sistema com acesso ao desconto de 40% para pagamento antecipado, pelo canal oficial.</p>
+              </div>
+            </li>
+            <li class="plano-feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div>
+                <p class="plano-feat__title">IPVA e licenciamento</p>
+                <p class="plano-feat__desc">Débitos anuais do veículo consultados e pagos no mesmo fluxo da gestão, sem trocar de sistema.</p>
+              </div>
+            </li>
+            <li class="plano-feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div>
+                <p class="plano-feat__title">Débitos do veículo</p>
+                <p class="plano-feat__desc">Consulta consolidada das pendências por placa, para a frota não ser surpreendida por vencimento.</p>
+              </div>
+            </li>
+            <li class="plano-feat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div>
+                <p class="plano-feat__title">Liquidação com parceiro credenciado</p>
+                <p class="plano-feat__desc">Pagamentos processados via Banco do Brasil, parceiro oficial, com compliance e trilha de auditoria.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="plano-card__cta">
+            <a href="/#oferta" class="btn btn-outline btn-M">Falar com representante</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="compare-wrap reveal-up">
+        <h2 class="heading-2">Compare os planos</h2>
+
+        <div class="compare-scroll">
+          <table class="compare">
+            <thead>
+              <tr>
+                <th scope="col" class="compare__label">Funcionalidade</th>
+                <th scope="col" class="compare__plan">
+                  <span class="compare__plan-name">Gestão</span>
+                  <a href="/#oferta" class="btn btn-outline btn-S">Falar com representante</a>
+                </th>
+                <th scope="col" class="compare__plan">
+                  <span class="compare__plan-name">Gestão + Pagamentos</span>
+                  <a href="/#oferta" class="btn btn-outline btn-S">Falar com representante</a>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr class="compare__group">
+                <td colspan="3">
+                  <span class="compare__group-inner">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    Gestão de frota
+                  </span>
+                </td>
+              </tr>
+              <tr><td class="compare__feat">Cadastro de veículos e placas</td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td></tr>
+              <tr><td class="compare__feat">Consulta automática de infrações</td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td></tr>
+              <tr><td class="compare__feat">Indicação de condutor</td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td></tr>
+              <tr><td class="compare__feat">Controle de prazos e status</td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td></tr>
+
+              <tr class="compare__group">
+                <td colspan="3">
+                  <span class="compare__group-inner">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    Relatórios e inteligência
+                  </span>
+                </td>
+              </tr>
+              <tr><td class="compare__feat">Dashboard de ROI</td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td></tr>
+              <tr><td class="compare__feat">Ranking de condutores</td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td></tr>
+              <tr><td class="compare__feat">Mapa de calor de infrações</td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td></tr>
+
+              <tr class="compare__group">
+                <td colspan="3">
+                  <span class="compare__group-inner">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    Pagamentos
+                  </span>
+                </td>
+              </tr>
+              <tr><td class="compare__feat">Pagamento de multas pelo sistema</td><td class="compare__mark compare__mark--no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Não incluso</title><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td></tr>
+              <tr><td class="compare__feat">IPVA e licenciamento</td><td class="compare__mark compare__mark--no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Não incluso</title><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td></tr>
+              <tr><td class="compare__feat">Débitos do veículo</td><td class="compare__mark compare__mark--no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Não incluso</title><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td></tr>
+              <tr><td class="compare__feat">Desconto de 40% por pagamento antecipado</td><td class="compare__mark compare__mark--no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Não incluso</title><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td></tr>
+
+              <tr class="compare__group">
+                <td colspan="3">
+                  <span class="compare__group-inner">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                    Incluso nos dois
+                  </span>
+                </td>
+              </tr>
+              <tr><td class="compare__feat">API própria documentada</td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td></tr>
+              <tr><td class="compare__feat">Integração com sistemas terceiros</td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td></tr>
+              <tr><td class="compare__feat">Suporte por ticket</td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td></tr>
+              <tr><td class="compare__feat">Compliance e LGPD</td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td><td class="compare__mark compare__mark--yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Incluso</title><polyline points="20 6 9 17 4 12"></polyline></svg></td></tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="planos-cta reveal-up">
+        <h2 class="heading-3">Não sabe qual plano faz sentido para a sua frota?</h2>
+        <p class="body-M text-secondary" style="max-width: 560px; margin: 0 auto var(--space-32);">Conte o tamanho da operação e há quantas infrações por mês vocês lidam. Montamos a proposta em cima disso.</p>
         <a href="/#oferta" class="btn btn-primary btn-M">Falar com representante</a>
       </div>
+
     </div>
   </section>
+
 
   <footer class="footer">
     <div class="container">
@@ -88,7 +276,8 @@
         <div>
           <h4 class="footer-title">Empresa</h4>
           <ul class="footer-links">
-            <li><a href="/sobre/">Quem somos</a></li>
+            <li><a href="/institucional/">A empresa</a></li>
+            <li><a href="/institucional/#quem-somos">Quem somos</a></li>
             <li><a href="/planos/">Planos e preços</a></li>
             <li><a href="/blog">Blog</a></li>
           </ul>
