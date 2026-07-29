@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroWidget = document.getElementById('sistemaTabs');
 
   function updateNavbar() {
+    // Páginas internas usam .navbar--page: nasce sólida e fica assim, sem hero
+    // para sobrevoar. Sem esta saída antecipada a navbar viraria transparente no
+    // topo e a logo branca sumiria contra o fundo claro.
+    if (!navbar || navbar.classList.contains('navbar--page')) return;
     let threshold = 50;
     if (heroWidget) {
       const rect = heroWidget.getBoundingClientRect();
@@ -114,6 +118,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     );
   });
+
+  // Fontes e imagens grandes terminam de carregar depois que os ScrollTriggers
+  // já mediram a página, deslocando tudo que vem abaixo. Sem este refresh, um
+  // bloco após uma imagem alta pode nunca chegar ao seu start e ficar invisível.
+  window.addEventListener('load', () => ScrollTrigger.refresh());
 
   // Staggered card reveals in grids
   const grids = document.querySelectorAll('.grid, .bento-grid, .timeline, .stats-grid');

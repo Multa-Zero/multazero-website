@@ -502,6 +502,18 @@ body {
     z-index: -1;
 }
 
+/* Páginas internas (institucional): não há hero para a navbar sobrevoar, então
+   ela nasce sólida e rola junto em vez de deslizar de cima. Herda o resto de
+   .solid para o menu mobile e as cores de link continuarem valendo. */
+.navbar--page {
+    position: sticky;
+    animation: none;
+    border-bottom: 1px solid var(--border-default);
+}
+.navbar--page::before {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
 /* Remove mobile override — no longer needed */
 .navbar.solid .nav-link,
 .navbar.solid .nav-logo {
@@ -3446,6 +3458,61 @@ body.modal-open {
 .sobre-badge--bb { gap: 10px; }
 .sobre-badge__bb-logo { height: 17px; width: auto; display: block; flex: 0 0 auto; }
 .sobre-cta { margin-top: var(--space-32); }
+
+/* Quem somos — faixa de fundadores no fim da dobra institucional.
+   Sem borda/sombra de propósito: a seção já tem texto, foto, badges e CTA. */
+.time-block {
+  margin-top: var(--space-64);
+  padding-top: var(--space-48);
+  border-top: 1px solid var(--border-default);
+}
+.time-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-32);
+}
+.time-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-40);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 768px) {
+  .time-grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-32); }
+}
+.time-avatar {
+  display: block;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: var(--space-16);
+  background: var(--blue-ribbon-1);
+}
+.time-name {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+.time-role {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--blue-ribbon-7);
+  margin-top: var(--space-4);
+}
+.time-cred {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin-top: var(--space-8);
+}
 
 /* ===== Widget de abas (dobra "O que é o multazero") ===== */
 /* #sistema sem padding-top: o overlap do widget = |margin-top| (consistente).
