@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planos e preços | multazero</title>
-  <meta name="description" content="Planos e preços do multazero.">
+  <meta name="description" content="Planos do multazero: gestão de multas da frota e o módulo adicional de pagamento de IPVA e débitos do veículo.">
   <link rel="icon" type="image/png" href="/images/favicon-multazero-dark.png" media="(prefers-color-scheme: dark)">
   <link rel="icon" type="image/png" href="/images/favicon-multazero-light.png" media="(prefers-color-scheme: light)">
   <link rel="stylesheet" href="/styles.css">
@@ -34,14 +34,12 @@
         <a href="/planos/" class="nav-link" aria-current="page">Planos e preços</a>
         <a href="/blog" class="nav-link">Blog</a>
         <a href="/" class="nav-link">Produto</a>
-        <!-- .visible fixo: o JS só revela o CTA depois que o CTA do hero sai de
-             cena, e aqui não há hero — sem isso o botão fica com max-width 0. -->
-        <a href="/#oferta" class="btn btn-primary btn-S nav-cta visible">Falar com representante</a>
+        <a href="/institucional/#proposta" data-contact-cta class="btn btn-primary btn-S nav-cta visible">Falar com representante</a>
       </div>
     </div>
   </nav>
 
-  <section class="section-padding">
+  <section class="section-padding planos-page-top">
     <div class="container">
 
       <div class="planos-hero reveal-up">
@@ -59,7 +57,7 @@
           </button>
         </div>
 
-        <p class="planos-note">O preço acompanha o tamanho da frota. Mesmo que hoje você só precise organizar, o módulo de pagamentos pode entrar depois — <a href="/#oferta">fale com um representante</a> e receba uma proposta para a sua operação.</p>
+        <p class="planos-note">O preço acompanha o tamanho da frota. Mesmo que hoje você só precise organizar, o módulo de pagamentos pode entrar depois — <a href="/institucional/#proposta" data-contact-cta>fale com um representante</a> e receba uma proposta para a sua operação.</p>
       </div>
 
       <div class="planos-grid reveal-up">
@@ -103,7 +101,7 @@
           </ul>
 
           <div class="plano-card__cta">
-            <a href="/#oferta" class="btn btn-outline btn-M">Falar com representante</a>
+            <button type="button" class="btn btn-outline btn-M" data-contact-cta aria-haspopup="dialog" aria-controls="contact-modal">Falar com representante</button>
           </div>
         </div>
 
@@ -146,7 +144,7 @@
           </ul>
 
           <div class="plano-card__cta">
-            <a href="/#oferta" class="btn btn-outline btn-M">Falar com representante</a>
+            <button type="button" class="btn btn-outline btn-M" data-contact-cta aria-haspopup="dialog" aria-controls="contact-modal">Falar com representante</button>
           </div>
         </div>
 
@@ -162,11 +160,11 @@
                 <th scope="col" class="compare__label">Funcionalidade</th>
                 <th scope="col" class="compare__plan">
                   <span class="compare__plan-name">Gestão</span>
-                  <a href="/#oferta" class="btn btn-outline btn-S">Falar com representante</a>
+                  <button type="button" class="btn btn-outline btn-S" data-contact-cta aria-haspopup="dialog" aria-controls="contact-modal">Falar com representante</button>
                 </th>
                 <th scope="col" class="compare__plan">
                   <span class="compare__plan-name">Gestão + Pagamentos</span>
-                  <a href="/#oferta" class="btn btn-outline btn-S">Falar com representante</a>
+                  <button type="button" class="btn btn-outline btn-S" data-contact-cta aria-haspopup="dialog" aria-controls="contact-modal">Falar com representante</button>
                 </th>
               </tr>
             </thead>
@@ -231,7 +229,7 @@
       <div class="planos-cta reveal-up">
         <h2 class="heading-3">Não sabe qual plano faz sentido para a sua frota?</h2>
         <p class="body-M text-secondary" style="max-width: 560px; margin: 0 auto var(--space-32);">Conte o tamanho da operação e há quantas infrações por mês vocês lidam. Montamos a proposta em cima disso.</p>
-        <a href="/#oferta" class="btn btn-primary btn-M">Falar com representante</a>
+        <button type="button" class="btn btn-primary btn-M" data-contact-cta aria-haspopup="dialog" aria-controls="contact-modal">Falar com representante</button>
       </div>
 
     </div>
@@ -395,6 +393,112 @@
   </footer>
 
   <script type="module" src="/main.js"></script>
+
+  <!-- Contact Modal (expandable CTA) -->
+  <div id="contact-modal" class="contact-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <div class="contact-modal-card" data-modal-card>
+      <button type="button" class="contact-modal-close" data-modal-close aria-label="Fechar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="contact-modal-inner">
+        <!-- Left: pitch column -->
+        <div class="contact-modal-pitch">
+          <img src="/images/favicon-multazero-dark.png" alt="multazero" class="contact-modal-mark" width="44" height="44">
+          <h2 id="contact-modal-title" class="contact-modal-title">Solicite uma proposta para sua frota</h2>
+
+          <div class="contact-modal-bullets">
+            <div class="contact-modal-bullet">
+              <div class="contact-modal-bullet-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <p>Descubra como o multazero reduz custos e automatiza a gestão de multas da sua operação.</p>
+            </div>
+            <div class="contact-modal-bullet">
+              <div class="contact-modal-bullet-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <p>Veja na prática como nossa plataforma acelera processos e protege sua frota.</p>
+            </div>
+          </div>
+
+          <!-- ARQUIVADO (2026-07-12): depoimento Rafaela/Treméa + ticker de cidades.
+               Será reativado futuramente — ver docs/ARQUIVADOS.md para o snippet completo
+               e instruções de reativação. CSS correspondente mantido em styles.css
+               (.contact-modal-quote, .contact-modal-avatar, .contact-modal-tremea-logo, .cities-ticker). -->
+        </div>
+
+        <!-- Right: form column -->
+        <div class="contact-modal-form-wrap">
+          <form id="contact-form" class="contact-modal-form">
+            <div class="cmf-group">
+              <label for="cmf-nome" class="cmf-label">Nome completo *</label>
+              <input id="cmf-nome" type="text" name="nome" class="cmf-input" autocomplete="name" required>
+            </div>
+
+            <div class="cmf-group">
+              <label for="cmf-email" class="cmf-label">E-mail corporativo *</label>
+              <input id="cmf-email" type="email" name="email" class="cmf-input" autocomplete="email" required>
+            </div>
+
+            <div class="cmf-row">
+              <div class="cmf-group">
+                <label for="cmf-telefone" class="cmf-label">Telefone *</label>
+                <input id="cmf-telefone" type="tel" name="telefone" class="cmf-input" inputmode="tel" autocomplete="tel" maxlength="15" required>
+              </div>
+              <div class="cmf-group">
+                <label for="cmf-cnpj" class="cmf-label">CNPJ *</label>
+                <input id="cmf-cnpj" type="text" name="cnpj" class="cmf-input" inputmode="numeric" maxlength="18" required>
+              </div>
+            </div>
+
+            <div class="cmf-row">
+              <div class="cmf-group">
+                <label for="cmf-empresa" class="cmf-label">Empresa *</label>
+                <input id="cmf-empresa" type="text" name="empresa" class="cmf-input" autocomplete="organization" required>
+              </div>
+              <div class="cmf-group">
+                <label for="cmf-setor" class="cmf-label">Setor *</label>
+                <select id="cmf-setor" name="setor" class="cmf-input cmf-select" required>
+                  <option value="">Selecione</option>
+                  <option value="transporte-cargas">Transporte de cargas</option>
+                  <option value="logistica">Logística</option>
+                  <option value="distribuicao">Distribuição</option>
+                  <option value="locacao-veiculos">Locação de veículos</option>
+                  <option value="passageiros">Transporte de passageiros</option>
+                  <option value="construcao">Construção</option>
+                  <option value="agronegocio">Agronegócio</option>
+                  <option value="servicos">Serviços</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="cmf-group">
+              <label for="cmf-frota-tamanho" class="cmf-label">Tamanho da frota *</label>
+              <select id="cmf-frota-tamanho" name="frota_tamanho" class="cmf-input cmf-select" required>
+                <option value="">Selecione</option>
+                <option value="1-50">1 a 50 veículos</option>
+                <option value="51-100">51 a 100 veículos</option>
+                <option value="100-500">100 a 500 veículos</option>
+                <option value="500-1000">500 a 1.000 veículos</option>
+                <option value="1000-2000">1.000 a 2.000 veículos</option>
+              </select>
+            </div>
+
+            <button type="submit" class="cmf-submit">Solicitar proposta</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 

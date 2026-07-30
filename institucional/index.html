@@ -13,7 +13,9 @@
 
 <body>
 
-  <nav class="navbar solid navbar--page" id="navbar">
+
+  <!-- Navbar -->
+  <nav class="navbar transparent" id="navbar">
     <div class="container nav-container">
       <a href="/institucional/" class="nav-logo">
         <img src="/images/logomultazerobranca.png" alt="multazero" class="logo-white" height="52">
@@ -30,22 +32,731 @@
       </button>
 
       <div class="nav-links">
-        <a href="/institucional/#quem-somos" class="nav-link" aria-current="page">Quem somos</a>
+        <a href="#quem-somos" class="nav-link">Quem somos</a>
         <a href="/planos/" class="nav-link">Planos e preços</a>
         <a href="/blog" class="nav-link">Blog</a>
         <a href="/" class="nav-link">Produto</a>
-        <!-- .visible fixo: o JS só revela o CTA depois que o CTA do hero sai de
-             cena, e aqui não há hero — sem isso o botão fica com max-width 0. -->
-        <a href="/#oferta" class="btn btn-primary btn-S nav-cta visible">Falar com representante</a>
+        <a href="#proposta" class="btn btn-primary btn-S nav-cta" id="nav-cta">Falar com representante</a>
       </div>
     </div>
   </nav>
 
-  <section class="section-padding" id="sobre">
+  <!-- 1. Hero -->
+  <header class="hero" id="home">
+    <div class="hero-bg">
+      <img src="/hero-truck-sunset-3.webp" alt="" class="hero-bg-image">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-text reveal-up">
+        <h1 class="heading-1">Gestão de multas e frota, inteligente.</h1>
+        <p class="body-L hero-subtitle">Solução inteligente para captura, gestão e pagamento de infrações em tempo real, com inteligência artificial.</p>
+
+        <div class="hero-actions">
+          <a href="#proposta" data-contact-cta class="btn btn-primary btn-M" id="hero-cta">Falar com representante</a>
+          <a href="#diferenciais" class="btn btn-outline-light btn-M">Saiba mais</a>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- 2. Logos (seção arquivada - clientes fictícios) -->
+  <!-- <section class="logos-section">...</section> -->
+
+  <!-- 2. O que é o multazero (substitui a antiga seção Problema) -->
+  <section class="section-padding card-neutral" id="sistema">
+    <div class="container">
+      <div class="tabs-widget" id="sistemaTabs">
+        <div class="tabs-panels" data-tabs-panels>
+
+          <!-- Panel 0: Condutor -->
+          <div class="tabs-panel is-active" data-panel="0">
+            <div class="tw-copy">
+              <h3 class="tw-title">Indicação do real condutor</h3>
+              <p class="tw-desc">Identifique e indique o condutor correto de cada infração, com apoio da IA — direto na plataforma, sem planilha.</p>
+            </div>
+            <div class="tw-visual">
+              <div class="tw-mock tw-cond">
+                <div class="tw-mock-head">
+                  <span class="tw-chip tw-chip--ai">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.2L18 8.8l-4.4 1.6L12 15l-1.6-4.6L6 8.8l4.4-1.6L12 3z"/></svg>
+                    IA · identificação
+                  </span>
+                  <span class="tw-mock-ait">AIT129031</span>
+                </div>
+                <div class="tw-cond-search">
+                  <svg class="tw-cond-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+                  <span class="tw-cond-typed" data-cond-typed></span><span class="tw-cond-caret" data-cond-caret></span>
+                </div>
+                <div class="tw-cond-stage">
+                  <div class="tw-cond-drop" data-cond-drop>
+                    <div class="tw-cond-opt" data-cond-opt>
+                      <span class="tw-avatar">JS</span>
+                      <div class="tw-cond-info">
+                        <span class="tw-cond-name">José da Silva C. Mota</span>
+                        <span class="tw-cond-sub">CNH 12903901902 · Faixa A</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tw-cond-result" data-cond-result>
+                    <div class="tw-cond-row">
+                      <span class="tw-avatar">JS</span>
+                      <div class="tw-cond-info">
+                        <span class="tw-cond-name">José da Silva C. Mota</span>
+                        <span class="tw-cond-sub">CNH 12903901902 · Faixa A</span>
+                      </div>
+                      <span class="tw-check tw-cond-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    </div>
+                    <div class="tw-btn tw-btn--blue">Confirmar indicação</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 1: PIX -->
+          <div class="tabs-panel" data-panel="1">
+            <div class="tw-copy">
+              <h3 class="tw-title">Pagamento das multas via PIX</h3>
+              <p class="tw-desc">Quite infrações na hora, com PIX integrado — sem sair do sistema e sem intermediários.</p>
+            </div>
+            <div class="tw-visual">
+              <div class="tw-mock tw-pixq">
+                <div class="tw-pixq-head">
+                  <span class="tw-pixq-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="tw-pixq-title">PIX gerado com sucesso</span>
+                </div>
+                <div class="tw-pixq-amount">
+                  <span class="tw-pixq-label">Valor a pagar</span>
+                  <span class="tw-pixq-value">R$ 281,67</span>
+                  <span class="tw-pixq-sub">ABC-1234 · Parcela 2/3 do IPVA 2026</span>
+                </div>
+                <img class="tw-pixq-qr" src="/pix-qr.svg" alt="" width="120" height="120">
+                <div class="tw-pixq-copy">
+                  <span class="tw-pixq-code">00020126580014BR.GOV.BCB.PIX0136a629cc5e-aaa0-4d77-9614-c0e1a2b3c4d5520400005303986540528167802BR5913MULTAZERO PAY6009SAO PAULO62070503***6304A1B2</span>
+                  <button type="button" class="tw-pixq-copybtn" data-pix-copy>Copiar</button>
+                </div>
+                <div class="tw-pixq-expire">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  Este código expira em 30 minutos
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 2: Boleto -->
+          <div class="tabs-panel" data-panel="2">
+            <div class="tw-copy">
+              <h3 class="tw-title">Boleto com 40%/20% de desconto</h3>
+              <p class="tw-desc">Emita boletos com o desconto legal aplicado automaticamente — 40% à vista ou 20%, sem cálculo manual.</p>
+            </div>
+            <div class="tw-visual">
+              <div class="tw-mock tw-multa">
+                <div class="tw-multa-head">
+                  <div>
+                    <div class="tw-multa-title">Detalhes da Multa</div>
+                    <div class="tw-multa-ait">Auto da Infração AF12890319</div>
+                  </div>
+                  <span class="tw-chip tw-chip--grave">Grave</span>
+                </div>
+                <div class="tw-multa-driver">
+                  <span class="tw-avatar">JS</span>
+                  <div class="tw-cond-info">
+                    <span class="tw-cond-name">José da Silva C. Mota</span>
+                    <span class="tw-cond-sub">Scania 380i · 2024/2025</span>
+                  </div>
+                  <span class="tw-multa-status">Em andamento</span>
+                </div>
+                <div class="tw-multa-stage">
+                  <div class="tw-multa-actions" data-boleto-actions>
+                    <span class="tw-multa-action">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                      Ver boleto
+                    </span>
+                    <span class="tw-multa-action">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+                      Entrar com recurso
+                    </span>
+                    <button type="button" class="tw-multa-action tw-multa-action--primary" data-boleto-emit>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M7 15h4"/></svg>
+                      Emitir boleto c/ desconto
+                      <span class="tw-40badge">40%</span>
+                    </button>
+                  </div>
+                  <div class="tw-multa-loader" data-boleto-loader aria-hidden="true">
+                    <span class="tw-spinner"></span>
+                    <span>Gerando boleto com 40% de desconto…</span>
+                  </div>
+                  <div class="tw-multa-emitted" data-boleto-emitted aria-hidden="true">
+                    <div class="tw-emit-head">
+                      <span class="tw-emit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                      <span class="tw-emit-title">Boleto emitido · 40% de desconto</span>
+                    </div>
+                    <div class="tw-emit-vals">
+                      <span class="tw-strike">R$ 195,20</span>
+                      <span class="tw-boleto-total">R$ 117,12</span>
+                    </div>
+                    <div class="tw-barcode2" aria-hidden="true"></div>
+                    <div class="tw-emit-line">34191.79001 01043.510047 91020.150008 8 9123456789</div>
+                    <div class="tw-btn tw-btn--green">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                      Baixar boleto
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 3: Pipeline -->
+          <div class="tabs-panel" data-panel="3">
+            <div class="tw-copy">
+              <h3 class="tw-title">Pipeline de multas em tempo real</h3>
+              <p class="tw-desc">Acompanhe cada infração mudando de etapa, ao vivo, num quadro visual — do começo ao pagamento.</p>
+            </div>
+            <div class="tw-visual">
+              <div class="tw-mock tw-mock--pipe">
+                <div class="illus-pipe-wrap">
+                  <div class="illus-pipe-col">
+                    <div class="illus-pipe-col-header">
+                      <span class="illus-pipe-dot" style="background:#407EFC"></span>
+                      <span class="illus-pipe-col-title">Confirmar</span>
+                      <span class="illus-pipe-count">3</span>
+                    </div>
+                    <div class="illus-pipe-placeholder"></div>
+                    <div class="illus-pipe-card">
+                      <span class="illus-pipe-badge illus-pipe-badge--warn">1 mês</span>
+                      <div class="illus-pipe-ait">AIT382045</div>
+                      <div class="illus-pipe-plate">DEF-8G90</div>
+                    </div>
+                  </div>
+                  <div class="illus-pipe-col">
+                    <div class="illus-pipe-col-header">
+                      <span class="illus-pipe-dot" style="background:#F59E0B"></span>
+                      <span class="illus-pipe-col-title">Confirmada</span>
+                      <span class="illus-pipe-count">4</span>
+                    </div>
+                    <div class="illus-pipe-card">
+                      <span class="illus-pipe-badge illus-pipe-badge--danger">2 dias</span>
+                      <div class="illus-pipe-ait">AIT490122</div>
+                      <div class="illus-pipe-plate">GHI-2J34</div>
+                    </div>
+                    <div class="illus-pipe-card">
+                      <span class="illus-pipe-badge illus-pipe-badge--danger">10 dias</span>
+                      <div class="illus-pipe-ait">AIT651098</div>
+                      <div class="illus-pipe-plate">JKL-3M56</div>
+                    </div>
+                  </div>
+                  <div class="illus-pipe-col">
+                    <div class="illus-pipe-col-header">
+                      <span class="illus-pipe-dot" style="background:#10B981"></span>
+                      <span class="illus-pipe-col-title">Pago</span>
+                      <span class="illus-pipe-count">3</span>
+                    </div>
+                    <div class="illus-pipe-card illus-pipe-card--paid">
+                      <div class="illus-pipe-ait">AIT773201</div>
+                      <div class="illus-pipe-plate">MNO-4P78</div>
+                      <div class="illus-pipe-paid-label">Pago</div>
+                    </div>
+                    <div class="illus-pipe-card illus-pipe-card--paid">
+                      <div class="illus-pipe-ait">AIT129031</div>
+                      <div class="illus-pipe-plate">ABC-1D23</div>
+                      <div class="illus-pipe-paid-label">Pago</div>
+                    </div>
+                  </div>
+                  <div class="illus-pipe-dragging">
+                    <span class="illus-pipe-badge illus-pipe-badge--danger">2 dias</span>
+                    <div class="illus-pipe-ait">AIT129031</div>
+                    <div class="illus-pipe-plate">ABC-1D23</div>
+                    <div class="illus-pipe-drag-meta"><span class="illus-pipe-drag-label">Infr:</span> 22/11</div>
+                    <svg class="illus-pipe-cursor" width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 3l14 8-6 2-4 6z" fill="#303641" stroke="white" stroke-width="1.5"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 4: Relatórios -->
+          <div class="tabs-panel" data-panel="4">
+            <div class="tw-copy">
+              <h3 class="tw-title">Relatórios completos da frota</h3>
+              <p class="tw-desc">Rankings de infrações, condutores e veículos por período — filtre, compare valores e exporte tudo em CSV.</p>
+            </div>
+            <div class="tw-visual">
+              <div class="tw-mock tw-rel">
+                <div class="tw-rel-tabs" data-rel-tabs>
+                  <button class="tw-rel-tab is-active" type="button" data-rel-tab="0">Ranking de infrações</button>
+                  <button class="tw-rel-tab" type="button" data-rel-tab="1">Motoristas x multas</button>
+                  <button class="tw-rel-tab" type="button" data-rel-tab="2">Veículos</button>
+                </div>
+                <div class="tw-rel-filters">
+                  <span class="tw-rel-pill">Mensal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                  <span class="tw-rel-pill">Julho · 2026 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                  <span class="tw-rel-export">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Exportar CSV
+                  </span>
+                </div>
+                <div class="tw-rel-stage">
+
+                  <!-- Relatório 0: ranking de infrações (dados fictícios) -->
+                  <div class="tw-rel-view is-on" data-rel-view="0">
+                    <div class="tw-rel-titles">
+                      <div class="tw-rel-title">Maior número de ocorrências</div>
+                      <div class="tw-rel-sub">Infrações por código no período</div>
+                    </div>
+                    <div class="tw-rel-chart">
+                      <div class="tw-rel-tip">
+                        <span class="tw-rel-tip-code">6050</span>
+                        <span class="tw-rel-tip-occ">12 ocorrências</span>
+                        <span class="tw-rel-tip-val">R$ 3.418,20</span>
+                      </div>
+                      <div class="tw-rel-plot">
+                        <div class="tw-rel-col" style="--h:100%; --i:0"><span class="tw-rel-bar" style="background:var(--blue-ribbon-6)"></span><span class="tw-rel-code">6050</span></div>
+                        <div class="tw-rel-col" style="--h:78%; --i:1"><span class="tw-rel-bar" style="background:var(--blue-ribbon-9)"></span><span class="tw-rel-code">5185</span></div>
+                        <div class="tw-rel-col" style="--h:60%; --i:2"><span class="tw-rel-bar" style="background:var(--blue-ribbon-5)"></span><span class="tw-rel-code">7030</span></div>
+                        <div class="tw-rel-col" style="--h:44%; --i:3"><span class="tw-rel-bar" style="background:var(--neutral-5)"></span><span class="tw-rel-code">5010</span></div>
+                        <div class="tw-rel-col" style="--h:30%; --i:4"><span class="tw-rel-bar" style="background:var(--neutral-3)"></span><span class="tw-rel-code">6262</span></div>
+                        <div class="tw-rel-col" style="--h:14%; --i:5"><span class="tw-rel-bar" style="background:var(--blue-ribbon-8)"></span><span class="tw-rel-code">7331</span></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Relatório 1: motoristas indicados x multas (dados fictícios) -->
+                  <div class="tw-rel-view" data-rel-view="1">
+                    <div class="tw-rel-titles">
+                      <div class="tw-rel-title">Motoristas indicados x multas</div>
+                      <div class="tw-rel-sub">Condutores com mais indicações no período</div>
+                    </div>
+                    <div class="tw-rel-rows">
+                      <div class="tw-rel-row" style="--w:90%; --i:0"><span class="tw-rel-row-label">C. Almeida</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-7)"></span></span><span class="tw-rel-row-val">9</span></div>
+                      <div class="tw-rel-row" style="--w:70%; --i:1"><span class="tw-rel-row-label">R. Barros</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-6)"></span></span><span class="tw-rel-row-val">7</span></div>
+                      <div class="tw-rel-row" style="--w:50%; --i:2"><span class="tw-rel-row-label">M. Duarte</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-5)"></span></span><span class="tw-rel-row-val">5</span></div>
+                      <div class="tw-rel-row" style="--w:30%; --i:3"><span class="tw-rel-row-label">P. Siqueira</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-4)"></span></span><span class="tw-rel-row-val">3</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Relatório 2: veículos com mais infrações (dados fictícios) -->
+                  <div class="tw-rel-view" data-rel-view="2">
+                    <div class="tw-rel-titles">
+                      <div class="tw-rel-title">Veículos com mais infrações</div>
+                      <div class="tw-rel-sub">Placas com mais ocorrências no período</div>
+                    </div>
+                    <div class="tw-rel-rows">
+                      <div class="tw-rel-row" style="--w:88%; --i:0"><span class="tw-rel-plate">RTX-4B21</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-7)"></span></span><span class="tw-rel-row-val">8</span></div>
+                      <div class="tw-rel-row" style="--w:66%; --i:1"><span class="tw-rel-plate">KWD-7E88</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-6)"></span></span><span class="tw-rel-row-val">6</span></div>
+                      <div class="tw-rel-row" style="--w:44%; --i:2"><span class="tw-rel-plate">PZM-1C09</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-5)"></span></span><span class="tw-rel-row-val">4</span></div>
+                      <div class="tw-rel-row" style="--w:22%; --i:3"><span class="tw-rel-plate">JQX-5T72</span><span class="tw-rel-track"><span class="tw-rel-hbar" style="background:var(--blue-ribbon-4)"></span></span><span class="tw-rel-row-val">2</span></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="tabs-bar">
+          <div class="tabs-list" role="tablist" data-tabs-list>
+            <span class="tabs-indicator" data-tabs-indicator aria-hidden="true"></span>
+            <button class="tabs-tab is-active" type="button" role="tab" data-tab="0">Indicação de condutor</button>
+            <button class="tabs-tab" type="button" role="tab" data-tab="1">Pagamento via PIX</button>
+            <button class="tabs-tab" type="button" role="tab" data-tab="2">Boleto 40/20</button>
+            <button class="tabs-tab" type="button" role="tab" data-tab="3">Pipeline</button>
+            <button class="tabs-tab" type="button" role="tab" data-tab="4">Relatórios</button>
+          </div>
+          <a href="#proposta" data-contact-cta class="tabs-cta">Falar com representante</a>
+        </div>
+      </div>
+
+      <div class="sistema-intro reveal-up">
+        <h2 class="heading-2">Um sistema conectado a todos os órgãos infratores do Brasil</h2>
+        <p class="body-M text-secondary sistema-lead">O multazero é um sistema inteligente de gestão de infrações, conectado a todos os órgãos infratores do Brasil, possibilitando a gestão de infrações em tempo real, indicação de condutores, emissão de boletos com descontos, e pagamentos de IPVA, DPVAT/SPVAT e licenciamentos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3b. Bento — Plataforma -->
+  <section class="section-padding card-neutral" id="plataforma-bento">
+    <div class="container">
+      <div class="bento-grid reveal-up">
+
+        <!-- Card 1: IA Search -->
+        <div class="bento-card bento-card--hero">
+          <div class="ai-wrap">
+            <div class="ai-frame">
+              <span class="ai-base" aria-hidden="true"></span>
+              <span class="ai-border" id="aiBorder" aria-hidden="true"></span>
+              <span class="ai-glow-outer" id="aiGlow" aria-hidden="true"></span>
+              <div class="ai-inner">
+                <span class="ai-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3l1.8 4.6L18 9.4l-4.2 1.8L12 15.8l-1.8-4.6L6 9.4l4.2-1.8L12 3z"/>
+                    <path d="M19 14l.9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9L19 14z"/>
+                  </svg>
+                </span>
+                <input id="aiInput" class="ai-input" type="text" autocomplete="off" placeholder="Buscar com Inteligência Artificial" aria-label="Buscar com Inteligência Artificial" />
+              </div>
+            </div>
+          </div>
+          <h3 class="bento-card__title">Inteligência artificial no apoio diário</h3>
+          <p class="bento-card__desc">Perguntas e respostas em tempo real, linkada ao seu negócio.</p>
+        </div>
+
+        <!-- Card 2: Alertas -->
+        <div class="bento-card bento-card--alerts">
+          <div class="bento-card__eyebrow">Alertas em tempo real</div>
+          <h3 class="bento-card__title">Prazos em dia</h3>
+          <p class="bento-card__desc">Notificações inteligentes de acompanhamento das infrações.</p>
+          <div class="alerts" id="alertsList"></div>
+        </div>
+
+        <!-- Card 3: Análise do Condutor -->
+        <div class="bento-card bento-card--condutor">
+          <div class="bento-card__eyebrow">Análise do Condutor</div>
+          <h3 class="bento-card__title">Acompanhamento em tempo real</h3>
+          <p class="bento-card__desc">Desempenho do motorista consolidado, direto do prontuário CNH.</p>
+
+          <div class="cond">
+            <div class="cond-top">
+              <div class="score-ring">
+                <div>
+                  <div class="score-ring__n">100</div>
+                  <div class="score-ring__d">de 100</div>
+                </div>
+              </div>
+              <div class="cond-info">
+                <span class="badge-faixa">Faixa A</span>
+                <span class="cond-info__name">José da Silva C. Mota</span>
+                <span class="cond-info__cnh">CNH 12903901902</span>
+              </div>
+            </div>
+
+            <div class="infractions">
+              <div class="infractions__row"><span class="infractions__label">Score inicial</span><span class="infractions__pts infractions__pts--ok">100</span></div>
+              <div class="infractions__row"><span class="infractions__label">Excesso de velocidade</span><span class="infractions__pts infractions__pts--warn">−5</span></div>
+              <div class="infractions__row"><span class="infractions__label">Avanço de sinal</span><span class="infractions__pts infractions__pts--warn">−7</span></div>
+              <div class="infractions__row"><span class="infractions__label">Excesso (reincidência)</span><span class="infractions__pts infractions__pts--error">−10</span></div>
+              <div class="infractions__row infractions__row--total"><span class="infractions__label">Score atual</span><span class="infractions__pts">100</span></div>
+            </div>
+
+            <div class="grade-bar">
+              <div class="grade-bar__seg grade-bar__seg--a">A</div>
+              <div class="grade-bar__seg grade-bar__seg--b">B</div>
+              <div class="grade-bar__seg grade-bar__seg--c">C</div>
+              <div class="grade-bar__seg grade-bar__seg--d">D</div>
+              <div class="grade-bar__seg grade-bar__seg--e">E</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bento-cta reveal-up">
+        <a href="#proposta" data-contact-cta class="btn btn-primary btn-M">Falar com representante</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Resultados -->
+  <section class="section-padding card-neutral" id="resultados">
+    <div class="container">
+      <div class="text-center reveal-up">
+        <h2 class="heading-2">Resultados que falam por si</h2>
+        <p class="body-M text-secondary" style="margin-top: 16px;">Números que mostram o impacto do multazero na
+          gestão de frotas.</p>
+      </div>
+
+      <div class="results-strip reveal-up">
+        <div class="result-stat">
+          <span class="result-num"><span class="reveal-number" data-target="85">0</span>%</span>
+          <span class="result-label">Redução no tempo de processos de recurso</span>
+        </div>
+        <div class="result-stat">
+          <span class="result-num"><span class="reveal-number" data-target="200">0</span>k+</span>
+          <span class="result-label">Multas já gerenciadas na plataforma</span>
+        </div>
+        <div class="result-stat">
+          <span class="result-num"><span class="reveal-number" data-target="40">0</span>%</span>
+          <span class="result-label">Economia média em custos com infrações</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. Features -->
+  <section class="section-padding" id="diferenciais">
+    <div class="container">
+      <div class="text-center reveal-up" style="margin-bottom: 64px;">
+        <h2 class="heading-2">Conheça o multazero</h2>
+        <p class="body-M text-secondary"
+          style="margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">Gestão de multas, recursos com IA e pipeline visual em uma plataforma inteligente.</p>
+      </div>
+
+      <div class="features-container reveal-up">
+        <!-- Left: Illustrations -->
+        <div class="features-illustrations">
+          <!-- Illustration 1: AI Typewriter (placeholder for Task 4) -->
+          <div class="features-illus active" id="illus-ai" aria-hidden="true">
+            <div class="illus-ai-card">
+              <div class="illus-ai-header">
+                <div class="illus-ai-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93" />
+                    <path d="M8.24 4.47A4 4 0 0 1 12 2" />
+                    <circle cx="12" cy="12" r="2" />
+                    <path d="M16 16l3 3" />
+                    <path d="M8 16l-3 3" />
+                    <path d="M12 18v4" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="illus-ai-title">multazero IA</span>
+                  <span class="illus-ai-status">Analisando...</span>
+                </div>
+              </div>
+
+              <div class="illus-ai-context">
+                <div class="illus-ai-context-header">
+                  <span class="illus-ai-context-label">MULTA ANALISADA</span>
+                  <span class="illus-ai-badge-grave">Grave</span>
+                </div>
+                <div class="illus-ai-context-body">Art. 218, III — Excesso de velocidade</div>
+                <div class="illus-ai-context-meta">Placa: ABC-1D23 · Radar BR-101 km 42</div>
+              </div>
+
+              <div class="illus-ai-output">
+                <span class="illus-ai-output-label">Defesa gerada:</span>
+                <div class="illus-ai-typewriter" id="typewriter-target"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Illustration 2: Pipeline Drag (placeholder for Task 5) -->
+          <div class="features-illus" id="illus-pipeline" aria-hidden="true">
+            <div class="illus-pipe-wrap">
+              <!-- Col 1: Confirmar -->
+              <div class="illus-pipe-col">
+                <div class="illus-pipe-col-header">
+                  <span class="illus-pipe-dot" style="background:#407EFC"></span>
+                  <span class="illus-pipe-col-title">Confirmar</span>
+                  <span class="illus-pipe-count">3</span>
+                </div>
+                <div class="illus-pipe-placeholder"></div>
+                <div class="illus-pipe-card">
+                  <span class="illus-pipe-badge illus-pipe-badge--warn">1 mês</span>
+                  <div class="illus-pipe-ait">AIT382045</div>
+                  <div class="illus-pipe-plate">DEF-8G90</div>
+                </div>
+              </div>
+
+              <!-- Col 2: Confirmada -->
+              <div class="illus-pipe-col">
+                <div class="illus-pipe-col-header">
+                  <span class="illus-pipe-dot" style="background:#F59E0B"></span>
+                  <span class="illus-pipe-col-title">Confirmada</span>
+                  <span class="illus-pipe-count">4</span>
+                </div>
+                <div class="illus-pipe-card">
+                  <span class="illus-pipe-badge illus-pipe-badge--danger">2 dias</span>
+                  <div class="illus-pipe-ait">AIT490122</div>
+                  <div class="illus-pipe-plate">GHI-2J34</div>
+                </div>
+                <div class="illus-pipe-card">
+                  <span class="illus-pipe-badge illus-pipe-badge--danger">10 dias</span>
+                  <div class="illus-pipe-ait">AIT651098</div>
+                  <div class="illus-pipe-plate">JKL-3M56</div>
+                </div>
+              </div>
+
+              <!-- Col 3: Pago -->
+              <div class="illus-pipe-col">
+                <div class="illus-pipe-col-header">
+                  <span class="illus-pipe-dot" style="background:#10B981"></span>
+                  <span class="illus-pipe-col-title">Pago</span>
+                  <span class="illus-pipe-count">3</span>
+                </div>
+                <div class="illus-pipe-card illus-pipe-card--paid">
+                  <div class="illus-pipe-ait">AIT773201</div>
+                  <div class="illus-pipe-plate">MNO-4P78</div>
+                  <div class="illus-pipe-paid-label">Pago</div>
+                </div>
+                <div class="illus-pipe-card illus-pipe-card--paid">
+                  <div class="illus-pipe-ait">AIT129031</div>
+                  <div class="illus-pipe-plate">ABC-1D23</div>
+                  <div class="illus-pipe-paid-label">Pago</div>
+                </div>
+              </div>
+
+              <!-- Dragging card -->
+              <div class="illus-pipe-dragging">
+                <span class="illus-pipe-badge illus-pipe-badge--danger">2 dias</span>
+                <div class="illus-pipe-ait">AIT129031</div>
+                <div class="illus-pipe-plate">ABC-1D23</div>
+                <div class="illus-pipe-drag-meta"><span class="illus-pipe-drag-label">Infr:</span> 22/11</div>
+                <svg class="illus-pipe-cursor" width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 3l14 8-6 2-4 6z" fill="#303641" stroke="white" stroke-width="1.5"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Illustration 3: 3 Steps (placeholder for Task 6) -->
+          <div class="features-illus" id="illus-steps" aria-hidden="true">
+            <div class="illus-steps-wrap">
+
+              <!-- Step 1: Vincular multa -->
+              <div class="illus-step illus-step--1">
+                <div class="illus-step-header">
+                  <div class="illus-step-num">1</div>
+                  <span class="illus-step-label">Vincular multa</span>
+                  <div class="illus-step-dots">
+                    <span class="illus-step-dot illus-step-dot--active"></span>
+                    <span class="illus-step-dot"></span>
+                    <span class="illus-step-dot"></span>
+                  </div>
+                </div>
+                <div class="illus-step-context">
+                  <div class="illus-step-context-row">
+                    <span class="illus-step-context-ait">AIT129031</span>
+                    <span class="illus-ai-badge-grave">Grave</span>
+                  </div>
+                  <div class="illus-step-context-line"><span class="illus-step-context-key">Placa:</span> ABC-1D23</div>
+                  <div class="illus-step-context-line"><span class="illus-step-context-key">Art.:</span> 218, III — Excesso de velocidade</div>
+                  <div class="illus-step-context-line"><span class="illus-step-context-key">Local:</span> BR-101 km 42</div>
+                </div>
+                <div class="illus-step-btn illus-step-btn--blue">Vincular ao recurso</div>
+              </div>
+
+              <!-- Step 2: IA analisando -->
+              <div class="illus-step illus-step--2">
+                <div class="illus-step-header">
+                  <div class="illus-step-num">2</div>
+                  <span class="illus-step-label">IA analisando</span>
+                  <div class="illus-step-dots">
+                    <span class="illus-step-dot illus-step-dot--done"></span>
+                    <span class="illus-step-dot illus-step-dot--active"></span>
+                    <span class="illus-step-dot"></span>
+                  </div>
+                </div>
+                <div class="illus-step-checklist">
+                  <div class="illus-step-check-item">
+                    <div class="illus-step-check-icon illus-step-check-icon--done">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#179D71" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span>Verificando base legal do CTB</span>
+                  </div>
+                  <div class="illus-step-check-item">
+                    <div class="illus-step-check-icon illus-step-check-icon--done">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#179D71" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span>Analisando vícios formais</span>
+                  </div>
+                  <div class="illus-step-check-item illus-step-check-item--active">
+                    <div class="illus-step-check-icon illus-step-check-icon--spin">
+                      <div class="illus-step-spinner"></div>
+                    </div>
+                    <span>Gerando argumentação jurídica...</span>
+                  </div>
+                </div>
+                <div class="illus-step-progress">
+                  <div class="illus-step-progress-fill"></div>
+                </div>
+              </div>
+
+              <!-- Step 3: Recurso pronto -->
+              <div class="illus-step illus-step--3">
+                <div class="illus-step-header">
+                  <div class="illus-step-num illus-step-num--done">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <span class="illus-step-label">Recurso pronto</span>
+                  <div class="illus-step-dots">
+                    <span class="illus-step-dot illus-step-dot--done"></span>
+                    <span class="illus-step-dot illus-step-dot--done"></span>
+                    <span class="illus-step-dot illus-step-dot--done"></span>
+                  </div>
+                </div>
+                <div class="illus-step-doc">
+                  <div class="illus-step-doc-header">
+                    <div class="illus-step-doc-icon">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0447D3" stroke-width="2" stroke-linecap="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="illus-step-doc-name">Recurso_AIT129031.pdf</div>
+                      <div class="illus-step-doc-meta">3 páginas · Gerado agora</div>
+                    </div>
+                  </div>
+                  <div class="illus-step-doc-lines">
+                    <div class="illus-step-doc-line" style="width:90%"></div>
+                    <div class="illus-step-doc-line" style="width:75%"></div>
+                    <div class="illus-step-doc-line" style="width:82%"></div>
+                    <div class="illus-step-doc-line illus-step-doc-line--blue" style="width:60%"></div>
+                  </div>
+                </div>
+                <div class="illus-step-btn illus-step-btn--green">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                  Baixar recurso
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Accordion -->
+        <div class="features-accordion">
+          <div class="features-card features-card--active" data-feature="0">
+            <div class="features-card-header">
+              <h3 class="features-card-title">IA Embutida</h3>
+              <span class="features-card-icon">+</span>
+            </div>
+            <div class="features-card-body">
+              <p>Nossa inteligência artificial analisa cada multa e gera defesas personalizadas com base legal sólida,
+                aumentando suas chances de sucesso.</p>
+            </div>
+          </div>
+
+          <div class="features-card" data-feature="1">
+            <div class="features-card-header">
+              <h3 class="features-card-title">Gestão de Multas</h3>
+              <span class="features-card-icon">+</span>
+            </div>
+            <div class="features-card-body">
+              <p>Acompanhe cada infração da sua frota em um pipeline visual. Arraste multas entre etapas e tenha controle
+                total do fluxo.</p>
+            </div>
+          </div>
+
+          <div class="features-card" data-feature="2">
+            <div class="features-card-header">
+              <h3 class="features-card-title">Criação de Recursos</h3>
+              <span class="features-card-icon">+</span>
+            </div>
+            <div class="features-card-body">
+              <p>Em três passos simples: vincule a multa, a IA analisa e gera o recurso completo, pronto para download.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6a. Institucional / LogTech -->
+  <section class="section-padding card-neutral" id="sobre">
     <div class="container">
       <div class="sobre-wrap reveal-up">
         <div class="sobre-text">
-        <h1 class="heading-2">Uma LogTech focada em reduzir custos com infrações</h1>
+        <h2 class="heading-2">Uma LogTech focada em reduzir custos com infrações</h2>
         <div class="sobre-body">
           <p class="body-M text-secondary">O multazero é uma LogTech, fundada em 2025 com foco 100% na redução de custos e no manejo de infrações. O objetivo central é garantir confiabilidade nos dados, gestão aguçada de prazos e status, e pagamentos facilitados.</p>
           <p class="body-M text-secondary">Somos parceiros credenciados do Banco do Brasil e atuamos com API própria documentada, de fácil integração a sistemas terceiros e com compliance absoluto.</p>
@@ -66,7 +777,7 @@
           </span>
         </div>
         <div class="sobre-cta">
-          <a href="/#oferta" class="btn btn-primary btn-M">Falar com representante</a>
+          <a href="#proposta" data-contact-cta class="btn btn-primary btn-M">Falar com representante</a>
         </div>
         </div>
         <div class="sobre-media">
@@ -100,11 +811,128 @@
     </div>
   </section>
 
+  <!-- 6b. Blog / Conteúdo -->
+  <section class="section-padding" id="blog">
+    <div class="container">
+      <div class="text-center reveal-up" style="margin-bottom: 48px;">
+        <h2 class="heading-2">Direto do nosso blog</h2>
+        <p class="body-M text-secondary" style="margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">Guias práticos sobre gestão de frotas, multas e tecnologia — para reduzir burocracia e proteger sua operação.</p>
+      </div>
+
+      <div class="blog-teaser-grid reveal-up">
+        <!-- BLOG-TEASERS:START -->
+        <!-- Preenchido no build por scripts/inject-blog-teasers.mjs com os posts
+             mais recentes do Sanity (os mesmos de /blog). Não adicionar cards à mão. -->
+        <p class="body-M text-secondary" style="grid-column: 1 / -1; text-align: center; padding: 24px 0;">Em breve, novos artigos por aqui.</p>
+        <!-- BLOG-TEASERS:END -->
+      </div>
+
+      <div class="text-center reveal-up" style="margin-top: 40px;">
+        <a href="/blog" class="btn btn-outline btn-M">Ver todos os artigos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="section-padding card-neutral" id="faq">
+    <div class="container reveal-up">
+      <div class="text-center">
+        <h2 class="heading-2">Perguntas frequentes</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question subtitle-M">Para que tamanho de frota a plataforma é recomendada?<span
+              class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg></span></button>
+          <div class="faq-answer">
+            <p class="body-M text-secondary" style="max-width: 90%;">Atendemos empresas a partir de 10 veículos
+              corporativos até operações logísticas complexas com milhares de caminhões, adaptando nossa proposta à sua
+              realidade.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question subtitle-M">Como funciona a inteligência artificial nos recursos?<span
+              class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg></span></button>
+          <div class="faq-answer">
+            <p class="body-M text-secondary" style="max-width: 90%;">Nosso sistema analisa os dados do auto de infração
+              contra a legislação vigente e erros comuns de autuação, elaborando automaticamente uma peça de defesa
+              consistente baseada em casos de sucesso anteriores.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question subtitle-M">O multazero garante o cancelamento da multa?<span
+              class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg></span></button>
+          <div class="faq-answer">
+            <p class="body-M text-secondary" style="max-width: 90%;">Nenhuma empresa idônea pode garantir o
+              cancelamento, pois a decisão final cabe ao órgão de trânsito. O que entregamos é a melhor defesa possível
+              para as infrações, maximizando a taxa de deferimentos e oferecendo gestão completa sobre o risco.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question subtitle-M">O sistema integra com rastreadores e telemetria?<span
+              class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg></span></button>
+          <div class="faq-answer">
+            <p class="body-M text-secondary" style="max-width: 90%;">Sim, possuímos documentação de API para integração
+              com os principais sistemas de ERP, telemetria e rastreamento do mercado, facilitando a identificação
+              automática de condutores.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question subtitle-M">Como recebo uma proposta comercial?<span class="faq-icon"><svg
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg></span></button>
+          <div class="faq-answer">
+            <p class="body-M text-secondary" style="max-width: 90%;">Preencha o formulário na seção "Contato" desta
+              página. Um representante especialista em frotas analisará suas informações e entrará em contato para uma
+              conversa consultiva e sem compromisso.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CTA Final -->
+  <section class="cta-final section-padding" id="proposta">
+    <div class="container reveal-up">
+      <h2 class="heading-2">Pronto para elevar a gestão de multas da sua frota?</h2>
+      <p class="body-L text-secondary" style="margin-top: 16px; margin-bottom: 32px;">Gestão de frota exige ferramentas
+        à altura. Conte-nos sobre sua operação e solicite uma proposta personalizada.</p>
+
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <button type="button" id="contact-cta" class="contact-cta-btn" aria-haspopup="dialog" aria-controls="contact-modal">
+          Solicitar proposta para minha frota
+        </button>
+      </div>
+
+      <div class="trust-badge" style="justify-content: center; color: var(--blue-ribbon-2); margin-top: 24px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        Sem compromisso.
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a href="/" class="footer-logo">
+          <a href="#" class="footer-logo">
             <img src="/images/logomultazeroblack.png" alt="multazero" height="52">
           </a>
           <p class="body-S text-secondary" style="max-width: 80%;">Gestão inteligente, recursos com IA e redução de
@@ -129,9 +957,9 @@
         <div>
           <h4 class="footer-title">Produto</h4>
           <ul class="footer-links">
-            <li><a href="/#diferenciais">Plataforma</a></li>
-            <li><a href="/#resultados">Resultados</a></li>
-            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="#diferenciais">Plataforma</a></li>
+            <li><a href="#resultados">Resultados</a></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
 
@@ -149,7 +977,7 @@
         <div>
           <h4 class="footer-title">Contato</h4>
           <ul class="footer-links">
-            <li><a href="/#oferta">Solicitar Proposta</a></li>
+            <li><a href="#proposta" data-contact-cta>Solicitar Proposta</a></li>
             <li><a href="mailto:multazero@multazero.co">Suporte ao Cliente</a></li>
             <!-- <li><a href="#">Parceiros Automotivos</a></li> -->
           </ul>
@@ -257,6 +1085,112 @@
   </footer>
 
   <script type="module" src="/main.js"></script>
+
+  <!-- Contact Modal (expandable CTA) -->
+  <div id="contact-modal" class="contact-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <div class="contact-modal-card" data-modal-card>
+      <button type="button" class="contact-modal-close" data-modal-close aria-label="Fechar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="contact-modal-inner">
+        <!-- Left: pitch column -->
+        <div class="contact-modal-pitch">
+          <img src="/images/favicon-multazero-dark.png" alt="multazero" class="contact-modal-mark" width="44" height="44">
+          <h2 id="contact-modal-title" class="contact-modal-title">Solicite uma proposta para sua frota</h2>
+
+          <div class="contact-modal-bullets">
+            <div class="contact-modal-bullet">
+              <div class="contact-modal-bullet-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <p>Descubra como o multazero reduz custos e automatiza a gestão de multas da sua operação.</p>
+            </div>
+            <div class="contact-modal-bullet">
+              <div class="contact-modal-bullet-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <p>Veja na prática como nossa plataforma acelera processos e protege sua frota.</p>
+            </div>
+          </div>
+
+          <!-- ARQUIVADO (2026-07-12): depoimento Rafaela/Treméa + ticker de cidades.
+               Será reativado futuramente — ver docs/ARQUIVADOS.md para o snippet completo
+               e instruções de reativação. CSS correspondente mantido em styles.css
+               (.contact-modal-quote, .contact-modal-avatar, .contact-modal-tremea-logo, .cities-ticker). -->
+        </div>
+
+        <!-- Right: form column -->
+        <div class="contact-modal-form-wrap">
+          <form id="contact-form" class="contact-modal-form">
+            <div class="cmf-group">
+              <label for="cmf-nome" class="cmf-label">Nome completo *</label>
+              <input id="cmf-nome" type="text" name="nome" class="cmf-input" autocomplete="name" required>
+            </div>
+
+            <div class="cmf-group">
+              <label for="cmf-email" class="cmf-label">E-mail corporativo *</label>
+              <input id="cmf-email" type="email" name="email" class="cmf-input" autocomplete="email" required>
+            </div>
+
+            <div class="cmf-row">
+              <div class="cmf-group">
+                <label for="cmf-telefone" class="cmf-label">Telefone *</label>
+                <input id="cmf-telefone" type="tel" name="telefone" class="cmf-input" inputmode="tel" autocomplete="tel" maxlength="15" required>
+              </div>
+              <div class="cmf-group">
+                <label for="cmf-cnpj" class="cmf-label">CNPJ *</label>
+                <input id="cmf-cnpj" type="text" name="cnpj" class="cmf-input" inputmode="numeric" maxlength="18" required>
+              </div>
+            </div>
+
+            <div class="cmf-row">
+              <div class="cmf-group">
+                <label for="cmf-empresa" class="cmf-label">Empresa *</label>
+                <input id="cmf-empresa" type="text" name="empresa" class="cmf-input" autocomplete="organization" required>
+              </div>
+              <div class="cmf-group">
+                <label for="cmf-setor" class="cmf-label">Setor *</label>
+                <select id="cmf-setor" name="setor" class="cmf-input cmf-select" required>
+                  <option value="">Selecione</option>
+                  <option value="transporte-cargas">Transporte de cargas</option>
+                  <option value="logistica">Logística</option>
+                  <option value="distribuicao">Distribuição</option>
+                  <option value="locacao-veiculos">Locação de veículos</option>
+                  <option value="passageiros">Transporte de passageiros</option>
+                  <option value="construcao">Construção</option>
+                  <option value="agronegocio">Agronegócio</option>
+                  <option value="servicos">Serviços</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="cmf-group">
+              <label for="cmf-frota-tamanho" class="cmf-label">Tamanho da frota *</label>
+              <select id="cmf-frota-tamanho" name="frota_tamanho" class="cmf-input cmf-select" required>
+                <option value="">Selecione</option>
+                <option value="1-50">1 a 50 veículos</option>
+                <option value="51-100">51 a 100 veículos</option>
+                <option value="100-500">100 a 500 veículos</option>
+                <option value="500-1000">500 a 1.000 veículos</option>
+                <option value="1000-2000">1.000 a 2.000 veículos</option>
+              </select>
+            </div>
+
+            <button type="submit" class="cmf-submit">Solicitar proposta</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 

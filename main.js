@@ -311,7 +311,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 5.6 Contact Modal (expandable CTA with FLIP morph)
-  const contactCta = document.getElementById('contact-cta');
+  // Gatilhos do modal de proposta. A LP tem um só (#contact-cta); /planos/ tem
+  // vários, marcados com data-contact-cta. A animação de abrir/fechar parte do
+  // botão que foi clicado, por isso guardamos qual foi.
+  const contactCtas = document.querySelectorAll('#contact-cta, [data-contact-cta]');
+  const contactCta = contactCtas[0] || null;
+  let activeCta = contactCta;
   const contactModal = document.getElementById('contact-modal');
   const contactModalCard = contactModal?.querySelector('[data-modal-card]');
   const contactModalClose = contactModal?.querySelector('[data-modal-close]');
@@ -333,12 +338,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const openContactModal = () => {
-    if (!contactCta || !contactModal || !contactModalCard) return;
+    if (!activeCta || !contactModal || !contactModalCard) return;
     clearPendingClose();
     lastFocusedEl = document.activeElement;
 
     // First: capture CTA rect
-    const ctaRect = contactCta.getBoundingClientRect();
+    const ctaRect = activeCta.getBoundingClientRect();
 
     // Reveal modal (flips visibility and pointer-events via CSS)
     contactModal.setAttribute('aria-hidden', 'false');
@@ -374,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const closeContactModal = () => {
-    if (!contactCta || !contactModal || !contactModalCard) return;
+    if (!activeCta || !contactModal || !contactModalCard) return;
 
     // Fade out inner content + close button quickly so the morph doesn't
     // show distortion from the non-uniform scale.
@@ -388,7 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Recompute CTA rect (may have moved if user scrolled before modal opened)
-    const ctaRect = contactCta.getBoundingClientRect();
+    const ctaRect = activeCta.getBoundingClientRect();
     const cardRect = contactModalCard.getBoundingClientRect();
 
     const dx = ctaRect.left - cardRect.left;
@@ -447,9 +452,13 @@ document.addEventListener('DOMContentLoaded', () => {
     pendingFallback = setTimeout(() => onEnd(null), 450);
   };
 
-  if (contactCta) {
-    contactCta.addEventListener('click', openContactModal);
-  }
+  contactCtas.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      activeCta = btn;
+      openContactModal();
+    });
+  });
   if (contactModalClose) {
     contactModalClose.addEventListener('click', closeContactModal);
   }

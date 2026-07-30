@@ -505,7 +505,10 @@ body {
 /* Páginas internas (institucional): não há hero para a navbar sobrevoar, então
    ela nasce sólida e rola junto em vez de deslizar de cima. Herda o resto de
    .solid para o menu mobile e as cores de link continuarem valendo. */
-.navbar--page {
+/* .navbar.navbar--page e não .navbar--page: precisa de duas classes para
+   vencer o position:fixed de .navbar.solid. Com fixed a navbar sai do fluxo
+   e a primeira seção sobe para trás dela. */
+.navbar.navbar--page {
     position: sticky;
     animation: none;
     border-bottom: 1px solid var(--border-default);
@@ -4051,4 +4054,11 @@ button.tw-multa-action { font-family: inherit; cursor: pointer; width: 100%; tex
     grid-template-columns: minmax(0, 520px);
     justify-content: center;
   }
+}
+
+/* Primeira seção de página interna: a navbar sticky ocupa o topo, então o
+   section-padding sozinho deixa o título praticamente encostado nela. */
+.planos-page-top { padding-top: var(--space-64); }
+@media (min-width: 768px) {
+  .planos-page-top { padding-top: var(--space-80); }
 }
