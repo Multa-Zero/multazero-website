@@ -3,13 +3,20 @@ import '../styles/multazero.css';
 import '../styles/blog.css';
 
 const base = import.meta.env.BASE_URL; // '/blog/'
+const site = 'https://multazero.co';
 
 const {
   title = 'Blog · MultaZero',
   description = 'Conteúdo sobre gestão de frotas, multas e tecnologia — sem burocracia.',
+  image = `${site}/truckoptmizedfinalv3.jpg`,
+  type = 'website',
+  jsonLd,
 } = Astro.props;
 
-const site = 'https://multazero.co';
+// Com barra no fim: é a URL final que o CloudFront entrega (sem ela há um 301)
+const canonical = new URL(Astro.url.pathname.replace(/\/?$/, '/'), site).href;
+// `<` escapado para um título com "</script>" não fechar a tag antes da hora
+const jsonLdHtml = jsonLd && JSON.stringify(jsonLd).replace(/</g, '\\u003c');
 ---
 
 <!doctype html>
@@ -19,6 +26,16 @@ const site = 'https://multazero.co';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="MultaZero" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    {jsonLdHtml && <script type="application/ld+json" set:html={jsonLdHtml} />}
     <link rel="icon" type="image/png" href={`${base}images/favicon-multazero-light.png`} />
     <meta name="generator" content={Astro.generator} />
   </head>

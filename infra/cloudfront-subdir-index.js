@@ -1,4 +1,5 @@
-// CloudFront Function (viewer request) — resolve URLs de diretório para index.html.
+// CloudFront Function (viewer request) — resolve URLs de diretório para index.html
+// e redireciona www.multazero.co -> multazero.co.
 //
 // Por que: o site/blog é estático com PASTAS (/blog/, /blog/post/<slug>/, /blog/studio).
 // O S3 atrás do CloudFront (origin REST) NÃO serve index.html automático para subpastas,
@@ -14,6 +15,17 @@
 function handler(event) {
   var request = event.request;
   var uri = request.uri;
+
+  // www -> domínio principal. Sem isso o site inteiro existe em dois endereços
+  // e buscadores dividem a relevância entre eles. (Query string não é mantida.)
+  var host = request.headers.host && request.headers.host.value;
+  if (host === 'www.multazero.co') {
+    return {
+      statusCode: 301,
+      statusDescription: 'Moved Permanently',
+      headers: { location: { value: 'https://multazero.co' + uri } },
+    };
+  }
 
   if (uri.endsWith('/')) {
     // /blog/  ->  /blog/index.html

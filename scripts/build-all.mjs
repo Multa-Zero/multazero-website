@@ -20,4 +20,7 @@ const dest = 'dist/blog';
 if (existsSync(dest)) rmSync(dest, { recursive: true, force: true });
 cpSync('blog/dist', dest, { recursive: true });
 
+// 4) Sitemap com todas as páginas do site + posts do blog
+run('node scripts/generate-sitemap.mjs');
+
 console.log('\n✓ Build combinado pronto: site em dist/, blog em dist/blog/ (serve /blog e /blog/studio)');

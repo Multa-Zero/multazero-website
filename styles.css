@@ -2386,61 +2386,36 @@ body {
     color: var(--blue-ribbon-7);
 }
 
-/* Modals */
-.modal {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    display: none;
-    /* Changed from flex to none */
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(8px);
-    opacity: 0;
-    transition: opacity 300ms ease;
+/* Páginas legais (/termos/, /privacidade/) */
+.legal-page {
+    padding-top: var(--space-64);
 }
 
-.modal.show {
-    opacity: 1;
-}
-
-.modal-content {
-    background: var(--surface-elevated);
-    width: 90%;
-    max-width: 600px;
-    max-height: 85vh;
-    border-radius: var(--radius-lg);
-    padding: var(--space-32);
-    position: relative;
-    overflow-y: auto;
-    box-shadow: var(--shadow-lg);
+.legal-content {
+    max-width: 760px;
+    margin: 0 auto;
     color: var(--text-primary);
-    transform: translateY(20px) scale(0.98);
-    transition: transform 300ms ease;
 }
 
-.modal.show .modal-content {
-    transform: translateY(0) scale(1);
+.legal-content h1 {
+    margin-bottom: var(--space-32);
 }
 
-.modal-content h2 {
-    margin-bottom: var(--space-16);
+.legal-content h2 {
+    margin-top: var(--space-32);
+    margin-bottom: var(--space-12);
 }
 
-.close {
-    position: absolute;
-    top: var(--space-16);
-    right: var(--space-24);
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+.legal-content p {
     color: var(--text-secondary);
-    transition: color 200ms ease;
+    line-height: 1.7;
+    margin-bottom: var(--space-8);
 }
 
-.close:hover {
-    color: var(--blue-ribbon-6);
+@media (min-width: 768px) {
+    .legal-page {
+        padding-top: var(--space-80);
+    }
 }
 
 /* ============ Contact CTA (expandable) ============ */

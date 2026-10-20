@@ -84,7 +84,14 @@ function normalize(d) {
     cover: d.coverImage?.asset
       ? urlFor(d.coverImage).width(1280).height(720).fit('crop').auto('format').url()
       : `${import.meta.env.BASE_URL}sample-cover.jpg`,
-    author: { name: d.authorName || 'Equipe MultaZero', initials: initialsOf(d.authorName) },
+    // isTeam: post sem autor ou assinado pela marca ("Multazero") — no schema.org
+    // o autor vira a própria empresa, não uma pessoa
+    author: {
+      name: d.authorName || 'Equipe MultaZero',
+      initials: initialsOf(d.authorName),
+      isTeam: !d.authorName || /multa\s*zero/i.test(d.authorName),
+    },
+    publishedAt: d.publishedAt || null,
     dateLabel: dateLabel(d.publishedAt),
     readingTime: readingTime(d.body),
     bodyHtml: bodyToHtml(d.body),
@@ -102,7 +109,8 @@ function sampleAsNormalized() {
     tags: p.tags,
     excerpt: p.excerpt,
     cover: `${base}${p.cover}`,
-    author: p.author,
+    author: { ...p.author, isTeam: true },
+    publishedAt: p.date,
     dateLabel: p.dateLabel,
     readingTime: p.readingTime,
     bodyHtml: p.body,

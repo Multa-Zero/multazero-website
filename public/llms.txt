@@ -1,0 +1,41 @@
+# MultaZero
+
+> MultaZero é um sistema (SaaS) brasileiro de gestão de multas para frotas corporativas. Centraliza as infrações da frota em tempo real, faz a indicação de condutor dentro do prazo, gera recursos de multa com inteligência artificial e permite pagar multas, IPVA e licenciamento pelo próprio sistema.
+
+A MultaZero (razão social MULTAZERO SOLUCOES EM TECNOLOGIA PARA FROTAS LTDA, CNPJ 65.205.605/0001-64) é uma LogTech fundada em 2025 e parceira credenciada do Banco do Brasil. Atende empresas a partir de 10 veículos até operações logísticas com milhares de caminhões: transportadoras, locadoras de veículos, distribuidoras e frotas corporativas em geral.
+
+## O que o sistema faz
+
+- Consulta automática de infrações por placa e CNPJ, via integração oficial e-Frotas (SERPRO/SENATRAN), conectada aos órgãos autuadores do Brasil
+- Indicação de condutor com apoio de IA, com controle de prazos e alertas
+- Recursos de multa gerados por IA em cerca de 1 minuto, com estimativa de chance de aprovação
+- Emissão de boletos com desconto de 40% ou 20% e pagamento de multas via PIX
+- Pagamento de IPVA, licenciamento e débitos do veículo (módulo Pagamentos), com liquidação via Banco do Brasil
+- Pipeline visual das multas em tempo real, do recebimento ao pagamento
+- Relatórios e rankings de infrações, condutores e veículos, com exportação em CSV; dashboard de ROI e mapa de calor de infrações
+- Score do condutor a partir do prontuário da CNH
+- API própria documentada para integração com ERP, telemetria e rastreamento
+
+## Resultados divulgados pela empresa
+
+- 85% de redução no tempo de processos de recurso
+- Mais de 200 mil multas gerenciadas na plataforma
+- 40% de economia média em custos com infrações
+
+## Páginas
+
+- [Página inicial](https://multazero.co/): visão geral do sistema, recursos com IA e perguntas frequentes
+- [Sobre a empresa](https://multazero.co/institucional/): a empresa e o time
+- [Planos e preços](https://multazero.co/planos/): plano Gestão e módulo Pagamentos; preço sob consulta, conforme o tamanho da frota
+- [Blog](https://multazero.co/blog/): artigos sobre gestão de multas, frotas e legislação de trânsito
+
+## Contato
+
+- E-mail: multazero@multazero.co
+- Proposta comercial: https://multazero.co/institucional/#proposta
+- LinkedIn: https://www.linkedin.com/company/multazerosistema
+
+## Optional
+
+- [Termos de Uso](https://multazero.co/termos/)
+- [Política de Privacidade](https://multazero.co/privacidade/)

@@ -190,20 +190,6 @@
 /* tags below the article */
 .post__tags { max-width: 720px; margin: 40px auto 0; display: flex; gap: 8px; flex-wrap: wrap; }
 
-/* comments */
-.comments { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border-default); }
-.comments__title { font-size: 22px; font-weight: 700; color: var(--text-primary); }
-.comments__placeholder {
-  margin-top: 16px;
-  padding: 24px;
-  background: var(--neutral-1);
-  border: 1px dashed var(--neutral-3);
-  border-radius: var(--radius-md);
-  color: var(--text-secondary);
-  font-size: 15px;
-  text-align: center;
-}
-
 /* ---- Post list (home) ---- */
 .list-hero { padding: 56px 0 8px; text-align: center; }
 .list-hero__title {

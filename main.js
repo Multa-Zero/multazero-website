@@ -562,6 +562,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const numbers = document.querySelectorAll('.reveal-number');
   numbers.forEach(number => {
     const target = parseInt(number.getAttribute('data-target'), 10);
+    // O HTML já traz o valor final, para quem lê sem JS (buscadores e robôs de
+    // IA). A animação zera aqui e conta até ele.
+    number.innerText = 0;
 
     gsap.to(number, {
       innerText: target,
@@ -786,51 +789,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.35 });
     tabsIO.observe(tabsWidget);
   }
-
-  // 8. Modals Logic
-  const termsLink = document.getElementById('terms-link');
-  const privacyLink = document.getElementById('privacy-link');
-  const termsModal = document.getElementById('terms-modal');
-  const privacyModal = document.getElementById('privacy-modal');
-  const termsClose = document.getElementById('terms-close');
-  const privacyClose = document.getElementById('privacy-close');
-
-  function openModal(modal, e) {
-    if (e) e.preventDefault();
-    if (modal) {
-      modal.style.display = 'flex';
-      // Slight delay to allow display:flex to apply before adding transition class
-      setTimeout(() => {
-        modal.classList.add('show');
-      }, 10);
-      // Disable background scrolling
-      document.body.style.overflow = 'hidden';
-    }
-  }
-
-  function closeModal(modal) {
-    if (modal) {
-      modal.classList.remove('show');
-      // Wait for the transition to finish before hiding
-      setTimeout(() => {
-        modal.style.display = 'none';
-      }, 300);
-      // Enable background scrolling
-      document.body.style.overflow = '';
-    }
-  }
-
-  if (termsLink) termsLink.addEventListener('click', (e) => openModal(termsModal, e));
-  if (privacyLink) privacyLink.addEventListener('click', (e) => openModal(privacyModal, e));
-
-  if (termsClose) termsClose.addEventListener('click', () => closeModal(termsModal));
-  if (privacyClose) privacyClose.addEventListener('click', () => closeModal(privacyModal));
-
-  // Close modals when clicking outside the modal content
-  window.addEventListener('click', (e) => {
-    if (e.target === termsModal) closeModal(termsModal);
-    if (e.target === privacyModal) closeModal(privacyModal);
-  });
 
   // ==========================================================================
   // Bento — Plataforma

@@ -13,6 +13,8 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         institucional: resolve(__dirname, 'institucional/index.html'),
         planos: resolve(__dirname, 'planos/index.html'),
+        termos: resolve(__dirname, 'termos/index.html'),
+        privacidade: resolve(__dirname, 'privacidade/index.html'),
         // redirect legado: /sobre/ -> /institucional/
         sobre: resolve(__dirname, 'sobre/index.html'),
       },

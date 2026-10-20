@@ -1,0 +1,7 @@
+# Todos os robôs podem ler o site, incluindo os de busca e de IA
+# (Googlebot, Bingbot, OAI-SearchBot, GPTBot, ClaudeBot, PerplexityBot...).
+User-agent: *
+Allow: /
+Disallow: /blog/studio
+
+Sitemap: https://multazero.co/sitemap.xml

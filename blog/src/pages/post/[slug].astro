@@ -8,9 +8,39 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
+
+const site = 'https://multazero.co';
+const url = `${site}${import.meta.env.BASE_URL}post/${post.slug}/`;
+const image = new URL(post.cover, site).href;
+const organization = {
+  '@type': 'Organization',
+  '@id': `${site}/#organization`,
+  name: 'MultaZero',
+  url: `${site}/`,
+  logo: { '@type': 'ImageObject', url: `${site}/logo-multazero.png` },
+};
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.title,
+  description: post.excerpt,
+  image,
+  url,
+  mainEntityOfPage: url,
+  inLanguage: 'pt-BR',
+  ...(post.publishedAt && { datePublished: post.publishedAt }),
+  author: post.author.isTeam ? organization : { '@type': 'Person', name: post.author.name },
+  publisher: organization,
+};
 ---
 
-<Base title={`${post.title} · Blog MultaZero`} description={post.excerpt}>
+<Base
+  title={`${post.title} · Blog MultaZero`}
+  description={post.excerpt}
+  image={image}
+  type="article"
+  jsonLd={jsonLd}
+>
   <article class="post blog-container">
     <div class="reading">
       <div class="post__eyebrow"><span class="tag-pill">{post.tag}</span></div>
@@ -48,13 +78,6 @@ const { post } = Astro.props;
     <div class="post__tags">
       {post.tags.map((t) => <span class="tag-pill">{t}</span>)}
     </div>
-
-    <section class="comments reading">
-      <h2 class="comments__title">Comentários</h2>
-      <div class="comments__placeholder">
-        Os comentários aparecerão aqui — a conectar (ex.: Cusdis, leve e open-source).
-      </div>
-    </section>
   </article>
 </Base>
 
